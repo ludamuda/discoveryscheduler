@@ -1,0 +1,84 @@
+package discoveryscheduler.solver;
+    dialect "java"
+
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScoreHolder;
+
+import discoveryscheduler.domain.*;
+
+
+global HardSoftScoreHolder scoreHolder;
+
+// ############################################################################
+// Hard constraints
+// ############################################################################
+
+//there is a task for each required activity: build in - exactly as many task are created
+//task has the length of its activity: build in task.getEnd()
+//task starts in the morning or after noon: build in task.start ValueRange by task.getPossibleStartList()
+//task is planned between group arrival and departure: task.getPossibleStartList() selects starts from each group unique Timestamp list 
+
+//task is planned in one day only
+rule "conflictingTaskSameDayStartInSameDayEnd"
+	when
+		Task(start != null, start.getDay() != getEnd().getDay())
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+//group has max of two tasks per day
+rule "conflictingTaskGroupMoreThanTwoInSameDay"
+	when
+		Task($idLeft : id, start != null, $day : start.getDay(), $groupLeft : group)
+		Task($idMiddle :id, id > $idLeft, start != null, start.getDay() == $day, group == $groupLeft)
+		Task(id > $idMiddle, start != null, start.getDay() == $day, group == $groupLeft)
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+//tasks of same activity do not collide
+rule "conflictingTasksSameActivityInSameTime"
+    when
+        Task($leftId : id, $leftActivity : activity, $start : start, start != null, $end : getEnd())
+        Task(id > $leftId, activity == $leftActivity, !((start < $start && getEnd() < $start) || (start > $end && getEnd() > $end)))
+    then
+        scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+//tasks in group do not collide
+rule "conflictingTasksSameGroupInSameTime"
+	when
+		Task($leftId : id, $leftGroup : group, $start : start, start != null, $end : getEnd())
+		Task(id > $leftId, group == $leftGroup,  !((start < $start && getEnd() < $start) || (start > $end && getEnd() > $end)))
+	then
+        scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+//penalizes presence of instructor if not required or not presence if required
+rule "instructorRequiredForTask"
+	when 
+		Task((instructor == null && isInstructorRequired()) || (instructor != null && isInstructorRequired() == false))
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+
+//instructors tasks cannot collide
+rule "conflictInstructorsMoreTasksAtSameTime"
+	when
+		Task($idLeft : id, $start : start, $end : getEnd(), $instructorLeft : instructor, start != null, instructor != null)
+		Task(id > $idLeft, instructor == $instructorLeft, !((start < $start && getEnd() < $start) || (start > $end && getEnd() > $end)))
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+// ############################################################################
+// Soft constraints
+// ############################################################################
+
+rule "instructorsHaveSameActivity"
+	when
+		Task($idLeft : id, $instructorLeft : instructor, $dayLeft : getDay(), $activityLeft : activity, start != null)
+		Task(id > $idLeft, activity == $activityLeft, instructor != $instructorLeft, getDay() == $dayLeft, start !=null)
+	then
+	 	scoreHolder.addSoftConstraintMatch(kcontext, -1);
+end

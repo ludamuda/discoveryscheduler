@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+
+  <solutionClass>discoveryscheduler.domain.Week</solutionClass>
+  <entityClass>discoveryscheduler.domain.Task</entityClass>
+    
+  <scoreDirectorFactory>
+   <scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
+    <scoreDrl>discoveryscheduler/solver/discoverySchedulerScoreRules.drl</scoreDrl>
+
+  
+  </scoreDirectorFactory>
+  
+  <!-- 
+  <termination>
+    <secondsSpentLimit>120</secondsSpentLimit>
+    <bestScoreLimit>-0hard/-999999soft</bestScoreLimit>
+  </termination>
+ -->
+  <constructionHeuristic>
+    <constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
+  </constructionHeuristic>
+  
+   <!-- 
+  <localSearch>
+    <unionMoveSelector>
+      <changeMoveSelector/>
+      <swapMoveSelector>
+        <filterClass>discoveryscheduler.solver.move.DifferentTaskSwapMoveFilter</filterClass>
+      </swapMoveSelector>
+    </unionMoveSelector>
+    <acceptor>
+      <lateAcceptanceSize>600</lateAcceptanceSize>
+    </acceptor>
+    <forager>
+      <acceptedCountLimit>4</acceptedCountLimit>
+    </forager>
+  </localSearch>
+    -->
+
+</solver>
