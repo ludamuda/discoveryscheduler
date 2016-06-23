@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import org.apache.commons.lang3.tuple.Pair;
 import org.optaplanner.core.api.domain.solution.Solution;
@@ -12,9 +13,14 @@ import org.optaplanner.examples.common.persistence.AbstractTxtSolutionImporter;
 
 import discoveryscheduler.domain.*;
 
+
+//import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
+
 public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
 	
-	private static final int TIME_PERIODS_IN_DAY = 25; //8.00, 8.30, 9.00, 9.30 .. 20.00
+	private static Properties configuration;
+	
+	//private static final int TIME_PERIODS_IN_DAY = 25; //8.00, 8.30, 9.00, 9.30 .. 20.00
     private static final String INPUT_FILE_SUFFIX = "ctt";
     private static final int ACTIVITY_LENGTH_IN_HALF_HOURS = 6;
     
@@ -24,6 +30,8 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
 
     public DiscoverySchedulerImporter() {
         super(new DiscoverySchedulerDao());
+       
+        configuration = DiscoverySchedulerImportConfig.getConfig();
     }
 
     @Override
@@ -115,7 +123,7 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
             	int arrival = groupStayTimeList.get(i).getLeft();
             	int departure = groupStayTimeList.get(i).getRight();
             	int lenghtOfStay = departure - arrival + 1;
-            	List<Timestamp> groupTimestampList = new ArrayList<Timestamp>(lenghtOfStay * TIME_PERIODS_IN_DAY);
+            	List<Timestamp> groupTimestampList = new ArrayList<Timestamp>(lenghtOfStay * Integer.parseInt(configuration.getProperty("time_periods_in_day"))); //TIME_PERIODS_IN_DAY);
             	for(Timestamp timestamp : week.getTimestampList()){
             		if(timestamp.getDay().getDayIndex() >= arrival && timestamp.getDay().getDayIndex() <= departure){
             			groupTimestampList.add(timestamp);
@@ -131,7 +139,7 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
         }
         
         private void updateTimeSchedule(Week week, int dayListSize) {
-        	int hourListSize = TIME_PERIODS_IN_DAY;
+        	int hourListSize = Integer.parseInt(configuration.getProperty("time_periods_in_day"));
         	
         	List<Day> dayList = new ArrayList<Day>(dayListSize);
             for (int i = 0; i < dayListSize; i++) {

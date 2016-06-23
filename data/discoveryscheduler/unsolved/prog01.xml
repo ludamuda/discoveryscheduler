@@ -848,13 +848,13 @@
       <id>0</id>
       <name>Lezeni</name>
       <length>6</length>
-      <instructorRequired>false</instructorRequired>
+      <instructorRequired>true</instructorRequired>
     </Activity>
     <Activity id="142">
       <id>0</id>
       <name>MTB</name>
       <length>6</length>
-      <instructorRequired>false</instructorRequired>
+      <instructorRequired>true</instructorRequired>
     </Activity>
     <Activity id="143">
       <id>0</id>

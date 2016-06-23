@@ -8,6 +8,7 @@ import org.optaplanner.examples.common.persistence.SolutionDao;
 import org.optaplanner.examples.common.swingui.SolutionPanel;
 
 import discoveryscheduler.persistence.DiscoverySchedulerDao;
+import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
 import discoveryscheduler.persistence.DiscoverySchedulerImporter;
 import discoveryscheduler.swingui.DiscoverySchedulerPanel;
 
@@ -26,8 +27,9 @@ public class DiscoverySchedulerApp extends CommonApp {
 	 */
 	public DiscoverySchedulerApp() {
         super("Discovery program planner",
-              "Master thesis scheduler for Discovery s.r.o. company.",
+              "Master thesis scheduler for Outdoor Discovery s.r.o. company.",
               "discoveryscheduler/swingui/logo.png");
+        new DiscoverySchedulerImportConfig();
     }
 	
 	/**

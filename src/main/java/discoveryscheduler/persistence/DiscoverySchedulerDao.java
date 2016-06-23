@@ -6,6 +6,6 @@ import discoveryscheduler.domain.Week;
 
 public class DiscoverySchedulerDao extends XStreamSolutionDao {
 	public DiscoverySchedulerDao() {
-        super("DiscoveryScheduler", Week.class);
+        super("discoveryscheduler", Week.class);
     }
 }

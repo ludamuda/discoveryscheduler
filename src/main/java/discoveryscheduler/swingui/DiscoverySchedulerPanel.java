@@ -29,6 +29,7 @@ import org.optaplanner.examples.common.swingui.components.LabeledComboBoxRendere
 import org.optaplanner.examples.common.swingui.timetable.TimeTablePanel;
 
 
+
 import discoveryscheduler.domain.*;
 
 
@@ -38,8 +39,11 @@ public class DiscoverySchedulerPanel extends SolutionPanel {
 
     private final TimeTablePanel<Group, Timestamp> groupsPanel;
     private final TimeTablePanel<Instructor, Timestamp> instructorsPanel;
+    
 
     public DiscoverySchedulerPanel() {
+    	
+
         setLayout(new BorderLayout());
         JTabbedPane tabbedPane = new JTabbedPane();
         groupsPanel = new TimeTablePanel<Group, Timestamp>();

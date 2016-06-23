@@ -17,7 +17,7 @@ global HardSoftScoreHolder scoreHolder;
 //task starts in the morning or after noon: build in task.start ValueRange by task.getPossibleStartList()
 //task is planned between group arrival and departure: task.getPossibleStartList() selects starts from each group unique Timestamp list 
 
-//task is planned in one day only
+//task starts and ends in the same day
 rule "conflictingTaskSameDayStartInSameDayEnd"
 	when
 		Task(start != null, start.getDay() != getEnd().getDay())
