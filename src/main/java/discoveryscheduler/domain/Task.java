@@ -6,14 +6,24 @@ import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
+
 import java.util.ArrayList;
-import java.util.Collection;
+//import java.util.Collection;
 import java.util.List;
+import java.util.Properties;
 
 
 @PlanningEntity
 @XStreamAlias("Task")
 public class Task extends AbstractPersistable {
+	
+	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
+	private static final int MORNING_EST = Integer.parseInt(configuration.getProperty("morning_earliest_start_period"));
+	private static final int MORNING_LCT = Integer.parseInt(configuration.getProperty("morning_latest_completion_period"));
+	private static final int AFTERNOON_EST = Integer.parseInt(configuration.getProperty("afternoon_earliest_start_period"));
+	private static final int AFTERNOON_LCT = Integer.parseInt(configuration.getProperty("afternoon_latest_completion_period"));
+	
 	private int index;
 	
 	private Activity activity;
@@ -46,7 +56,7 @@ public class Task extends AbstractPersistable {
 		return group.getGroupTimestampList().get(group.getGroupTimestampList().indexOf(start) + activity.getLength() - 1);
 	}
 
-	@PlanningVariable(nullable = true, valueRangeProviderRefs = {"instructorRange"})
+	@PlanningVariable(valueRangeProviderRefs = {"instructorRange"}, nullable = true)
 	public Instructor getInstructor() {
 		return instructor;
 	}
@@ -75,11 +85,11 @@ public class Task extends AbstractPersistable {
     }
     		
 	@ValueRangeProvider(id = "possibleStartRange")   
-    List<Timestamp> getPossibleStartList(){
+    List<Timestamp> getPossibleStartList(){		
     	List<Timestamp> starts = new ArrayList<Timestamp>();
     	for(Timestamp timestamp : group.getGroupTimestampList()){
     		int hour = timestamp.getHour().getHourIndex();
-    		if((hour >= 0 && hour <= 4) || (hour >= 10 && hour <= 16)){ //8-10, 13-16
+    		if((hour >= MORNING_EST && hour <= MORNING_LCT) || (hour >= AFTERNOON_EST && hour <= AFTERNOON_LCT)){ //8-10, 13-16
     			starts.add(timestamp);
     		}
     	}
@@ -90,7 +100,7 @@ public class Task extends AbstractPersistable {
 		return start.getDay();
 	}
 	public boolean isInstructorRequired(){
-		return activity.isInstructorRequired();
+		return getActivity().getInstructorRequired();
 	}
     
 }

@@ -14,15 +14,15 @@ import org.optaplanner.examples.common.persistence.AbstractTxtSolutionImporter;
 import discoveryscheduler.domain.*;
 
 
-//import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
+import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
 
 public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
 	
-	private static Properties configuration;
+	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
 	
-	//private static final int TIME_PERIODS_IN_DAY = 25; //8.00, 8.30, 9.00, 9.30 .. 20.00
+	private static final int TIME_PERIODS_IN_DAY = Integer.parseInt(configuration.getProperty("time_periods_in_day"));
+    private static final int ACTIVITY_LENGTH_IN_TIME_PERIODS = Integer.parseInt(configuration.getProperty("activity_lenght_in_time_periods"));
     private static final String INPUT_FILE_SUFFIX = "ctt";
-    private static final int ACTIVITY_LENGTH_IN_HALF_HOURS = 6;
     
     public static void main(String[] args) {
         new DiscoverySchedulerImporter().convertAll();
@@ -30,8 +30,6 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
 
     public DiscoverySchedulerImporter() {
         super(new DiscoverySchedulerDao());
-       
-        configuration = DiscoverySchedulerImportConfig.getConfig();
     }
 
     @Override
@@ -102,9 +100,10 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
 	                    Activity activity = new Activity();
 	                    activity.setId((long) j*i);
 	                    activity.setName(lineTokens[j]);
-	                    activity.setLength(ACTIVITY_LENGTH_IN_HALF_HOURS);
+	                    activity.setLength(ACTIVITY_LENGTH_IN_TIME_PERIODS);
 	                    if(activity.getName().equals("MTB") || activity.getName().equals("Lezeni") || 
-	                    		activity.getName().equals("C&R") || activity.getName().equals("HighRopes")){
+	                    		activity.getName().equals("C&R") || activity.getName().equals("HighRopes") || 
+	                    		activity.getName().equals("HRHS") || activity.getName().equals("Climb")){
 	                    	activity.setInstructorRequired(true);
 	                    }
 	                    else{
@@ -123,7 +122,7 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
             	int arrival = groupStayTimeList.get(i).getLeft();
             	int departure = groupStayTimeList.get(i).getRight();
             	int lenghtOfStay = departure - arrival + 1;
-            	List<Timestamp> groupTimestampList = new ArrayList<Timestamp>(lenghtOfStay * Integer.parseInt(configuration.getProperty("time_periods_in_day"))); //TIME_PERIODS_IN_DAY);
+            	List<Timestamp> groupTimestampList = new ArrayList<Timestamp>(lenghtOfStay * TIME_PERIODS_IN_DAY);
             	for(Timestamp timestamp : week.getTimestampList()){
             		if(timestamp.getDay().getDayIndex() >= arrival && timestamp.getDay().getDayIndex() <= departure){
             			groupTimestampList.add(timestamp);
@@ -139,7 +138,7 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
         }
         
         private void updateTimeSchedule(Week week, int dayListSize) {
-        	int hourListSize = Integer.parseInt(configuration.getProperty("time_periods_in_day"));
+        	int hourListSize = TIME_PERIODS_IN_DAY;
         	
         	List<Day> dayList = new ArrayList<Day>(dayListSize);
             for (int i = 0; i < dayListSize; i++) {

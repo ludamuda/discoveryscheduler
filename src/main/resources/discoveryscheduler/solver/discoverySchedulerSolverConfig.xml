@@ -21,7 +21,6 @@
     <constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
   </constructionHeuristic>
   
-   <!-- 
   <localSearch>
     <unionMoveSelector>
       <changeMoveSelector/>
@@ -36,6 +35,5 @@
       <acceptedCountLimit>4</acceptedCountLimit>
     </forager>
   </localSearch>
-    -->
 
 </solver>

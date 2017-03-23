@@ -19,6 +19,7 @@ public class DiscoverySchedulerApp extends CommonApp {
 		 * Creates solutionAndPersistenceFrame - the look of the app 
 		 */
 		prepareSwingEnvironment();
+		new DiscoverySchedulerImportConfig().loadConfig();;
         new DiscoverySchedulerApp().init();
 	}
 	
@@ -28,8 +29,7 @@ public class DiscoverySchedulerApp extends CommonApp {
 	public DiscoverySchedulerApp() {
         super("Discovery program planner",
               "Master thesis scheduler for Outdoor Discovery s.r.o. company.",
-              "discoveryscheduler/swingui/logo.png");
-        new DiscoverySchedulerImportConfig();
+              "discoveryscheduler/swingui/logo.png"); 
     }
 	
 	/**

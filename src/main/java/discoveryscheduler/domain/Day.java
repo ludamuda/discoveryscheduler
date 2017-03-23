@@ -4,11 +4,17 @@ import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
+
 import java.util.List;
+import java.util.Properties;
 
 @XStreamAlias("Day")
 public class Day extends AbstractPersistable{
-		private static final String[] DAYS = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
+	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
+		private static final String[] DAYS = configuration.getProperty("week_days").split(",");
+
+		//private static final String[] DAYS = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
 
 	    private int dayIndex;
 	    private List<Timestamp> timestampList;

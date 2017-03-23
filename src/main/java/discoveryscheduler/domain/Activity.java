@@ -24,7 +24,7 @@ public class Activity extends AbstractPersistable{
 		this.length = length;
 	}
 	
-	public boolean isInstructorRequired() {
+	public boolean getInstructorRequired() {
 		return instructorRequired;
 	}
 	public void setInstructorRequired(boolean instructorRequired) {
