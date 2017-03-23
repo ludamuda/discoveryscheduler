@@ -79,6 +79,15 @@ rule "conflictInstructorsMoreTasksAtSameTime"
 		scoreHolder.addHardConstraintMatch(kcontext, -1);
 end
 
+//there must be at least 1 hour for lunch
+rule "conflictOneHourBetweenTasks"
+	when
+		Task($idLeft : id, start != null, $day : start.getDay(), $groupLeft : group, $endLeft : getEnd())
+		Task(id > $idLeft, start != null, start.getDay() == $day, group == $groupLeft, start.getTimestampIndex() - $endLeft.getTimestampIndex() < 2)
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
 
 // ############################################################################
 // Soft constraints
@@ -91,7 +100,7 @@ rule "instructorsMinimize"
 		$instructor : Instructor()
 		exists Task(instructor == $instructor)
 	then
-		scoreHolder.addSoftConstraintMatch(kcontext, -10);
+		scoreHolder.addSoftConstraintMatch(kcontext, -5);
 end
 
 //instructors should have same activities in one day
@@ -103,11 +112,10 @@ rule "instructorsShouldHaveSameActivity"
 	 	scoreHolder.addSoftConstraintMatch(kcontext, -1);
 end
 
-###TODO###
-//task should start around 9.00
-rule "tasksShouldStartLater"
+//task shouldn't start before 9.00AM
+rule "tasksShouldStartAfter9AM"
 	when
-//		Task(start != null, start.getHour().getHourIndex() >= 2)
+		Task(start != null, start.getHour().getHourIndex() < 2)
 	then
-//	 	scoreHolder.addSoftConstraintMatch(kcontext, -1);
+	 	scoreHolder.addSoftConstraintMatch(kcontext, -1);
 end

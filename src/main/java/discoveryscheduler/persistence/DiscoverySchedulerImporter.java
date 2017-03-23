@@ -118,6 +118,12 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
                 groupList.add(group);
             }
             
+            /**
+             * Sets basic time window for each group (in timestamps).
+             * 
+             * For each groups iterates through the whole week's timestampList and selects only the timestamps between group arrival and departure.
+             * These become groupTimestampList 
+             */
             for (int i = 0; i < groupList.size(); i++){
             	int arrival = groupStayTimeList.get(i).getLeft();
             	int departure = groupStayTimeList.get(i).getRight();

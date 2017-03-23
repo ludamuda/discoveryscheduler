@@ -89,7 +89,7 @@ public class Task extends AbstractPersistable {
     	List<Timestamp> starts = new ArrayList<Timestamp>();
     	for(Timestamp timestamp : group.getGroupTimestampList()){
     		int hour = timestamp.getHour().getHourIndex();
-    		if((hour >= MORNING_EST && hour <= MORNING_LCT) || (hour >= AFTERNOON_EST && hour <= AFTERNOON_LCT)){ //8-10, 13-16
+    		if((hour >= MORNING_EST && /*hour <= MORNING_LCT) || (hour >= AFTERNOON_EST &&*/ hour <= AFTERNOON_LCT)){ //8-10, 13-16
     			starts.add(timestamp);
     		}
     	}

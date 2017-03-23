@@ -835,67 +835,67 @@
     <Activity id="139">
       <id>0</id>
       <name>Trek</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>false</instructorRequired>
     </Activity>
     <Activity id="140">
       <id>12</id>
       <name>OB</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>false</instructorRequired>
     </Activity>
     <Activity id="141">
       <id>56</id>
       <name>HRHS</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>true</instructorRequired>
     </Activity>
     <Activity id="142">
       <id>0</id>
       <name>Climb</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>true</instructorRequired>
     </Activity>
     <Activity id="143">
       <id>45</id>
       <name>Archery</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>false</instructorRequired>
     </Activity>
     <Activity id="144">
       <id>5</id>
       <name>MTB</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>true</instructorRequired>
     </Activity>
     <Activity id="145">
       <id>12</id>
       <name>Raft</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>false</instructorRequired>
     </Activity>
     <Activity id="146">
       <id>24</id>
       <name>GPS</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>false</instructorRequired>
     </Activity>
     <Activity id="147">
       <id>0</id>
       <name>Free</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>false</instructorRequired>
     </Activity>
     <Activity id="148">
       <id>0</id>
       <name>C&amp;R</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>true</instructorRequired>
     </Activity>
     <Activity id="149">
       <id>10</id>
       <name>TeamSpirit</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>false</instructorRequired>
     </Activity>
   </activityList>
