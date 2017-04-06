@@ -32,6 +32,7 @@ public class Task extends AbstractPersistable {
 	//Planning variables
 	private Timestamp start;
 	private Instructor instructor;
+	private Location location;
 	
 	public int getIndex() {
 		return index;
@@ -63,6 +64,15 @@ public class Task extends AbstractPersistable {
 	public void setInstructor(Instructor instructor) {
 		this.instructor = instructor;
 	}
+	
+	@PlanningVariable(valueRangeProviderRefs = {"locationRange"}, nullable = true)
+	public Location getLocation() {
+		return location;
+	}
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+	
 	public Group getGroup() {
 		return group;
 	}
@@ -76,12 +86,14 @@ public class Task extends AbstractPersistable {
 	 */
 	
 	public String getLabel() {
-        return activity.getName() + "-" + group.getLabel() + (isInstructorRequired() ? "-I" : "-N");
+        return activity.getName() + " " + group.getLabel() + " " + 
+        		"Reqs:" + (isInstructorRequired() ? " -I" : "") + (isLocationRequired() ? " -L" : "");
     }
 	
     @Override
     public String toString() {
-        return activity + "-" + group + (isInstructorRequired() ? "-I" : "");
+        return activity + " " + group + " " +
+        		"Reqs: " + (isInstructorRequired() ? " -I" : "") + (isLocationRequired() ? " -L" : "");
     }
     		
 	@ValueRangeProvider(id = "possibleStartRange")   
@@ -100,7 +112,10 @@ public class Task extends AbstractPersistable {
 		return start.getDay();
 	}
 	public boolean isInstructorRequired(){
-		return getActivity().getInstructorRequired();
+		return getActivity().isInstructorRequired();
+	}
+	public boolean isLocationRequired(){
+		return getActivity().isLocationRequired();
 	}
     
 }

@@ -70,7 +70,7 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
             for (int i = 0; i < groupListSize; i++) {
                 Group group = new Group();
                 group.setId((long) i);
-                // Groups: <name> <arrival> <departure> <# Activities> <Activity1> ... <ActivityN>
+                // group line: <name> <arrival> <departure> <# of Activities> <Activity1> ... <ActivityN>
                 String line = bufferedReader.readLine();
                 String[] lineTokens = splitBySpacesOrTabs(line);
                 if (lineTokens.length < 5) {
@@ -101,13 +101,19 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
 	                    activity.setId((long) j*i);
 	                    activity.setName(lineTokens[j]);
 	                    activity.setLength(ACTIVITY_LENGTH_IN_TIME_PERIODS);
-	                    if(activity.getName().equals("MTB") || activity.getName().equals("Lezeni") || 
-	                    		activity.getName().equals("C&R") || activity.getName().equals("HighRopes") || 
+	                    if(activity.getName().equals("MTB") || activity.getName().equals("C&R") || 
 	                    		activity.getName().equals("HRHS") || activity.getName().equals("Climb")){
 	                    	activity.setInstructorRequired(true);
 	                    }
 	                    else{
 	                    	activity.setInstructorRequired(false);
+	                    }
+	                    if(activity.getName().equals("MTB") || activity.getName().equals("Trek") || 
+	                    		activity.getName().equals("Raft") || activity.getName().equals("Climb")){
+	                    	activity.setLocationRequired(true);
+	                    }
+	                    else{
+	                    	activity.setLocationRequired(false);
 	                    }
 	                    groupActivityList.add(activity);
 	                    activityMap.put(lineTokens[j], activity);
@@ -205,11 +211,14 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
             }
             week.setTaskList(taskList);
             week.setInstructorList(generateInstructorList(week.getTaskList().size()));
+            week.setLocationList(generateLocationList());
         }
         
+        private static final int MAX_NUM_OF_INSTRUCTORS = 10;
         private List<Instructor> generateInstructorList(int numberOfInstructors){
+        	numberOfInstructors = numberOfInstructors < MAX_NUM_OF_INSTRUCTORS ? numberOfInstructors : MAX_NUM_OF_INSTRUCTORS;
         	List<Instructor> instructorList = new ArrayList<Instructor>(numberOfInstructors);
-        	for(int i = 0; i < numberOfInstructors; i++){
+        	for(int i = 0; i < numberOfInstructors ; i++){
         		Instructor instructor = new Instructor();
         		instructor.setId((long) i);
         		instructor.setInstructorIndex(i);
@@ -218,6 +227,19 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
         	}
         	
         	return instructorList;
+        }
+        private static final String[] LOCATIONS = {"Climb", "Climb", "Climb", "MTB", "MTB", "Trek", "Trek", "Trek", "Trek", "Raft", "Raft", "Raft"};
+        private List<Location> generateLocationList(){
+        	List<Location>locationList = new ArrayList<Location>(LOCATIONS.length);
+        	for(int i = 0; i < LOCATIONS.length; i++){
+        		Location location = new Location();
+        		location.setId((long) i);
+        		location.setLocationIndex(i);
+        		location.setType(LOCATIONS[i]);
+        		locationList.add(location);
+        	}
+        	
+        	return locationList;
         }
     }
 }

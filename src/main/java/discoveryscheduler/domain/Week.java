@@ -31,7 +31,8 @@ public class Week extends AbstractPersistable implements Solution<HardSoftScore>
 	private List<Hour> hourList;
 	private List<Timestamp> timestampList;
 	private List<Activity> activityList;	 
-	private List<Instructor> instructorList;	
+	private List<Instructor> instructorList;
+	private List<Location> locationList;
 	private List<Group> groupList;
 	
 	private List<Task> taskList;
@@ -93,6 +94,13 @@ public class Week extends AbstractPersistable implements Solution<HardSoftScore>
 	public void setInstructorList(List<Instructor> instructorList) {
 		this.instructorList = instructorList;
 	}
+	@ValueRangeProvider(id = "locationRange")
+    public List<Location> getLocationList() {
+		return locationList;
+	}
+	public void setLocationList(List<Location> locationList) {
+		this.locationList = locationList;
+	}
 	public HardSoftScore getScore() {
 		return score;
 	}
@@ -110,6 +118,7 @@ public class Week extends AbstractPersistable implements Solution<HardSoftScore>
         facts.addAll(activityList);
         facts.addAll(groupList);
         facts.addAll(instructorList);
+        facts.addAll(locationList);
         
 
         

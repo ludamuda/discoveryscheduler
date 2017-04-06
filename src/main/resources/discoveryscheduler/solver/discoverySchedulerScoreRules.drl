@@ -14,7 +14,7 @@ global HardSoftScoreHolder scoreHolder;
 
 //there is a task for each required activity: build in - exactly as many tasks are created
 //task has the length of its activity: build in task.getEnd()
-//task starts in the morning or after noon: build in task.start ValueRange by task.getPossibleStartList()
+//TODO task starts in the morning or after noon: build in task.start ValueRange by task.getPossibleStartList()
 //task is planned between group arrival and departure: task.getPossibleStartList() selects starts from each group unique Timestamp list 
 
 //task starts and ends in the same day
@@ -36,6 +36,7 @@ rule "conflictingTaskGroupMoreThanTwoInSameDay"
 end
 
 //tasks of the same activity do not collide
+/* covered by putting tasks at locations?
 rule "conflictingTasksSameActivityInSameTime"
     when
         Task($leftId : id, $leftActivity : activity, $start : start, start != null, $end : getEnd())
@@ -43,6 +44,7 @@ rule "conflictingTasksSameActivityInSameTime"
     then
         scoreHolder.addHardConstraintMatch(kcontext, -1);
 end
+*/
 
 //tasks in group do not collide
 rule "conflictingTasksSameGroupInSameTime"
@@ -69,7 +71,6 @@ rule "instructorNotRequiredForTask"
 		scoreHolder.addHardConstraintMatch(kcontext, -1);
 end
 
-
 //instructors tasks cannot collide
 rule "conflictInstructorsMoreTasksAtSameTime"
 	when
@@ -84,6 +85,42 @@ rule "conflictOneHourBetweenTasks"
 	when
 		Task($idLeft : id, start != null, $day : start.getDay(), $groupLeft : group, $endLeft : getEnd())
 		Task(id > $idLeft, start != null, start.getDay() == $day, group == $groupLeft, start.getTimestampIndex() - $endLeft.getTimestampIndex() < 2)
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+//penalizes not presence of location if required
+rule "locationRequiredForTask"
+	when 
+		Task(start != null, location == null, isLocationRequired())
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+
+//penalizes presence of location if not required
+/* covered by placing tasks at locations ?
+rule "locationNotRequiredForTask"
+	when 
+		Task(start != null, location != null, !isLocationRequired())
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+*/
+
+//tasks in one location cannot collide
+rule "conflictLocationsMoreTasksAtSameTime"
+	when
+		Task($idLeft : id, $startLeft : start, $endLeft : getEnd(), $locationLeft : location, start != null, location != null)
+		Task(id > $idLeft, location == $locationLeft, !((start < $startLeft && getEnd() < $startLeft) || (start > $endLeft && getEnd() > $endLeft)))
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+//tasks with locations must be at its locations
+rule "taskAtItsLocation"
+	when 
+		Task(start != null, location != null, location.type != activity.name)
 	then
 		scoreHolder.addHardConstraintMatch(kcontext, -1);
 end

@@ -39,6 +39,7 @@ public class DiscoverySchedulerPanel extends SolutionPanel {
 
     private final TimeTablePanel<Group, Timestamp> groupsPanel;
     private final TimeTablePanel<Instructor, Timestamp> instructorsPanel;
+    private final TimeTablePanel<Location, Timestamp> locationsPanel;
     
 
     public DiscoverySchedulerPanel() {
@@ -50,6 +51,8 @@ public class DiscoverySchedulerPanel extends SolutionPanel {
         tabbedPane.add("Groups", new JScrollPane(groupsPanel));
         instructorsPanel = new TimeTablePanel<Instructor, Timestamp>();
         tabbedPane.add("Instructors", new JScrollPane(instructorsPanel));
+        locationsPanel = new TimeTablePanel<Location, Timestamp>();
+        tabbedPane.add("Locations", new JScrollPane(locationsPanel));
         add(tabbedPane, BorderLayout.CENTER);
         setPreferredSize(PREFERRED_SCROLLABLE_VIEWPORT_SIZE);
     }
@@ -71,6 +74,7 @@ public class DiscoverySchedulerPanel extends SolutionPanel {
     public void resetPanel(Solution solution) {
         groupsPanel.reset();
         instructorsPanel.reset();
+        locationsPanel.reset();
         Week week = (Week) solution;
         defineGrid(week);
         fillCells(week);
@@ -95,15 +99,25 @@ public class DiscoverySchedulerPanel extends SolutionPanel {
         	instructorsPanel.defineColumnHeader(instructor, footprintWidth);
         }
         instructorsPanel.defineColumnHeader(null, footprintWidth); // Unassigned
+        
+        locationsPanel.defineColumnHeaderByKey(HEADER_COLUMN_GROUP1); // Day header
+        locationsPanel.defineColumnHeaderByKey(HEADER_COLUMN); // Hour header
+        for (Location location : week.getLocationList()) {
+        	locationsPanel.defineColumnHeader(location, footprintWidth);
+        }
+        locationsPanel.defineColumnHeader(null, footprintWidth); // Unassigned
 
         groupsPanel.defineRowHeaderByKey(HEADER_ROW); // Group header
         instructorsPanel.defineRowHeaderByKey(HEADER_ROW); // Group header
+        locationsPanel.defineRowHeaderByKey(HEADER_ROW); // Group header
         for (Timestamp timestamp : week.getTimestampList()) {
             groupsPanel.defineRowHeader(timestamp);
             instructorsPanel.defineRowHeader(timestamp);
+            locationsPanel.defineRowHeader(timestamp);
         }
         groupsPanel.defineRowHeader(null); // Unassigned period
         instructorsPanel.defineRowHeader(null); // Unassigned period
+        locationsPanel.defineRowHeader(null); // Unassigned period
     }
 
     private void fillCells(Week week) {
@@ -113,6 +127,9 @@ public class DiscoverySchedulerPanel extends SolutionPanel {
         instructorsPanel.addCornerHeader(HEADER_COLUMN_GROUP1, HEADER_ROW, createTableHeader(new JLabel("Day")));
         instructorsPanel.addCornerHeader(HEADER_COLUMN, HEADER_ROW, createTableHeader(new JLabel("Hour")));
         fillInstructorCells(week);
+        locationsPanel.addCornerHeader(HEADER_COLUMN_GROUP1, HEADER_ROW, createTableHeader(new JLabel("Day")));
+        locationsPanel.addCornerHeader(HEADER_COLUMN, HEADER_ROW, createTableHeader(new JLabel("Hour")));
+        fillLocationCells(week);
         fillTimestampCells(week);
         fillTaskCells(week);
 
@@ -121,7 +138,7 @@ public class DiscoverySchedulerPanel extends SolutionPanel {
     private void fillGroupCells(Week week) {
         for (Group group : week.getGroupList()) {
             groupsPanel.addColumnHeader(group, HEADER_ROW,
-                    createTableHeader(new JLabel("Group " + group.getLabel(), SwingConstants.CENTER)));
+                    createTableHeader(new JLabel(group.getLabel(), SwingConstants.CENTER)));
         }
         groupsPanel.addColumnHeader(null, HEADER_ROW,
                 createTableHeader(new JLabel("Unassigned", SwingConstants.CENTER)));
@@ -135,6 +152,15 @@ public class DiscoverySchedulerPanel extends SolutionPanel {
         instructorsPanel.addColumnHeader(null, HEADER_ROW,
                 createTableHeader(new JLabel("Unassigned", SwingConstants.CENTER)));
     }
+    
+    private void fillLocationCells(Week week) {
+        for (Location location : week.getLocationList()) {
+        	locationsPanel.addColumnHeader(location, HEADER_ROW,
+                    createTableHeader(new JLabel(location.getLabel(), SwingConstants.CENTER)));
+        }
+        locationsPanel.addColumnHeader(null, HEADER_ROW,
+                createTableHeader(new JLabel("Unassigned", SwingConstants.CENTER)));
+    }
 
 
     private void fillTimestampCells(Week week) {
@@ -145,16 +171,22 @@ public class DiscoverySchedulerPanel extends SolutionPanel {
                     createTableHeader(new JLabel(day.getLabel())));
             instructorsPanel.addRowHeader(HEADER_COLUMN_GROUP1, dayStartTimestamp, HEADER_COLUMN_GROUP1, dayEndTimestamp,
                     createTableHeader(new JLabel(day.getLabel())));
+            locationsPanel.addRowHeader(HEADER_COLUMN_GROUP1, dayStartTimestamp, HEADER_COLUMN_GROUP1, dayEndTimestamp,
+                    createTableHeader(new JLabel(day.getLabel())));
             for (Timestamp timestamp : day.getTimestampList()) {
                 groupsPanel.addRowHeader(HEADER_COLUMN, timestamp,
                         createTableHeader(new JLabel(timestamp.getHour().getLabel())));
                 instructorsPanel.addRowHeader(HEADER_COLUMN, timestamp,
+                        createTableHeader(new JLabel(timestamp.getHour().getLabel())));
+                locationsPanel.addRowHeader(HEADER_COLUMN, timestamp,
                         createTableHeader(new JLabel(timestamp.getHour().getLabel())));
             }
         }
         groupsPanel.addRowHeader(HEADER_COLUMN_GROUP1, null, HEADER_COLUMN_GROUP1, null,
                 createTableHeader(new JLabel("Unassigned")));
         instructorsPanel.addRowHeader(HEADER_COLUMN_GROUP1, null, HEADER_COLUMN_GROUP1, null,
+                createTableHeader(new JLabel("Unassigned")));
+        locationsPanel.addRowHeader(HEADER_COLUMN_GROUP1, null, HEADER_COLUMN_GROUP1, null,
                 createTableHeader(new JLabel("Unassigned")));
     }
     
@@ -165,11 +197,15 @@ public class DiscoverySchedulerPanel extends SolutionPanel {
             if(task.getStart() == null){
             	groupsPanel.addCell(task.getGroup(), task.getStart(), createButton(task, taskColor));
                 instructorsPanel.addCell(task.getInstructor(), task.getStart(), createButton(task, taskColor));
+                locationsPanel.addCell(task.getLocation(), task.getStart(), createButton(task, taskColor));
             } else {
 	            groupsPanel.addCell(task.getGroup(), task.getStart(), task.getGroup(), 
 	            		task.getEnd(),
 	                    createButton(task, taskColor));
 	            instructorsPanel.addCell(task.getInstructor(), task.getStart(), task.getInstructor(), 
+	            		task.getEnd(),
+	                    createButton(task, taskColor));
+	            locationsPanel.addCell(task.getLocation(), task.getStart(), task.getLocation(), 
 	            		task.getEnd(),
 	                    createButton(task, taskColor));
             }

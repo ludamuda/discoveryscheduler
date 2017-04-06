@@ -837,66 +837,77 @@
       <name>Trek</name>
       <length>8</length>
       <instructorRequired>false</instructorRequired>
+      <locationRequired>true</locationRequired>
     </Activity>
     <Activity id="140">
       <id>12</id>
       <name>OB</name>
       <length>8</length>
       <instructorRequired>false</instructorRequired>
+      <locationRequired>false</locationRequired>
     </Activity>
     <Activity id="141">
       <id>56</id>
       <name>HRHS</name>
       <length>8</length>
       <instructorRequired>true</instructorRequired>
+      <locationRequired>false</locationRequired>
     </Activity>
     <Activity id="142">
       <id>0</id>
       <name>Climb</name>
       <length>8</length>
       <instructorRequired>true</instructorRequired>
+      <locationRequired>true</locationRequired>
     </Activity>
     <Activity id="143">
       <id>45</id>
       <name>Archery</name>
       <length>8</length>
       <instructorRequired>false</instructorRequired>
+      <locationRequired>false</locationRequired>
     </Activity>
     <Activity id="144">
       <id>5</id>
       <name>MTB</name>
       <length>8</length>
       <instructorRequired>true</instructorRequired>
+      <locationRequired>true</locationRequired>
     </Activity>
     <Activity id="145">
       <id>12</id>
       <name>Raft</name>
       <length>8</length>
       <instructorRequired>false</instructorRequired>
+      <locationRequired>true</locationRequired>
     </Activity>
     <Activity id="146">
       <id>24</id>
       <name>GPS</name>
       <length>8</length>
       <instructorRequired>false</instructorRequired>
+      <locationRequired>false</locationRequired>
     </Activity>
     <Activity id="147">
       <id>0</id>
       <name>Free</name>
       <length>8</length>
       <instructorRequired>false</instructorRequired>
+      <locationRequired>false</locationRequired>
     </Activity>
     <Activity id="148">
       <id>0</id>
       <name>C&amp;R</name>
       <length>8</length>
       <instructorRequired>true</instructorRequired>
+      <locationRequired>false</locationRequired>
     </Activity>
     <Activity id="149">
       <id>10</id>
       <name>TeamSpirit</name>
       <length>8</length>
       <instructorRequired>false</instructorRequired>
+      <locationRequired>false</locationRequired>
     </Activity>
   </activityList>
   <instructorList id="150">
@@ -950,183 +961,80 @@
       <instructorIndex>9</instructorIndex>
       <isGuide>false</isGuide>
     </Instructor>
-    <Instructor id="161">
-      <id>10</id>
-      <instructorIndex>10</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="162">
-      <id>11</id>
-      <instructorIndex>11</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="163">
-      <id>12</id>
-      <instructorIndex>12</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="164">
-      <id>13</id>
-      <instructorIndex>13</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="165">
-      <id>14</id>
-      <instructorIndex>14</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="166">
-      <id>15</id>
-      <instructorIndex>15</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="167">
-      <id>16</id>
-      <instructorIndex>16</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="168">
-      <id>17</id>
-      <instructorIndex>17</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="169">
-      <id>18</id>
-      <instructorIndex>18</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="170">
-      <id>19</id>
-      <instructorIndex>19</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="171">
-      <id>20</id>
-      <instructorIndex>20</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="172">
-      <id>21</id>
-      <instructorIndex>21</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="173">
-      <id>22</id>
-      <instructorIndex>22</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="174">
-      <id>23</id>
-      <instructorIndex>23</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="175">
-      <id>24</id>
-      <instructorIndex>24</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="176">
-      <id>25</id>
-      <instructorIndex>25</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="177">
-      <id>26</id>
-      <instructorIndex>26</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="178">
-      <id>27</id>
-      <instructorIndex>27</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="179">
-      <id>28</id>
-      <instructorIndex>28</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="180">
-      <id>29</id>
-      <instructorIndex>29</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="181">
-      <id>30</id>
-      <instructorIndex>30</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="182">
-      <id>31</id>
-      <instructorIndex>31</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="183">
-      <id>32</id>
-      <instructorIndex>32</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="184">
-      <id>33</id>
-      <instructorIndex>33</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="185">
-      <id>34</id>
-      <instructorIndex>34</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="186">
-      <id>35</id>
-      <instructorIndex>35</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="187">
-      <id>36</id>
-      <instructorIndex>36</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="188">
-      <id>37</id>
-      <instructorIndex>37</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="189">
-      <id>38</id>
-      <instructorIndex>38</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="190">
-      <id>39</id>
-      <instructorIndex>39</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="191">
-      <id>40</id>
-      <instructorIndex>40</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="192">
-      <id>41</id>
-      <instructorIndex>41</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
-    <Instructor id="193">
-      <id>42</id>
-      <instructorIndex>42</instructorIndex>
-      <isGuide>false</isGuide>
-    </Instructor>
   </instructorList>
-  <groupList id="194">
-    <Group id="195">
+  <locationList id="161">
+    <Location id="162">
+      <id>0</id>
+      <locationIndex>0</locationIndex>
+      <type>Climb</type>
+    </Location>
+    <Location id="163">
+      <id>1</id>
+      <locationIndex>1</locationIndex>
+      <type>Climb</type>
+    </Location>
+    <Location id="164">
+      <id>2</id>
+      <locationIndex>2</locationIndex>
+      <type>Climb</type>
+    </Location>
+    <Location id="165">
+      <id>3</id>
+      <locationIndex>3</locationIndex>
+      <type>MTB</type>
+    </Location>
+    <Location id="166">
+      <id>4</id>
+      <locationIndex>4</locationIndex>
+      <type>MTB</type>
+    </Location>
+    <Location id="167">
+      <id>5</id>
+      <locationIndex>5</locationIndex>
+      <type>Trek</type>
+    </Location>
+    <Location id="168">
+      <id>6</id>
+      <locationIndex>6</locationIndex>
+      <type>Trek</type>
+    </Location>
+    <Location id="169">
+      <id>7</id>
+      <locationIndex>7</locationIndex>
+      <type>Trek</type>
+    </Location>
+    <Location id="170">
+      <id>8</id>
+      <locationIndex>8</locationIndex>
+      <type>Trek</type>
+    </Location>
+    <Location id="171">
+      <id>9</id>
+      <locationIndex>9</locationIndex>
+      <type>Raft</type>
+    </Location>
+    <Location id="172">
+      <id>10</id>
+      <locationIndex>10</locationIndex>
+      <type>Raft</type>
+    </Location>
+    <Location id="173">
+      <id>11</id>
+      <locationIndex>11</locationIndex>
+      <type>Raft</type>
+    </Location>
+  </locationList>
+  <groupList id="174">
+    <Group id="175">
       <id>0</id>
       <name>Busses</name>
-      <requiredActivities id="196">
+      <requiredActivities id="176">
         <Activity reference="148"/>
         <Activity reference="139"/>
         <Activity reference="142"/>
         <Activity reference="147"/>
       </requiredActivities>
-      <groupTimestampList id="197">
+      <groupTimestampList id="177">
         <Timestamp reference="5"/>
         <Timestamp reference="7"/>
         <Timestamp reference="9"/>
@@ -1229,16 +1137,16 @@
         <Timestamp reference="135"/>
       </groupTimestampList>
     </Group>
-    <Group id="198">
+    <Group id="178">
       <id>1</id>
       <name>Kokkedal</name>
-      <requiredActivities id="199">
+      <requiredActivities id="179">
         <Activity reference="147"/>
         <Activity reference="144"/>
         <Activity reference="142"/>
         <Activity reference="139"/>
       </requiredActivities>
-      <groupTimestampList id="200">
+      <groupTimestampList id="180">
         <Timestamp reference="5"/>
         <Timestamp reference="7"/>
         <Timestamp reference="9"/>
@@ -1341,15 +1249,15 @@
         <Timestamp reference="135"/>
       </groupTimestampList>
     </Group>
-    <Group id="201">
+    <Group id="181">
       <id>2</id>
       <name>Ids_Holst</name>
-      <requiredActivities id="202">
+      <requiredActivities id="182">
         <Activity reference="142"/>
         <Activity reference="149"/>
         <Activity reference="140"/>
       </requiredActivities>
-      <groupTimestampList id="203">
+      <groupTimestampList id="183">
         <Timestamp reference="5"/>
         <Timestamp reference="7"/>
         <Timestamp reference="9"/>
@@ -1452,16 +1360,16 @@
         <Timestamp reference="135"/>
       </groupTimestampList>
     </Group>
-    <Group id="204">
+    <Group id="184">
       <id>3</id>
       <name>Stenhus</name>
-      <requiredActivities id="205">
+      <requiredActivities id="185">
         <Activity reference="145"/>
         <Activity reference="140"/>
         <Activity reference="142"/>
         <Activity reference="139"/>
       </requiredActivities>
-      <groupTimestampList id="206">
+      <groupTimestampList id="186">
         <Timestamp reference="57"/>
         <Timestamp reference="58"/>
         <Timestamp reference="59"/>
@@ -1539,17 +1447,17 @@
         <Timestamp reference="135"/>
       </groupTimestampList>
     </Group>
-    <Group id="207">
+    <Group id="187">
       <id>4</id>
       <name>Bording</name>
-      <requiredActivities id="208">
+      <requiredActivities id="188">
         <Activity reference="139"/>
         <Activity reference="147"/>
         <Activity reference="145"/>
         <Activity reference="144"/>
         <Activity reference="142"/>
       </requiredActivities>
-      <groupTimestampList id="209">
+      <groupTimestampList id="189">
         <Timestamp reference="5"/>
         <Timestamp reference="7"/>
         <Timestamp reference="9"/>
@@ -1652,16 +1560,16 @@
         <Timestamp reference="135"/>
       </groupTimestampList>
     </Group>
-    <Group id="210">
+    <Group id="190">
       <id>5</id>
       <name>Gudenaad</name>
-      <requiredActivities id="211">
+      <requiredActivities id="191">
         <Activity reference="147"/>
         <Activity reference="142"/>
         <Activity reference="145"/>
         <Activity reference="144"/>
       </requiredActivities>
-      <groupTimestampList id="212">
+      <groupTimestampList id="192">
         <Timestamp reference="5"/>
         <Timestamp reference="7"/>
         <Timestamp reference="9"/>
@@ -1739,13 +1647,13 @@
         <Timestamp reference="108"/>
       </groupTimestampList>
     </Group>
-    <Group id="213">
+    <Group id="193">
       <id>6</id>
       <name>Supss</name>
-      <requiredActivities id="214">
+      <requiredActivities id="194">
         <Activity reference="146"/>
       </requiredActivities>
-      <groupTimestampList id="215">
+      <groupTimestampList id="195">
         <Timestamp reference="111"/>
         <Timestamp reference="112"/>
         <Timestamp reference="113"/>
@@ -1773,17 +1681,17 @@
         <Timestamp reference="135"/>
       </groupTimestampList>
     </Group>
-    <Group id="216">
+    <Group id="196">
       <id>7</id>
       <name>Aadalens</name>
-      <requiredActivities id="217">
+      <requiredActivities id="197">
         <Activity reference="140"/>
         <Activity reference="142"/>
         <Activity reference="144"/>
         <Activity reference="147"/>
         <Activity reference="141"/>
       </requiredActivities>
-      <groupTimestampList id="218">
+      <groupTimestampList id="198">
         <Timestamp reference="5"/>
         <Timestamp reference="7"/>
         <Timestamp reference="9"/>
@@ -1886,16 +1794,16 @@
         <Timestamp reference="135"/>
       </groupTimestampList>
     </Group>
-    <Group id="219">
+    <Group id="199">
       <id>8</id>
       <name>Trefalke</name>
-      <requiredActivities id="220">
+      <requiredActivities id="200">
         <Activity reference="139"/>
         <Activity reference="140"/>
         <Activity reference="145"/>
         <Activity reference="142"/>
       </requiredActivities>
-      <groupTimestampList id="221">
+      <groupTimestampList id="201">
         <Timestamp reference="5"/>
         <Timestamp reference="7"/>
         <Timestamp reference="9"/>
@@ -1998,16 +1906,16 @@
         <Timestamp reference="135"/>
       </groupTimestampList>
     </Group>
-    <Group id="222">
+    <Group id="202">
       <id>9</id>
       <name>Laursens</name>
-      <requiredActivities id="223">
+      <requiredActivities id="203">
         <Activity reference="140"/>
         <Activity reference="143"/>
         <Activity reference="142"/>
         <Activity reference="144"/>
       </requiredActivities>
-      <groupTimestampList id="224">
+      <groupTimestampList id="204">
         <Timestamp reference="5"/>
         <Timestamp reference="7"/>
         <Timestamp reference="9"/>
@@ -2085,17 +1993,17 @@
         <Timestamp reference="108"/>
       </groupTimestampList>
     </Group>
-    <Group id="225">
+    <Group id="205">
       <id>10</id>
       <name>Tinder</name>
-      <requiredActivities id="226">
+      <requiredActivities id="206">
         <Activity reference="141"/>
         <Activity reference="139"/>
         <Activity reference="140"/>
         <Activity reference="147"/>
         <Activity reference="145"/>
       </requiredActivities>
-      <groupTimestampList id="227">
+      <groupTimestampList id="207">
         <Timestamp reference="5"/>
         <Timestamp reference="7"/>
         <Timestamp reference="9"/>
@@ -2199,264 +2107,264 @@
       </groupTimestampList>
     </Group>
   </groupList>
-  <taskList id="228">
-    <Task id="229">
+  <taskList id="208">
+    <Task id="209">
       <id>0</id>
       <index>0</index>
       <activity reference="148"/>
-      <group reference="195"/>
+      <group reference="175"/>
     </Task>
-    <Task id="230">
+    <Task id="210">
       <id>1</id>
       <index>0</index>
       <activity reference="139"/>
-      <group reference="195"/>
+      <group reference="175"/>
     </Task>
-    <Task id="231">
+    <Task id="211">
       <id>2</id>
       <index>0</index>
       <activity reference="142"/>
-      <group reference="195"/>
+      <group reference="175"/>
     </Task>
-    <Task id="232">
+    <Task id="212">
       <id>3</id>
       <index>0</index>
       <activity reference="147"/>
-      <group reference="195"/>
+      <group reference="175"/>
     </Task>
-    <Task id="233">
+    <Task id="213">
       <id>4</id>
       <index>0</index>
       <activity reference="147"/>
-      <group reference="198"/>
+      <group reference="178"/>
     </Task>
-    <Task id="234">
+    <Task id="214">
       <id>5</id>
       <index>0</index>
       <activity reference="144"/>
-      <group reference="198"/>
+      <group reference="178"/>
     </Task>
-    <Task id="235">
+    <Task id="215">
       <id>6</id>
       <index>0</index>
       <activity reference="142"/>
-      <group reference="198"/>
+      <group reference="178"/>
     </Task>
-    <Task id="236">
+    <Task id="216">
       <id>7</id>
       <index>0</index>
       <activity reference="139"/>
-      <group reference="198"/>
+      <group reference="178"/>
     </Task>
-    <Task id="237">
+    <Task id="217">
       <id>8</id>
       <index>0</index>
       <activity reference="142"/>
-      <group reference="201"/>
+      <group reference="181"/>
     </Task>
-    <Task id="238">
+    <Task id="218">
       <id>9</id>
       <index>0</index>
       <activity reference="149"/>
-      <group reference="201"/>
+      <group reference="181"/>
     </Task>
-    <Task id="239">
+    <Task id="219">
       <id>10</id>
       <index>0</index>
       <activity reference="140"/>
-      <group reference="201"/>
+      <group reference="181"/>
     </Task>
-    <Task id="240">
+    <Task id="220">
       <id>11</id>
       <index>0</index>
       <activity reference="145"/>
-      <group reference="204"/>
+      <group reference="184"/>
     </Task>
-    <Task id="241">
+    <Task id="221">
       <id>12</id>
       <index>0</index>
       <activity reference="140"/>
-      <group reference="204"/>
+      <group reference="184"/>
     </Task>
-    <Task id="242">
+    <Task id="222">
       <id>13</id>
       <index>0</index>
       <activity reference="142"/>
-      <group reference="204"/>
+      <group reference="184"/>
     </Task>
-    <Task id="243">
+    <Task id="223">
       <id>14</id>
       <index>0</index>
       <activity reference="139"/>
-      <group reference="204"/>
+      <group reference="184"/>
     </Task>
-    <Task id="244">
+    <Task id="224">
       <id>15</id>
       <index>0</index>
       <activity reference="139"/>
-      <group reference="207"/>
+      <group reference="187"/>
     </Task>
-    <Task id="245">
+    <Task id="225">
       <id>16</id>
       <index>0</index>
       <activity reference="147"/>
-      <group reference="207"/>
+      <group reference="187"/>
     </Task>
-    <Task id="246">
+    <Task id="226">
       <id>17</id>
       <index>0</index>
       <activity reference="145"/>
-      <group reference="207"/>
+      <group reference="187"/>
     </Task>
-    <Task id="247">
+    <Task id="227">
       <id>18</id>
       <index>0</index>
       <activity reference="144"/>
-      <group reference="207"/>
+      <group reference="187"/>
     </Task>
-    <Task id="248">
+    <Task id="228">
       <id>19</id>
       <index>0</index>
       <activity reference="142"/>
-      <group reference="207"/>
+      <group reference="187"/>
     </Task>
-    <Task id="249">
+    <Task id="229">
       <id>20</id>
       <index>0</index>
       <activity reference="147"/>
-      <group reference="210"/>
+      <group reference="190"/>
     </Task>
-    <Task id="250">
+    <Task id="230">
       <id>21</id>
       <index>0</index>
       <activity reference="142"/>
-      <group reference="210"/>
+      <group reference="190"/>
     </Task>
-    <Task id="251">
+    <Task id="231">
       <id>22</id>
       <index>0</index>
       <activity reference="145"/>
-      <group reference="210"/>
+      <group reference="190"/>
     </Task>
-    <Task id="252">
+    <Task id="232">
       <id>23</id>
       <index>0</index>
       <activity reference="144"/>
-      <group reference="210"/>
+      <group reference="190"/>
     </Task>
-    <Task id="253">
+    <Task id="233">
       <id>24</id>
       <index>0</index>
       <activity reference="146"/>
-      <group reference="213"/>
+      <group reference="193"/>
     </Task>
-    <Task id="254">
+    <Task id="234">
       <id>25</id>
       <index>0</index>
       <activity reference="140"/>
-      <group reference="216"/>
+      <group reference="196"/>
     </Task>
-    <Task id="255">
+    <Task id="235">
       <id>26</id>
       <index>0</index>
       <activity reference="142"/>
-      <group reference="216"/>
+      <group reference="196"/>
     </Task>
-    <Task id="256">
+    <Task id="236">
       <id>27</id>
       <index>0</index>
       <activity reference="144"/>
-      <group reference="216"/>
+      <group reference="196"/>
     </Task>
-    <Task id="257">
+    <Task id="237">
       <id>28</id>
       <index>0</index>
       <activity reference="147"/>
-      <group reference="216"/>
+      <group reference="196"/>
     </Task>
-    <Task id="258">
+    <Task id="238">
       <id>29</id>
       <index>0</index>
       <activity reference="141"/>
-      <group reference="216"/>
+      <group reference="196"/>
     </Task>
-    <Task id="259">
+    <Task id="239">
       <id>30</id>
       <index>0</index>
       <activity reference="139"/>
-      <group reference="219"/>
+      <group reference="199"/>
     </Task>
-    <Task id="260">
+    <Task id="240">
       <id>31</id>
       <index>0</index>
       <activity reference="140"/>
-      <group reference="219"/>
+      <group reference="199"/>
     </Task>
-    <Task id="261">
+    <Task id="241">
       <id>32</id>
       <index>0</index>
       <activity reference="145"/>
-      <group reference="219"/>
+      <group reference="199"/>
     </Task>
-    <Task id="262">
+    <Task id="242">
       <id>33</id>
       <index>0</index>
       <activity reference="142"/>
-      <group reference="219"/>
+      <group reference="199"/>
     </Task>
-    <Task id="263">
+    <Task id="243">
       <id>34</id>
       <index>0</index>
       <activity reference="140"/>
-      <group reference="222"/>
+      <group reference="202"/>
     </Task>
-    <Task id="264">
+    <Task id="244">
       <id>35</id>
       <index>0</index>
       <activity reference="143"/>
-      <group reference="222"/>
+      <group reference="202"/>
     </Task>
-    <Task id="265">
+    <Task id="245">
       <id>36</id>
       <index>0</index>
       <activity reference="142"/>
-      <group reference="222"/>
+      <group reference="202"/>
     </Task>
-    <Task id="266">
+    <Task id="246">
       <id>37</id>
       <index>0</index>
       <activity reference="144"/>
-      <group reference="222"/>
+      <group reference="202"/>
     </Task>
-    <Task id="267">
+    <Task id="247">
       <id>38</id>
       <index>0</index>
       <activity reference="141"/>
-      <group reference="225"/>
+      <group reference="205"/>
     </Task>
-    <Task id="268">
+    <Task id="248">
       <id>39</id>
       <index>0</index>
       <activity reference="139"/>
-      <group reference="225"/>
+      <group reference="205"/>
     </Task>
-    <Task id="269">
+    <Task id="249">
       <id>40</id>
       <index>0</index>
       <activity reference="140"/>
-      <group reference="225"/>
+      <group reference="205"/>
     </Task>
-    <Task id="270">
+    <Task id="250">
       <id>41</id>
       <index>0</index>
       <activity reference="147"/>
-      <group reference="225"/>
+      <group reference="205"/>
     </Task>
-    <Task id="271">
+    <Task id="251">
       <id>42</id>
       <index>0</index>
       <activity reference="145"/>
-      <group reference="225"/>
+      <group reference="205"/>
     </Task>
   </taskList>
 </Week>

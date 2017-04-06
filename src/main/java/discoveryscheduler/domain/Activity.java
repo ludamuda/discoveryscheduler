@@ -9,6 +9,7 @@ public class Activity extends AbstractPersistable{
 	private String name;
 	private int length;
 	private boolean instructorRequired;
+	private boolean locationRequired; 
 	
 
 	public String getName() {
@@ -24,11 +25,18 @@ public class Activity extends AbstractPersistable{
 		this.length = length;
 	}
 	
-	public boolean getInstructorRequired() {
+	public boolean isInstructorRequired() {
 		return instructorRequired;
 	}
 	public void setInstructorRequired(boolean instructorRequired) {
 		this.instructorRequired = instructorRequired;
+	}
+	
+	public boolean isLocationRequired() {
+		return locationRequired;
+	}
+	public void setLocationRequired(boolean locationRequired) {
+		this.locationRequired = locationRequired;
 	}
 	@Override
 	public String toString() {

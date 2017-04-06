@@ -835,38 +835,44 @@
     <Activity id="139">
       <id>0</id>
       <name>OB</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>false</instructorRequired>
+      <locationRequired>false</locationRequired>
     </Activity>
     <Activity id="140">
       <id>0</id>
       <name>Trek</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>false</instructorRequired>
+      <locationRequired>true</locationRequired>
     </Activity>
     <Activity id="141">
       <id>0</id>
-      <name>Lezeni</name>
-      <length>6</length>
+      <name>Climb</name>
+      <length>8</length>
       <instructorRequired>true</instructorRequired>
+      <locationRequired>true</locationRequired>
     </Activity>
     <Activity id="142">
       <id>0</id>
       <name>MTB</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>true</instructorRequired>
+      <locationRequired>true</locationRequired>
     </Activity>
     <Activity id="143">
       <id>0</id>
-      <name>Rafty</name>
-      <length>6</length>
+      <name>Raft</name>
+      <length>8</length>
       <instructorRequired>false</instructorRequired>
+      <locationRequired>true</locationRequired>
     </Activity>
     <Activity id="144">
       <id>0</id>
-      <name>CR</name>
-      <length>6</length>
-      <instructorRequired>false</instructorRequired>
+      <name>C&amp;R</name>
+      <length>8</length>
+      <instructorRequired>true</instructorRequired>
+      <locationRequired>false</locationRequired>
     </Activity>
   </activityList>
   <instructorList id="145">
@@ -901,11 +907,73 @@
       <isGuide>false</isGuide>
     </Instructor>
   </instructorList>
-  <groupList id="152">
-    <Group id="153">
+  <locationList id="152">
+    <Location id="153">
+      <id>0</id>
+      <locationIndex>0</locationIndex>
+      <type>Climb</type>
+    </Location>
+    <Location id="154">
+      <id>1</id>
+      <locationIndex>1</locationIndex>
+      <type>Climb</type>
+    </Location>
+    <Location id="155">
+      <id>2</id>
+      <locationIndex>2</locationIndex>
+      <type>Climb</type>
+    </Location>
+    <Location id="156">
+      <id>3</id>
+      <locationIndex>3</locationIndex>
+      <type>MTB</type>
+    </Location>
+    <Location id="157">
+      <id>4</id>
+      <locationIndex>4</locationIndex>
+      <type>MTB</type>
+    </Location>
+    <Location id="158">
+      <id>5</id>
+      <locationIndex>5</locationIndex>
+      <type>Trek</type>
+    </Location>
+    <Location id="159">
+      <id>6</id>
+      <locationIndex>6</locationIndex>
+      <type>Trek</type>
+    </Location>
+    <Location id="160">
+      <id>7</id>
+      <locationIndex>7</locationIndex>
+      <type>Trek</type>
+    </Location>
+    <Location id="161">
+      <id>8</id>
+      <locationIndex>8</locationIndex>
+      <type>Trek</type>
+    </Location>
+    <Location id="162">
+      <id>9</id>
+      <locationIndex>9</locationIndex>
+      <type>Raft</type>
+    </Location>
+    <Location id="163">
+      <id>10</id>
+      <locationIndex>10</locationIndex>
+      <type>Raft</type>
+    </Location>
+    <Location id="164">
+      <id>11</id>
+      <locationIndex>11</locationIndex>
+      <type>Raft</type>
+    </Location>
+  </locationList>
+  <groupList id="165">
+    <Group id="166">
       <id>0</id>
       <name>Greve_School</name>
-      <requiredActivities id="154">
+      <requiredActivities id="167">
         <Activity reference="142"/>
         <Activity reference="141"/>
         <Activity reference="139"/>
@@ -913,7 +981,7 @@
         <Activity reference="144"/>
         <Activity reference="140"/>
       </requiredActivities>
-      <groupTimestampList id="155">
+      <groupTimestampList id="168">
         <Timestamp reference="5"/>
         <Timestamp reference="7"/>
         <Timestamp reference="9"/>
@@ -1017,42 +1085,42 @@
       </groupTimestampList>
     </Group>
   </groupList>
-  <taskList id="156">
-    <Task id="157">
+  <taskList id="169">
+    <Task id="170">
       <id>0</id>
       <index>0</index>
       <activity reference="142"/>
-      <group reference="153"/>
+      <group reference="166"/>
     </Task>
-    <Task id="158">
+    <Task id="171">
       <id>1</id>
       <index>0</index>
       <activity reference="141"/>
-      <group reference="153"/>
+      <group reference="166"/>
     </Task>
-    <Task id="159">
+    <Task id="172">
       <id>2</id>
       <index>0</index>
       <activity reference="139"/>
-      <group reference="153"/>
+      <group reference="166"/>
     </Task>
-    <Task id="160">
+    <Task id="173">
       <id>3</id>
       <index>0</index>
       <activity reference="143"/>
-      <group reference="153"/>
+      <group reference="166"/>
     </Task>
-    <Task id="161">
+    <Task id="174">
       <id>4</id>
       <index>0</index>
       <activity reference="144"/>
-      <group reference="153"/>
+      <group reference="166"/>
     </Task>
-    <Task id="162">
+    <Task id="175">
       <id>5</id>
       <index>0</index>
       <activity reference="140"/>
-      <group reference="153"/>
+      <group reference="166"/>
     </Task>
   </taskList>
 </Week>
