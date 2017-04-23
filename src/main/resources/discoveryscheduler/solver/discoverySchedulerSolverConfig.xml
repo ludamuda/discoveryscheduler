@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solver>
 
+	<environmentMode>PRODUCTION</environmentMode>
+
   <solutionClass>discoveryscheduler.domain.Week</solutionClass>
   <entityClass>discoveryscheduler.domain.Task</entityClass>
     
   <scoreDirectorFactory>
    <scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
     <scoreDrl>discoveryscheduler/solver/discoverySchedulerScoreRules.drl</scoreDrl>
-
-  
+	
+	<!--doesnt improve overall time, construction is faster but it takes more time to make it feasible -->
+  	<!-- initializingScoreTrend>ONLY_DOWN</initializingScoreTrend -->
   </scoreDirectorFactory>
   
-  <!-- 
-  <termination>
-    <secondsSpentLimit>120</secondsSpentLimit>
-    <bestScoreLimit>-0hard/-999999soft</bestScoreLimit>
-  </termination>
- -->
+  
+
   <constructionHeuristic>
     <constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
   </constructionHeuristic>
@@ -34,6 +33,11 @@
     <forager>
       <acceptedCountLimit>4</acceptedCountLimit>
     </forager>
+    <termination>
+   	  <unimprovedSecondsSpentLimit>10</unimprovedSecondsSpentLimit>
+      <!--secondsSpentLimit>120</secondsSpentLimit-->
+      <!--bestScoreLimit>-0hard/-999999soft</bestScoreLimit-->
+    </termination>
   </localSearch>
 
 </solver>

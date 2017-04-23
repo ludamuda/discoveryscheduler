@@ -101,7 +101,11 @@ public class Task extends AbstractPersistable {
     	List<Timestamp> starts = new ArrayList<Timestamp>();
     	for(Timestamp timestamp : group.getGroupTimestampList()){
     		int hour = timestamp.getHour().getHourIndex();
-    		if((hour >= MORNING_EST && /*hour <= MORNING_LCT) || (hour >= AFTERNOON_EST &&*/ hour <= AFTERNOON_LCT)){ //8-10, 13-16
+    		// snidane nejdrive v 7.30, 30 min snidane, 30 min odpocinek = 1 hod, 
+    		// lunchtime is: est: 12.00 lst: 13.30, typical length: 30 min + 0,5 - 1 hod odpocinek = 1 - 1,5 hod
+    		// vecere est 17.30, lst 19.00
+    		// morning activity: 
+    		if((hour >= MORNING_EST && hour <= MORNING_LCT) || (hour >= AFTERNOON_EST && hour <= AFTERNOON_LCT)){ //8-10, 13-16
     			starts.add(timestamp);
     		}
     	}
