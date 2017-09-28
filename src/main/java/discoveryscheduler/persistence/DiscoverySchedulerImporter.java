@@ -21,8 +21,8 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
 	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
 	
 	private static final int TIME_PERIODS_IN_DAY = Integer.parseInt(configuration.getProperty("time_periods_in_day"));
-    private static final int ACTIVITY_LENGTH_IN_TIME_PERIODS = Integer.parseInt(configuration.getProperty("activity_lenght_in_time_periods"));
-    private static final String INPUT_FILE_SUFFIX = "ctt";
+    //private static final int ACTIVITY_LENGTH_IN_TIME_PERIODS = Integer.parseInt(configuration.getProperty("activity_lenght_in_time_periods"));
+    private static final String INPUT_FILE_SUFFIX = "dsb";//discovery schedule breakdown
     
     public static void main(String[] args) {
         new DiscoverySchedulerImporter().convertAll();
@@ -66,33 +66,35 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
             readConstantLine("GROUPS:");
             List<Group> groupList = new ArrayList<Group>(groupListSize);
             Map<String, Activity> activityMap = new HashMap<String, Activity>();
-            List<Pair<Integer, Integer>> groupStayTimeList = new ArrayList<Pair<Integer, Integer>>(groupListSize);
+            List<Pair<Pair<Integer, Integer>, Pair<Integer, Integer>>> groupStayTimeList = new ArrayList<Pair<Pair<Integer, Integer>, Pair<Integer, Integer>>>(groupListSize);
             for (int i = 0; i < groupListSize; i++) {
                 Group group = new Group();
                 group.setId((long) i);
-                // group line: <name> <arrival> <departure> <# of Activities> <Activity1> ... <ActivityN>
+                // group line: <name> <arrival day> <arrival time> <departure day> <departure time> <# of Activities> <Activity1> ... <ActivityN>
                 String line = bufferedReader.readLine();
                 String[] lineTokens = splitBySpacesOrTabs(line);
-                if (lineTokens.length < 5) {
+                if (lineTokens.length < 7) {
                     throw new IllegalArgumentException("Read line (" + line
-                            + ") is expected to contain at least 5 tokens.");
+                            + ") is expected to contain at least 7 tokens. (<name> <arrival day> <arrival time> <departure day> <departure time> <# of Activities> <Activity1> ... <ActivityN>)");
                 }
                 group.setName(lineTokens[0]);
                 
-                int arrival = Integer.parseInt(lineTokens[1]);
-                int departure = Integer.parseInt(lineTokens[2]);                
-                groupStayTimeList.add(Pair.of(arrival, departure));                
-                if (week.getDayList() == null || departure-arrival+1 > week.getDayList().size()){
-                	updateTimeSchedule(week, departure-arrival+1);
+                int arrival_day = Integer.parseInt(lineTokens[1]);
+                int arrival_time = Integer.parseInt(lineTokens[2]);
+                int departure_day = Integer.parseInt(lineTokens[3]);
+                int departure_time = Integer.parseInt(lineTokens[4]);
+                groupStayTimeList.add(Pair.of(Pair.of(arrival_day, arrival_time),Pair.of(departure_day, departure_time)));                
+                if (week.getDayList() == null || departure_day-arrival_day+1 > week.getDayList().size()){
+                	updateTimeSchedule(week, departure_day-arrival_day+1);
                 }
                 
-                int numberOfRequriedActivities = Integer.parseInt(lineTokens[3]);
-                if (lineTokens.length != (numberOfRequriedActivities + 4)) {
-                    throw new IllegalArgumentException("Read line (" + line + ") is expected to contain "
-                            + (numberOfRequriedActivities + 4) + " tokens.");
+                int numberOfRequriedActivities = Integer.parseInt(lineTokens[5]);
+                if (lineTokens.length < (numberOfRequriedActivities + 6)) {
+                    throw new IllegalArgumentException("Read line (" + line + ") is expected to contain at least"
+                            + (numberOfRequriedActivities + 6) + " tokens.");
                 }
                 List<Activity> groupActivityList = new ArrayList<Activity>(numberOfRequriedActivities);
-                for (int j = 4; j < lineTokens.length; j++) {
+                for (int j = 6; j < lineTokens.length - 1; j++) {
                 	if(activityMap.containsKey(lineTokens[j])){
                 		groupActivityList.add(activityMap.get(lineTokens[j]));
                 	}
@@ -100,7 +102,14 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
 	                    Activity activity = new Activity();
 	                    activity.setId((long) j*i);
 	                    activity.setName(lineTokens[j]);
-	                    activity.setLength(ACTIVITY_LENGTH_IN_TIME_PERIODS);
+	                    if(activity.getName().equals("Raft")) {
+	                    	activity.setLength(5);
+	                    } else if(activity.getName().equals("MTB") || activity.getName().equals("Archery") || 
+	                    		activity.getName().equals("OB")){
+	                    	activity.setLength(7);
+	                    } else {
+	                    	activity.setLength(6);
+	                    }
 	                    if(activity.getName().equals("MTB") || activity.getName().equals("C&R") || 
 	                    		activity.getName().equals("HRHS") || activity.getName().equals("Climb")){
 	                    	activity.setInstructorRequired(true);
@@ -121,6 +130,7 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
                     
                 }
                 group.setRequiredActivities(groupActivityList);
+                group.setNumOfClients(Integer.parseInt(lineTokens[(6 + numberOfRequriedActivities + 1) - 1]));
                 groupList.add(group);
             }
             
@@ -131,13 +141,30 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
              * These become groupTimestampList 
              */
             for (int i = 0; i < groupList.size(); i++){
-            	int arrival = groupStayTimeList.get(i).getLeft();
-            	int departure = groupStayTimeList.get(i).getRight();
-            	int lenghtOfStay = departure - arrival + 1;
-            	List<Timestamp> groupTimestampList = new ArrayList<Timestamp>(lenghtOfStay * TIME_PERIODS_IN_DAY);
+            	int arrival_day = groupStayTimeList.get(i).getLeft().getLeft();
+            	int arrival_time = groupStayTimeList.get(i).getLeft().getRight();
+            	int departure_day = groupStayTimeList.get(i).getRight().getLeft();
+            	int departure_time = groupStayTimeList.get(i).getRight().getRight();
+            	int lenghtOfStayInPeriods = 0;
+            	if (departure_day-arrival_day == 0){
+            		lenghtOfStayInPeriods = departure_time-arrival_time;
+            	} else if (departure_day-arrival_day == 1){
+            		lenghtOfStayInPeriods = TIME_PERIODS_IN_DAY-arrival_time + departure_time;
+            	} else {
+            		lenghtOfStayInPeriods = TIME_PERIODS_IN_DAY-arrival_time + (departure_day-arrival_day-1) * TIME_PERIODS_IN_DAY + departure_time;
+            	}
+            	List<Timestamp> groupTimestampList = new ArrayList<Timestamp>(lenghtOfStayInPeriods);
             	for(Timestamp timestamp : week.getTimestampList()){
-            		if(timestamp.getDay().getDayIndex() >= arrival && timestamp.getDay().getDayIndex() <= departure){
-            			groupTimestampList.add(timestamp);
+            		if(departure_day-arrival_day == 0) {
+            			if(timestamp.getDay().getDayIndex() == arrival_day && (timestamp.getHour().getHourIndex() >= arrival_time && timestamp.getHour().getHourIndex() < departure_time)){
+            				groupTimestampList.add(timestamp);
+            			}
+            		} else {
+            			if((timestamp.getDay().getDayIndex() == arrival_day && timestamp.getHour().getHourIndex() >= arrival_time)
+            					|| (timestamp.getDay().getDayIndex() == departure_day && timestamp.getHour().getHourIndex() < departure_time)
+            					|| (timestamp.getDay().getDayIndex() > arrival_day && timestamp.getDay().getDayIndex() < departure_day)	){
+            				groupTimestampList.add(timestamp);
+            			}
             		}
             	}
             	groupList.get(i).setGroupTimestampList(groupTimestampList);

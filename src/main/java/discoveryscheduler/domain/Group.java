@@ -12,6 +12,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 @XStreamAlias("Group")
 public class Group extends AbstractPersistable implements Labeled {
 	private String name;
+	private int numOfClients;
 	private List<Activity> requiredActivities;
 	private List<Timestamp> groupTimestampList;
 	
@@ -22,6 +23,12 @@ public class Group extends AbstractPersistable implements Labeled {
 	public void setName(String name) {
 		this.name = name;
 	}	
+	public int getNumOfClients() {
+		return numOfClients;
+	}
+	public void setNumOfClients(int numOfClients) {
+		this.numOfClients = numOfClients;
+	}
 	public List<Activity> getRequiredActivities() {
 		return requiredActivities;
 	}

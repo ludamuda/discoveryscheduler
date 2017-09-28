@@ -9,7 +9,15 @@ public class Instructor extends AbstractPersistable{
 	
 	private int instructorIndex;
 	private boolean isGuide;
+	
+	private int instructorSoftScore;
 
+	public int getInstructorSoftScore() {
+		return instructorSoftScore;
+	}
+	public void setInstructorSoftScore(int instructorSoftScore) {
+		this.instructorSoftScore = instructorSoftScore;
+	}
 	public int getInstructorIndex() {
 		return instructorIndex;
 	}

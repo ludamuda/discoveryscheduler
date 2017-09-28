@@ -17,16 +17,25 @@
   
 
   <constructionHeuristic>
-    <constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
-  </constructionHeuristic>
-  
-  <localSearch>
+    <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
     <unionMoveSelector>
       <changeMoveSelector/>
       <swapMoveSelector>
         <filterClass>discoveryscheduler.solver.move.DifferentTaskSwapMoveFilter</filterClass>
       </swapMoveSelector>
     </unionMoveSelector>
+    <!-- forager>
+      <pickEarlyType>FIRST_FEASIBLE_SCORE</pickEarlyType>
+    </forager -->
+  </constructionHeuristic>
+  
+  <localSearch>
+    <!--unionMoveSelector>
+      <changeMoveSelector/>
+      <swapMoveSelector>
+        <filterClass>discoveryscheduler.solver.move.DifferentTaskSwapMoveFilter</filterClass>
+      </swapMoveSelector>
+    </unionMoveSelector-->
     <acceptor>
       <lateAcceptanceSize>600</lateAcceptanceSize>
     </acceptor>

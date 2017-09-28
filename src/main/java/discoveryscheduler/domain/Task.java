@@ -4,9 +4,12 @@ import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
 import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
+
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
+import discoveryscheduler.domain.solver.TaskDifficultyComparator;
+import discoveryscheduler.domain.solver.OutOfBoundsTaskSelectionFilter;
 
 import java.util.ArrayList;
 //import java.util.Collection;
@@ -14,15 +17,16 @@ import java.util.List;
 import java.util.Properties;
 
 
-@PlanningEntity
+@PlanningEntity(difficultyComparatorClass = TaskDifficultyComparator.class,
+				movableEntitySelectionFilter = OutOfBoundsTaskSelectionFilter.class)
 @XStreamAlias("Task")
 public class Task extends AbstractPersistable {
 	
 	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
-	private static final int MORNING_EST = Integer.parseInt(configuration.getProperty("morning_earliest_start_period"));
-	private static final int MORNING_LCT = Integer.parseInt(configuration.getProperty("morning_latest_completion_period"));
-	private static final int AFTERNOON_EST = Integer.parseInt(configuration.getProperty("afternoon_earliest_start_period"));
-	private static final int AFTERNOON_LCT = Integer.parseInt(configuration.getProperty("afternoon_latest_completion_period"));
+	private static final int MORNING_EST = Integer.parseInt(configuration.getProperty("morning_earliest_start_time"));
+	private static final int MORNING_LST = Integer.parseInt(configuration.getProperty("morning_latest_start_time"));
+	private static final int AFTERNOON_EST = Integer.parseInt(configuration.getProperty("afternoon_earliest_start_time"));
+	private static final int AFTERNOON_LST = Integer.parseInt(configuration.getProperty("afternoon_latest_start_time"));
 	
 	private int index;
 	
@@ -105,7 +109,7 @@ public class Task extends AbstractPersistable {
     		// lunchtime is: est: 12.00 lst: 13.30, typical length: 30 min + 0,5 - 1 hod odpocinek = 1 - 1,5 hod
     		// vecere est 17.30, lst 19.00
     		// morning activity: 
-    		if((hour >= MORNING_EST && hour <= MORNING_LCT) || (hour >= AFTERNOON_EST && hour <= AFTERNOON_LCT)){ //8-10, 13-16
+    		if((hour >= MORNING_EST && hour <= MORNING_LST) || (hour >= AFTERNOON_EST && hour <= AFTERNOON_LST)){ //8-10, 13-16
     			starts.add(timestamp);
     		}
     	}
