@@ -7,6 +7,10 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 @XStreamAlias("Instructor")
 public class Instructor extends AbstractPersistable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3L;
 	private int instructorIndex;
 	private boolean isGuide;
 	

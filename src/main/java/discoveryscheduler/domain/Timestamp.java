@@ -8,6 +8,11 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 @XStreamAlias("Timestamp")
 public class Timestamp extends AbstractPersistable implements Labeled{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6L;
+
 	int timestampIndex;
 	
 	private Day day;

@@ -11,6 +11,10 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("Group")
 public class Group extends AbstractPersistable implements Labeled {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8L;
 	private String name;
 	private int numOfClients;
 	private List<Activity> requiredActivities;

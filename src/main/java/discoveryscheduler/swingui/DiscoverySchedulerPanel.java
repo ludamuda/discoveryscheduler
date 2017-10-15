@@ -22,18 +22,25 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
 
-import org.optaplanner.core.api.domain.solution.Solution;
+//import org.optaplanner.core.api.domain.solution.Solution;
 import org.optaplanner.examples.common.swingui.SolutionPanel;
-import org.optaplanner.examples.common.swingui.TangoColorFactory;
-import org.optaplanner.examples.common.swingui.components.Labeled;
+//import org.optaplanner.examples.common.swingui.components.Labeled;
 import org.optaplanner.examples.common.swingui.components.LabeledComboBoxRenderer;
 import org.optaplanner.examples.common.swingui.timetable.TimeTablePanel;
 
+import org.optaplanner.swing.impl.TangoColorFactory;
+
 import discoveryscheduler.domain.*;
 
-public class DiscoverySchedulerPanel extends SolutionPanel {
+public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
 
-    public static final String LOGO_PATH = "/discoveryscheduler/swingui/logo.png";
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 170795823157068652L;
+
+
+	public static final String LOGO_PATH = "/discoveryscheduler/swingui/logo.png";
 
     
     private final TimeTablePanel<Group, Integer> groupsPanel;
@@ -64,7 +71,6 @@ public class DiscoverySchedulerPanel extends SolutionPanel {
         return false;
     }
 
-    @Override
     public boolean isRefreshScreenDuringSolving() {
         return true;
     }
@@ -73,7 +79,7 @@ public class DiscoverySchedulerPanel extends SolutionPanel {
         return (Week) solutionBusiness.getSolution();
     }
 
-    public void resetPanel(Solution solution) {
+    public void resetPanel(Week solution) {
         groupsPanel.reset();
         instructorsPanel.reset();
         locationsPanel.reset();
@@ -377,7 +383,7 @@ public class DiscoverySchedulerPanel extends SolutionPanel {
             // Add 1 to array size to add null, which makes the entity unassigned
             JComboBox timestampListField = new JComboBox(
             		timestampList.toArray(new Object[timestampList.size() + 1]));
-            timestampListField.setRenderer(new LabeledComboBoxRenderer());
+            timestampListField.setRenderer(new LabeledComboBoxRenderer(null));
             timestampListField.setSelectedItem(task.getStart());
             listFieldsPanel.add(timestampListField);
             int result = JOptionPane.showConfirmDialog(DiscoverySchedulerPanel.this.getRootPane(), listFieldsPanel,

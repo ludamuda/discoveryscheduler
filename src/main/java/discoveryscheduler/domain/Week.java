@@ -4,27 +4,30 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import org.optaplanner.core.api.domain.solution.PlanningSolution;
-import org.optaplanner.core.api.domain.solution.Solution;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
 import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
-//import org.optaplanner.core.api.score.buildin.simple.SimpleScore;
-import org.optaplanner.core.impl.score.buildin.hardsoft.HardSoftScoreDefinition;
 //import org.optaplanner.core.impl.score.buildin.simple.SimpleScoreDefinition;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
-
-import org.optaplanner.persistence.xstream.impl.score.XStreamScoreConverter;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardsoft.HardSoftScoreXStreamConverter;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
 
 import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
 
 //import discoveryscheduler.domain.solver.ActivityConflict;
 
 @PlanningSolution
 @XStreamAlias("Week")
-public class Week extends AbstractPersistable implements Solution<HardSoftScore>/*Solution<SimpleScore>*/{
+public class Week extends AbstractPersistable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private int number;	
 	
 	private List<Day> dayList;
@@ -40,7 +43,7 @@ public class Week extends AbstractPersistable implements Solution<HardSoftScore>
 	//@XStreamConverter(value = XStreamScoreConverter.class, types = {SimpleScoreDefinition.class})
 	//private SimpleScore score;
 	
-	@XStreamConverter(value = XStreamScoreConverter.class, types = {HardSoftScoreDefinition.class})
+	@XStreamConverter(HardSoftScoreXStreamConverter.class)
 	private HardSoftScore score;
 
 	public int getNumber() {
@@ -49,18 +52,21 @@ public class Week extends AbstractPersistable implements Solution<HardSoftScore>
 	public void setNumber(int number) {
 		this.number = number;
 	}
+	@ProblemFactCollectionProperty
 	public List<Group> getGroupList() {
 		return groupList;
 	}
 	public void setGroupList(List<Group> groupList) {
 		this.groupList = groupList;
 	}	
+	@ProblemFactCollectionProperty
 	public List<Day> getDayList() {
 		return dayList;
 	}
 	public void setDayList(List<Day> dayList) {
 		this.dayList = dayList;
 	}
+	@ProblemFactCollectionProperty
 	 public List<Hour> getHourList() {
 		return hourList;
 	}
@@ -68,12 +74,14 @@ public class Week extends AbstractPersistable implements Solution<HardSoftScore>
 		this.hourList = hourList;
 	}
 	@ValueRangeProvider(id = "timestampRange")
+	@ProblemFactCollectionProperty
 	public List<Timestamp> getTimestampList() {
 		return timestampList;
 	}
 	public void setTimestampList(List<Timestamp> timestampList) {
 		this.timestampList = timestampList;
 	}
+	@ProblemFactCollectionProperty
 	public List<Activity> getActivityList() {
 		return activityList;
 	}
@@ -88,6 +96,7 @@ public class Week extends AbstractPersistable implements Solution<HardSoftScore>
 		this.taskList = taskList;
 	}	
 	@ValueRangeProvider(id = "instructorRange")
+	@ProblemFactCollectionProperty
     public List<Instructor> getInstructorList() {
 		return instructorList;
 	}
@@ -95,12 +104,14 @@ public class Week extends AbstractPersistable implements Solution<HardSoftScore>
 		this.instructorList = instructorList;
 	}
 	@ValueRangeProvider(id = "locationRange")
-    public List<Location> getLocationList() {
+	@ProblemFactCollectionProperty
+	public List<Location> getLocationList() {
 		return locationList;
 	}
 	public void setLocationList(List<Location> locationList) {
 		this.locationList = locationList;
 	}
+	@PlanningScore
 	public HardSoftScore getScore() {
 		return score;
 	}

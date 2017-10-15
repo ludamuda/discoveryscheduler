@@ -1,18 +1,22 @@
 package discoveryscheduler.app;
 
-import org.optaplanner.core.api.solver.Solver;
-import org.optaplanner.core.api.solver.SolverFactory;
+//import org.optaplanner.core.api.solver.Solver;
+//import org.optaplanner.core.api.solver.SolverFactory;
 import org.optaplanner.examples.common.app.CommonApp;
 import org.optaplanner.examples.common.persistence.AbstractSolutionImporter;
 import org.optaplanner.examples.common.persistence.SolutionDao;
-import org.optaplanner.examples.common.swingui.SolutionPanel;
+//import org.optaplanner.examples.common.swingui.SolutionPanel;
 
+import discoveryscheduler.domain.Week;
 import discoveryscheduler.persistence.DiscoverySchedulerDao;
 import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
 import discoveryscheduler.persistence.DiscoverySchedulerImporter;
 import discoveryscheduler.swingui.DiscoverySchedulerPanel;
 
-public class DiscoverySchedulerApp extends CommonApp {
+public class DiscoverySchedulerApp extends CommonApp<Week> {
+	
+	public static final String SOLVER_CONFIG 
+		= "discoveryscheduler/solver/discoverySchedulerSolverConfig.xml";
 	public static void main(String[] args) {
 		/**
 		 * Creates and loads solutionBussines - solver and data
@@ -29,6 +33,7 @@ public class DiscoverySchedulerApp extends CommonApp {
 	public DiscoverySchedulerApp() {
         super("Discovery program planner",
               "Master thesis scheduler for Outdoor Discovery s.r.o. company.",
+              SOLVER_CONFIG,
               "discoveryscheduler/swingui/logo.png"); 
     }
 	
@@ -36,17 +41,17 @@ public class DiscoverySchedulerApp extends CommonApp {
 	 * Creates solver for the solutionBussines, solverFactory must be provided with configuration of solver
 	 * 		can be done with xml file or via programming
 	 */
-	@Override
-    protected Solver createSolver() {
-        SolverFactory solverFactory = SolverFactory.createFromXmlResource("discoveryscheduler/solver/discoverySchedulerSolverConfig.xml");
+	/*@Override
+    protected Solver<Week> createSolver() {
+        SolverFactory<Week> solverFactory = SolverFactory.createFromXmlResource("discoveryscheduler/solver/discoverySchedulerSolverConfig.xml");
         return solverFactory.buildSolver();
-    }
+    }*/
 	
 	/**
 	 * References the method that handles visualization of solving process in app GUI
 	 */
     @Override
-    protected SolutionPanel createSolutionPanel() {
+    protected /*SolutionPanel*/ DiscoverySchedulerPanel createSolutionPanel() {
         return new DiscoverySchedulerPanel();
     }
     /**

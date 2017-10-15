@@ -18,12 +18,14 @@ global HardSoftScoreHolder scoreHolder;
 //TODO task starts in the morning or afternoon: build in task.start ValueRange by task.getPossibleStartList()
 //task is planned between group arrival and departure: task.getPossibleStartList() selects starts from each group unique Timestamp list 
 
+/*covered by outofboundsfilter
 rule "outOfBounds"
 	when
-		Task(start != null, group.getGroupTimestampList().size()-1 < start.getTimestampIndex()+activity.getLength())
+		Task(start != null, group.getGroupTimestampList().get(group.getGroupTimestampList().size()-1).getTimestampIndex < start.getTimestampIndex()+activity.getLength())
 	then
 		scoreHolder.addHardConstraintMatch(kcontext, -100);
 end
+*/
 
 //task starts and ends in the same day
 /* pokryto pomoci value range

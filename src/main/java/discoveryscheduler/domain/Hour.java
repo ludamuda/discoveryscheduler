@@ -10,6 +10,10 @@ import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
 
 @XStreamAlias("Hour")
 public class Hour extends AbstractPersistable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2L;
 	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
 	private static final String[] HOURS = configuration.getProperty("time_periods").split(",");
 		/*private static final String[] HOURS = {

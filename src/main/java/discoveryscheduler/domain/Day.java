@@ -11,6 +11,10 @@ import java.util.Properties;
 
 @XStreamAlias("Day")
 public class Day extends AbstractPersistable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7L;
 	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
 		private static final String[] DAYS = configuration.getProperty("week_days").split(",");
 

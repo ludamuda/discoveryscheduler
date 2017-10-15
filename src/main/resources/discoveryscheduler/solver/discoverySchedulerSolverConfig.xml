@@ -7,7 +7,7 @@
   <entityClass>discoveryscheduler.domain.Task</entityClass>
     
   <scoreDirectorFactory>
-   <scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
+   <!--scoreDefinitionType>HARD_SOFT</scoreDefinitionType-->
     <scoreDrl>discoveryscheduler/solver/discoverySchedulerScoreRules.drl</scoreDrl>
 	
 	<!--doesnt improve overall time, construction is faster but it takes more time to make it feasible -->
@@ -18,24 +18,45 @@
 
   <constructionHeuristic>
     <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
-    <unionMoveSelector>
-      <changeMoveSelector/>
-      <swapMoveSelector>
-        <filterClass>discoveryscheduler.solver.move.DifferentTaskSwapMoveFilter</filterClass>
-      </swapMoveSelector>
-    </unionMoveSelector>
+	<!--queuedEntityPlacer>
+      <entitySelector id="placerEntitySelector">
+        <cacheType>PHASE</cacheType>
+        <selectionOrder>SORTED</selectionOrder>
+        <sorterManner>DECREASING_DIFFICULTY</sorterManner>
+      </entitySelector-->
+        <!--cartesianProductMoveSelector-->
+          <changeMoveSelector>
+	        <valueSelector variableName="start"/>
+	        <filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
+	      </changeMoveSelector>
+	      <changeMoveSelector>
+	        <valueSelector variableName="instructor"/>
+	      </changeMoveSelector>
+	      <changeMoveSelector>
+	        <valueSelector variableName="location"/>
+	      </changeMoveSelector>
+	    <!--/cartesianProductMoveSelector-->
+      <!--changeMoveSelector>
+	    <filterClass>discoveryscheduler.solver.move.InstructorReqTaskSelectionFilter</filterClass>
+      	<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
+      </changeMoveSelector-->
+    <!--/queuedEntityPlacer-->
     <!-- forager>
       <pickEarlyType>FIRST_FEASIBLE_SCORE</pickEarlyType>
     </forager -->
   </constructionHeuristic>
   
   <localSearch>
-    <!--unionMoveSelector>
-      <changeMoveSelector/>
+    <unionMoveSelector>
+      <changeMoveSelector>
+      	<cacheType>PHASE</cacheType>
+      	<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
+      </changeMoveSelector>
       <swapMoveSelector>
-        <filterClass>discoveryscheduler.solver.move.DifferentTaskSwapMoveFilter</filterClass>
+      	<cacheType>PHASE</cacheType>
+        <filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskSwapMoveFilter</filterClass>
       </swapMoveSelector>
-    </unionMoveSelector-->
+    </unionMoveSelector>
     <acceptor>
       <lateAcceptanceSize>600</lateAcceptanceSize>
     </acceptor>
@@ -43,9 +64,9 @@
       <acceptedCountLimit>4</acceptedCountLimit>
     </forager>
     <termination>
-   	  <unimprovedSecondsSpentLimit>10</unimprovedSecondsSpentLimit>
-      <!--secondsSpentLimit>120</secondsSpentLimit-->
-      <!--bestScoreLimit>-0hard/-999999soft</bestScoreLimit-->
+    	<terminationCompositionStyle>AND</terminationCompositionStyle>
+    	<bestScoreFeasible>true</bestScoreFeasible>
+   	  	<unimprovedSecondsSpentLimit>10</unimprovedSecondsSpentLimit>
     </termination>
   </localSearch>
 

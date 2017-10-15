@@ -7,6 +7,10 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 @XStreamAlias("Location")
 public class Location extends AbstractPersistable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4L;
 	private int locationIndex;
 	private String type;
 

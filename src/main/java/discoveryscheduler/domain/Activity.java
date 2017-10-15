@@ -6,6 +6,10 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 @XStreamAlias("Activity")
 public class Activity extends AbstractPersistable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 9L;
 	private String name;
 	private int length;
 	private boolean instructorRequired;

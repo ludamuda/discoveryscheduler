@@ -9,7 +9,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
 import discoveryscheduler.domain.solver.TaskDifficultyComparator;
-import discoveryscheduler.domain.solver.OutOfBoundsTaskSelectionFilter;
+//import discoveryscheduler.domain.solver.OutOfBoundsTaskSelectionFilter;
 
 import java.util.ArrayList;
 //import java.util.Collection;
@@ -17,11 +17,14 @@ import java.util.List;
 import java.util.Properties;
 
 
-@PlanningEntity(difficultyComparatorClass = TaskDifficultyComparator.class,
-				movableEntitySelectionFilter = OutOfBoundsTaskSelectionFilter.class)
+@PlanningEntity(difficultyComparatorClass = TaskDifficultyComparator.class)
 @XStreamAlias("Task")
 public class Task extends AbstractPersistable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5L;
 	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
 	private static final int MORNING_EST = Integer.parseInt(configuration.getProperty("morning_earliest_start_time"));
 	private static final int MORNING_LST = Integer.parseInt(configuration.getProperty("morning_latest_start_time"));

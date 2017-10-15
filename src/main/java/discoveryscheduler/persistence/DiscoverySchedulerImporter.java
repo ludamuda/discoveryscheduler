@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.apache.commons.lang3.tuple.Pair;
-import org.optaplanner.core.api.domain.solution.Solution;
+//import org.optaplanner.core.api.domain.solution.Solution;
 import org.optaplanner.examples.common.persistence.AbstractTxtSolutionImporter;
 
 import discoveryscheduler.domain.*;
@@ -16,7 +16,7 @@ import discoveryscheduler.domain.*;
 
 import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
 
-public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
+public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter<Week> {
 	
 	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
 	
@@ -37,13 +37,13 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
         return INPUT_FILE_SUFFIX;
     }
 
-    public TxtInputBuilder createTxtInputBuilder() {
+    public TxtInputBuilder<Week> createTxtInputBuilder() {
         return new DiscoverySchedulerInputBuilder();
     }
 
-    public static class DiscoverySchedulerInputBuilder extends TxtInputBuilder {
+    public static class DiscoverySchedulerInputBuilder extends TxtInputBuilder<Week> {
 
-        public Solution readSolution() throws IOException {
+        public Week readSolution() throws IOException {
             Week week = new Week();
             week.setId(0L);
 
@@ -67,6 +67,7 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
             List<Group> groupList = new ArrayList<Group>(groupListSize);
             Map<String, Activity> activityMap = new HashMap<String, Activity>();
             List<Pair<Pair<Integer, Integer>, Pair<Integer, Integer>>> groupStayTimeList = new ArrayList<Pair<Pair<Integer, Integer>, Pair<Integer, Integer>>>(groupListSize);
+            int numOfDays = 1; 
             for (int i = 0; i < groupListSize; i++) {
                 Group group = new Group();
                 group.setId((long) i);
@@ -84,8 +85,8 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
                 int departure_day = Integer.parseInt(lineTokens[3]);
                 int departure_time = Integer.parseInt(lineTokens[4]);
                 groupStayTimeList.add(Pair.of(Pair.of(arrival_day, arrival_time),Pair.of(departure_day, departure_time)));                
-                if (week.getDayList() == null || departure_day-arrival_day+1 > week.getDayList().size()){
-                	updateTimeSchedule(week, departure_day-arrival_day+1);
+                if (departure_day-arrival_day+1 > numOfDays){
+                	numOfDays = departure_day-arrival_day+1;
                 }
                 
                 int numberOfRequriedActivities = Integer.parseInt(lineTokens[5]);
@@ -100,7 +101,7 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
                 	}
                 	else{
 	                    Activity activity = new Activity();
-	                    activity.setId((long) j*i);
+	                    activity.setId((long) (i+1)*(j+1));
 	                    activity.setName(lineTokens[j]);
 	                    if(activity.getName().equals("Raft")) {
 	                    	activity.setLength(5);
@@ -134,6 +135,8 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
                 groupList.add(group);
             }
             
+            createTimeSchedule(week, numOfDays);
+            
             /**
              * Sets basic time window for each group (in timestamps).
              * 
@@ -156,12 +159,12 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
             	List<Timestamp> groupTimestampList = new ArrayList<Timestamp>(lenghtOfStayInPeriods);
             	for(Timestamp timestamp : week.getTimestampList()){
             		if(departure_day-arrival_day == 0) {
-            			if(timestamp.getDay().getDayIndex() == arrival_day && (timestamp.getHour().getHourIndex() >= arrival_time && timestamp.getHour().getHourIndex() < departure_time)){
+            			if(timestamp.getDay().getDayIndex() == arrival_day && (timestamp.getHour().getHourIndex() >= arrival_time && timestamp.getHour().getHourIndex() <= departure_time)){
             				groupTimestampList.add(timestamp);
             			}
             		} else {
             			if((timestamp.getDay().getDayIndex() == arrival_day && timestamp.getHour().getHourIndex() >= arrival_time)
-            					|| (timestamp.getDay().getDayIndex() == departure_day && timestamp.getHour().getHourIndex() < departure_time)
+            					|| (timestamp.getDay().getDayIndex() == departure_day && timestamp.getHour().getHourIndex() <= departure_time)
             					|| (timestamp.getDay().getDayIndex() > arrival_day && timestamp.getDay().getDayIndex() < departure_day)	){
             				groupTimestampList.add(timestamp);
             			}
@@ -176,7 +179,7 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter {
            
         }
         
-        private void updateTimeSchedule(Week week, int dayListSize) {
+        private void createTimeSchedule(Week week, int dayListSize) {
         	int hourListSize = TIME_PERIODS_IN_DAY;
         	
         	List<Day> dayList = new ArrayList<Day>(dayListSize);

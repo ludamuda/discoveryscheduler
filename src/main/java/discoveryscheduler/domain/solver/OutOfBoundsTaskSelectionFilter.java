@@ -5,14 +5,15 @@ import org.optaplanner.core.impl.heuristic.selector.common.decorator.SelectionFi
 import org.optaplanner.core.impl.score.director.ScoreDirector;
 
 import discoveryscheduler.domain.Task;
+import discoveryscheduler.domain.Week;
 
 
-public class OutOfBoundsTaskSelectionFilter implements SelectionFilter<Task>{
-	public boolean accept(ScoreDirector scoreDirector, Task task) {
+public class OutOfBoundsTaskSelectionFilter implements SelectionFilter<Week, Task>{
+	public boolean accept(ScoreDirector<Week> scoreDirector, Task task) {
 		if (task.getStart() == null){
 			return true;
 		} else {
-			return task.getGroup().getGroupTimestampList().get(task.getGroup().getGroupTimestampList().size()-1).getTimestampIndex() >= task.getStart().getTimestampIndex()+task.getActivity().getLength();
+			return task.getGroup().getGroupTimestampList().get(task.getGroup().getGroupTimestampList().size()-1).getTimestampIndex() > task.getStart().getTimestampIndex()+task.getActivity().getLength();
 		}
     }
 }
