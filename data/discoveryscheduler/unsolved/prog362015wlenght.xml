@@ -785,14 +785,14 @@
     <Activity id="131">
       <id>121</id>
       <name>HRHS</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>true</instructorRequired>
       <locationRequired>false</locationRequired>
     </Activity>
     <Activity id="132">
       <id>9</id>
       <name>Climb</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>true</instructorRequired>
       <locationRequired>true</locationRequired>
     </Activity>
@@ -806,42 +806,42 @@
     <Activity id="134">
       <id>24</id>
       <name>MTB</name>
-      <length>7</length>
+      <length>9</length>
       <instructorRequired>true</instructorRequired>
       <locationRequired>true</locationRequired>
     </Activity>
     <Activity id="135">
       <id>35</id>
       <name>Raft</name>
-      <length>5</length>
+      <length>7</length>
       <instructorRequired>false</instructorRequired>
       <locationRequired>true</locationRequired>
     </Activity>
     <Activity id="136">
       <id>70</id>
       <name>GPS</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>false</instructorRequired>
       <locationRequired>false</locationRequired>
     </Activity>
     <Activity id="137">
       <id>10</id>
       <name>Free</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>false</instructorRequired>
       <locationRequired>false</locationRequired>
     </Activity>
     <Activity id="138">
       <id>7</id>
       <name>C&amp;R</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>true</instructorRequired>
       <locationRequired>false</locationRequired>
     </Activity>
     <Activity id="139">
       <id>32</id>
       <name>TeamSpirit</name>
-      <length>6</length>
+      <length>8</length>
       <instructorRequired>false</instructorRequired>
       <locationRequired>false</locationRequired>
     </Activity>

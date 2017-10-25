@@ -2,10 +2,12 @@ package discoveryscheduler.persistence;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.tuple.Pair;
 //import org.optaplanner.core.api.domain.solution.Solution;
@@ -21,8 +23,11 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter<Week
 	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
 	
 	private static final int TIME_PERIODS_IN_DAY = Integer.parseInt(configuration.getProperty("time_periods_in_day"));
-    //private static final int ACTIVITY_LENGTH_IN_TIME_PERIODS = Integer.parseInt(configuration.getProperty("activity_lenght_in_time_periods"));
-    private static final String INPUT_FILE_SUFFIX = "dsb";//discovery schedule breakdown
+	private static final String[] ACTIVITIES = (configuration.getProperty("activities")).split(",");
+	private static final int[] ACTIVITIES_LENGTH_IN_TIME_PERIODS = Arrays.stream((configuration.getProperty("activities_length")).split(",")).map(String::trim).mapToInt(Integer::parseInt).toArray();
+	private static final int TRANSPORT_LENGHT = 2; 
+	private static final String[] LOCATIONS = {"Climb", "Climb", "Climb", "MTB", "MTB", "Trek", "Trek", "Trek", "Trek", "Raft", "Raft", "Raft"};
+	private static final String INPUT_FILE_SUFFIX = "dsb";//discovery schedule breakdown
     
     public static void main(String[] args) {
         new DiscoverySchedulerImporter().convertAll();
@@ -103,6 +108,27 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter<Week
 	                    Activity activity = new Activity();
 	                    activity.setId((long) (i+1)*(j+1));
 	                    activity.setName(lineTokens[j]);
+	                    switch(activity.getName()){
+	                    case "Raft":
+	                    	activity.setLength(5+2);
+	                    	break;
+	                    case "MTB":
+	                    	activity.setLength(7+2);
+	                    	break;
+	                    case "Archery":
+	                    	activity.setLength(7);
+	                    	break;
+	                    case "OB":
+	                    	activity.setLength(7);
+	                    	break;
+	                    case "Trek":
+	                    	activity.setLength(6);
+	                    	break;
+	                    default:
+	                    	activity.setLength(6+2);
+	                    	break;	
+	                    }
+	                    /*
 	                    if(activity.getName().equals("Raft")) {
 	                    	activity.setLength(5);
 	                    } else if(activity.getName().equals("MTB") || activity.getName().equals("Archery") || 
@@ -110,7 +136,7 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter<Week
 	                    	activity.setLength(7);
 	                    } else {
 	                    	activity.setLength(6);
-	                    }
+	                    }*/
 	                    if(activity.getName().equals("MTB") || activity.getName().equals("C&R") || 
 	                    		activity.getName().equals("HRHS") || activity.getName().equals("Climb")){
 	                    	activity.setInstructorRequired(true);
@@ -258,7 +284,7 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter<Week
         	
         	return instructorList;
         }
-        private static final String[] LOCATIONS = {"Climb", "Climb", "Climb", "MTB", "MTB", "Trek", "Trek", "Trek", "Trek", "Raft", "Raft", "Raft"};
+        
         private List<Location> generateLocationList(){
         	List<Location>locationList = new ArrayList<Location>(LOCATIONS.length);
         	for(int i = 0; i < LOCATIONS.length; i++){
