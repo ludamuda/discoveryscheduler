@@ -2,9 +2,9 @@ Week: 6
 Groups: 4
 
 GROUPS:
-A 0 0 3 22 6 MTB Climb OB Raft C&R Trek 30
-B 1 0 1 22 2 MTB Climb 30
-C 2 0 3 22 3 Trek Raft C&R 30
-D 0 0 2 22 4 HRHS MTB Raft Trek 30
+A 0 0 0 3 22 6 MTB Climb OB Raft C&R Trek
+B 1 1 0 1 22 2 MTB Climb
+C 2 2 0 3 22 3 Trek Raft C&R
+D 5 0 0 2 22 4 HRHS MTB Raft Trek
 
 END.

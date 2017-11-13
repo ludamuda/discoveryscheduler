@@ -769,53 +769,53 @@
   </timestampList>
   <activityList id="128">
     <Activity id="129">
-      <id>9</id>
+      <id>2</id>
       <name>OB</name>
       <length>7</length>
       <instructorRequired>false</instructorRequired>
-      <locationRequired>false</locationRequired>
+      <locationRequired>true</locationRequired>
     </Activity>
     <Activity id="130">
-      <id>12</id>
+      <id>5</id>
       <name>Trek</name>
       <length>6</length>
       <instructorRequired>false</instructorRequired>
       <locationRequired>true</locationRequired>
     </Activity>
     <Activity id="131">
-      <id>28</id>
+      <id>6</id>
       <name>HRHS</name>
       <length>8</length>
       <instructorRequired>true</instructorRequired>
-      <locationRequired>false</locationRequired>
+      <locationRequired>true</locationRequired>
     </Activity>
     <Activity id="132">
-      <id>8</id>
+      <id>1</id>
       <name>Climb</name>
       <length>8</length>
       <instructorRequired>true</instructorRequired>
       <locationRequired>true</locationRequired>
     </Activity>
     <Activity id="133">
-      <id>7</id>
+      <id>0</id>
       <name>MTB</name>
       <length>9</length>
       <instructorRequired>true</instructorRequired>
       <locationRequired>true</locationRequired>
     </Activity>
     <Activity id="134">
-      <id>10</id>
+      <id>3</id>
       <name>Raft</name>
       <length>7</length>
       <instructorRequired>false</instructorRequired>
       <locationRequired>true</locationRequired>
     </Activity>
     <Activity id="135">
-      <id>11</id>
+      <id>4</id>
       <name>C&amp;R</name>
       <length>8</length>
       <instructorRequired>true</instructorRequired>
-      <locationRequired>false</locationRequired>
+      <locationRequired>true</locationRequired>
     </Activity>
   </activityList>
   <instructorList id="136">
@@ -885,69 +885,1014 @@
       <id>0</id>
       <locationIndex>0</locationIndex>
       <type>Climb</type>
+      <typeNumber>1</typeNumber>
+      <locationHotelBusRequriemnet id="149">
+        <entry>
+          <Hotel id="150">
+            <id>3</id>
+            <hotelIndex>3</hotelIndex>
+          </Hotel>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel id="151">
+            <id>5</id>
+            <hotelIndex>5</hotelIndex>
+          </Hotel>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel id="152">
+            <id>0</id>
+            <hotelIndex>0</hotelIndex>
+          </Hotel>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel id="153">
+            <id>1</id>
+            <hotelIndex>1</hotelIndex>
+          </Hotel>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel id="154">
+            <id>2</id>
+            <hotelIndex>2</hotelIndex>
+          </Hotel>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel id="155">
+            <id>4</id>
+            <hotelIndex>4</hotelIndex>
+          </Hotel>
+          <boolean>true</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="156">
+        <entry>
+          <Hotel reference="150"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>0</int>
+        </entry>
+      </locationHotelPreference>
     </Location>
-    <Location id="149">
+    <Location id="157">
       <id>1</id>
       <locationIndex>1</locationIndex>
       <type>Climb</type>
+      <typeNumber>2</typeNumber>
+      <locationHotelBusRequriemnet id="158">
+        <entry>
+          <Hotel reference="150"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <boolean>true</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="159">
+        <entry>
+          <Hotel reference="150"/>
+          <int>3</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>3</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>1</int>
+        </entry>
+      </locationHotelPreference>
     </Location>
-    <Location id="150">
+    <Location id="160">
       <id>2</id>
       <locationIndex>2</locationIndex>
       <type>Climb</type>
+      <typeNumber>3</typeNumber>
+      <locationHotelBusRequriemnet id="161">
+        <entry>
+          <Hotel reference="150"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <boolean>true</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="162">
+        <entry>
+          <Hotel reference="150"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>-1</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>-1</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>-1</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>-1</int>
+        </entry>
+      </locationHotelPreference>
     </Location>
-    <Location id="151">
+    <Location id="163">
       <id>3</id>
       <locationIndex>3</locationIndex>
       <type>MTB</type>
+      <typeNumber>1</typeNumber>
+      <locationHotelBusRequriemnet id="164">
+        <entry>
+          <Hotel reference="150"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <boolean>true</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="165">
+        <entry>
+          <Hotel reference="150"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>3</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>1</int>
+        </entry>
+      </locationHotelPreference>
     </Location>
-    <Location id="152">
+    <Location id="166">
       <id>4</id>
       <locationIndex>4</locationIndex>
       <type>MTB</type>
+      <typeNumber>2</typeNumber>
+      <locationHotelBusRequriemnet id="167">
+        <entry>
+          <Hotel reference="150"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <boolean>true</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="168">
+        <entry>
+          <Hotel reference="150"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>3</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>2</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>0</int>
+        </entry>
+      </locationHotelPreference>
     </Location>
-    <Location id="153">
+    <Location id="169">
       <id>5</id>
       <locationIndex>5</locationIndex>
       <type>Trek</type>
+      <typeNumber>1</typeNumber>
+      <locationHotelBusRequriemnet id="170">
+        <entry>
+          <Hotel reference="150"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <boolean>true</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="171">
+        <entry>
+          <Hotel reference="150"/>
+          <int>3</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>3</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>3</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>2</int>
+        </entry>
+      </locationHotelPreference>
     </Location>
-    <Location id="154">
+    <Location id="172">
       <id>6</id>
       <locationIndex>6</locationIndex>
       <type>Trek</type>
+      <typeNumber>2</typeNumber>
+      <locationHotelBusRequriemnet id="173">
+        <entry>
+          <Hotel reference="150"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <boolean>true</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="174">
+        <entry>
+          <Hotel reference="150"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>3</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>2</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>1</int>
+        </entry>
+      </locationHotelPreference>
     </Location>
-    <Location id="155">
+    <Location id="175">
       <id>7</id>
       <locationIndex>7</locationIndex>
       <type>Trek</type>
+      <typeNumber>3</typeNumber>
+      <locationHotelBusRequriemnet id="176">
+        <entry>
+          <Hotel reference="150"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <boolean>true</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="177">
+        <entry>
+          <Hotel reference="150"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>3</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>2</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>0</int>
+        </entry>
+      </locationHotelPreference>
     </Location>
-    <Location id="156">
+    <Location id="178">
       <id>8</id>
       <locationIndex>8</locationIndex>
-      <type>Trek</type>
+      <type>Archery</type>
+      <typeNumber>1</typeNumber>
+      <locationHotelBusRequriemnet id="179">
+        <entry>
+          <Hotel reference="150"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <boolean>false</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="180">
+        <entry>
+          <Hotel reference="150"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>0</int>
+        </entry>
+      </locationHotelPreference>
     </Location>
-    <Location id="157">
+    <Location id="181">
       <id>9</id>
       <locationIndex>9</locationIndex>
-      <type>Raft</type>
+      <type>OB</type>
+      <typeNumber>1</typeNumber>
+      <locationHotelBusRequriemnet id="182">
+        <entry>
+          <Hotel reference="150"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <boolean>false</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="183">
+        <entry>
+          <Hotel reference="150"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>0</int>
+        </entry>
+      </locationHotelPreference>
     </Location>
-    <Location id="158">
+    <Location id="184">
       <id>10</id>
       <locationIndex>10</locationIndex>
       <type>Raft</type>
+      <typeNumber>1</typeNumber>
+      <locationHotelBusRequriemnet id="185">
+        <entry>
+          <Hotel reference="150"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <boolean>true</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="186">
+        <entry>
+          <Hotel reference="150"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>0</int>
+        </entry>
+      </locationHotelPreference>
     </Location>
-    <Location id="159">
+    <Location id="187">
       <id>11</id>
       <locationIndex>11</locationIndex>
-      <type>Raft</type>
+      <type>C&amp;R</type>
+      <typeNumber>1</typeNumber>
+      <locationHotelBusRequriemnet id="188">
+        <entry>
+          <Hotel reference="150"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <boolean>true</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="189">
+        <entry>
+          <Hotel reference="150"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>0</int>
+        </entry>
+      </locationHotelPreference>
+    </Location>
+    <Location id="190">
+      <id>12</id>
+      <locationIndex>12</locationIndex>
+      <type>HRHS</type>
+      <typeNumber>1</typeNumber>
+      <locationHotelBusRequriemnet id="191">
+        <entry>
+          <Hotel reference="150"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <boolean>true</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="192">
+        <entry>
+          <Hotel reference="150"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>0</int>
+        </entry>
+      </locationHotelPreference>
+    </Location>
+    <Location id="193">
+      <id>13</id>
+      <locationIndex>13</locationIndex>
+      <type>HRMS</type>
+      <typeNumber>1</typeNumber>
+      <locationHotelBusRequriemnet id="194">
+        <entry>
+          <Hotel reference="150"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <boolean>true</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="195">
+        <entry>
+          <Hotel reference="150"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>0</int>
+        </entry>
+      </locationHotelPreference>
+    </Location>
+    <Location id="196">
+      <id>14</id>
+      <locationIndex>14</locationIndex>
+      <type>Free</type>
+      <typeNumber>1</typeNumber>
+      <locationHotelBusRequriemnet id="197">
+        <entry>
+          <Hotel reference="150"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <boolean>false</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="198">
+        <entry>
+          <Hotel reference="150"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>0</int>
+        </entry>
+      </locationHotelPreference>
+    </Location>
+    <Location id="199">
+      <id>15</id>
+      <locationIndex>15</locationIndex>
+      <type>TeamSpirit</type>
+      <typeNumber>1</typeNumber>
+      <locationHotelBusRequriemnet id="200">
+        <entry>
+          <Hotel reference="150"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <boolean>true</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="201">
+        <entry>
+          <Hotel reference="150"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>0</int>
+        </entry>
+      </locationHotelPreference>
+    </Location>
+    <Location id="202">
+      <id>16</id>
+      <locationIndex>16</locationIndex>
+      <type>Canoe</type>
+      <typeNumber>1</typeNumber>
+      <locationHotelBusRequriemnet id="203">
+        <entry>
+          <Hotel reference="150"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <boolean>true</boolean>
+        </entry>
+      </locationHotelBusRequriemnet>
+      <locationHotelPreference id="204">
+        <entry>
+          <Hotel reference="150"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="151"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="152"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="153"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="154"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Hotel reference="155"/>
+          <int>0</int>
+        </entry>
+      </locationHotelPreference>
     </Location>
   </locationList>
-  <groupList id="160">
-    <Group id="161">
+  <groupList id="205">
+    <Group id="206">
       <id>0</id>
       <name>A</name>
-      <numOfClients>30</numOfClients>
-      <requiredActivities id="162">
+      <numOfClients>0</numOfClients>
+      <hotel reference="152"/>
+      <requiredActivities id="207">
         <Activity reference="133"/>
         <Activity reference="132"/>
         <Activity reference="129"/>
@@ -955,7 +1900,7 @@
         <Activity reference="135"/>
         <Activity reference="130"/>
       </requiredActivities>
-      <groupTimestampList id="163">
+      <groupTimestampList id="208">
         <Timestamp reference="5"/>
         <Timestamp reference="7"/>
         <Timestamp reference="9"/>
@@ -1050,15 +1995,16 @@
         <Timestamp reference="125"/>
       </groupTimestampList>
     </Group>
-    <Group id="164">
+    <Group id="209">
       <id>1</id>
       <name>B</name>
-      <numOfClients>30</numOfClients>
-      <requiredActivities id="165">
+      <numOfClients>0</numOfClients>
+      <hotel reference="153"/>
+      <requiredActivities id="210">
         <Activity reference="133"/>
         <Activity reference="132"/>
       </requiredActivities>
-      <groupTimestampList id="166">
+      <groupTimestampList id="211">
         <Timestamp reference="53"/>
         <Timestamp reference="54"/>
         <Timestamp reference="55"/>
@@ -1084,16 +2030,17 @@
         <Timestamp reference="75"/>
       </groupTimestampList>
     </Group>
-    <Group id="167">
+    <Group id="212">
       <id>2</id>
       <name>C</name>
-      <numOfClients>30</numOfClients>
-      <requiredActivities id="168">
+      <numOfClients>0</numOfClients>
+      <hotel reference="154"/>
+      <requiredActivities id="213">
         <Activity reference="130"/>
         <Activity reference="134"/>
         <Activity reference="135"/>
       </requiredActivities>
-      <groupTimestampList id="169">
+      <groupTimestampList id="214">
         <Timestamp reference="78"/>
         <Timestamp reference="79"/>
         <Timestamp reference="80"/>
@@ -1142,17 +2089,18 @@
         <Timestamp reference="125"/>
       </groupTimestampList>
     </Group>
-    <Group id="170">
+    <Group id="215">
       <id>3</id>
       <name>D</name>
-      <numOfClients>30</numOfClients>
-      <requiredActivities id="171">
+      <numOfClients>0</numOfClients>
+      <hotel reference="151"/>
+      <requiredActivities id="216">
         <Activity reference="131"/>
         <Activity reference="133"/>
         <Activity reference="134"/>
         <Activity reference="130"/>
       </requiredActivities>
-      <groupTimestampList id="172">
+      <groupTimestampList id="217">
         <Timestamp reference="5"/>
         <Timestamp reference="7"/>
         <Timestamp reference="9"/>
@@ -1225,97 +2173,112 @@
       </groupTimestampList>
     </Group>
   </groupList>
-  <taskList id="173">
-    <Task id="174">
+  <hotelList id="218">
+    <Hotel reference="152"/>
+    <Hotel reference="153"/>
+    <Hotel reference="154"/>
+    <Hotel reference="150"/>
+    <Hotel reference="155"/>
+    <Hotel reference="151"/>
+  </hotelList>
+  <taskList id="219">
+    <Task id="220">
       <id>0</id>
       <index>0</index>
       <activity reference="133"/>
-      <group reference="161"/>
+      <group reference="206"/>
     </Task>
-    <Task id="175">
+    <Task id="221">
       <id>1</id>
       <index>0</index>
       <activity reference="132"/>
-      <group reference="161"/>
+      <group reference="206"/>
     </Task>
-    <Task id="176">
+    <Task id="222">
       <id>2</id>
       <index>0</index>
       <activity reference="129"/>
-      <group reference="161"/>
+      <group reference="206"/>
+      <location reference="181"/>
     </Task>
-    <Task id="177">
+    <Task id="223">
       <id>3</id>
       <index>0</index>
       <activity reference="134"/>
-      <group reference="161"/>
+      <group reference="206"/>
+      <location reference="184"/>
     </Task>
-    <Task id="178">
+    <Task id="224">
       <id>4</id>
       <index>0</index>
       <activity reference="135"/>
-      <group reference="161"/>
+      <group reference="206"/>
+      <location reference="187"/>
     </Task>
-    <Task id="179">
+    <Task id="225">
       <id>5</id>
       <index>0</index>
       <activity reference="130"/>
-      <group reference="161"/>
+      <group reference="206"/>
     </Task>
-    <Task id="180">
+    <Task id="226">
       <id>6</id>
       <index>0</index>
       <activity reference="133"/>
-      <group reference="164"/>
+      <group reference="209"/>
     </Task>
-    <Task id="181">
+    <Task id="227">
       <id>7</id>
       <index>0</index>
       <activity reference="132"/>
-      <group reference="164"/>
+      <group reference="209"/>
     </Task>
-    <Task id="182">
+    <Task id="228">
       <id>8</id>
       <index>0</index>
       <activity reference="130"/>
-      <group reference="167"/>
+      <group reference="212"/>
     </Task>
-    <Task id="183">
+    <Task id="229">
       <id>9</id>
       <index>0</index>
       <activity reference="134"/>
-      <group reference="167"/>
+      <group reference="212"/>
+      <location reference="184"/>
     </Task>
-    <Task id="184">
+    <Task id="230">
       <id>10</id>
       <index>0</index>
       <activity reference="135"/>
-      <group reference="167"/>
+      <group reference="212"/>
+      <location reference="187"/>
     </Task>
-    <Task id="185">
+    <Task id="231">
       <id>11</id>
       <index>0</index>
       <activity reference="131"/>
-      <group reference="170"/>
+      <group reference="215"/>
+      <location reference="190"/>
     </Task>
-    <Task id="186">
+    <Task id="232">
       <id>12</id>
       <index>0</index>
       <activity reference="133"/>
-      <group reference="170"/>
+      <group reference="215"/>
     </Task>
-    <Task id="187">
+    <Task id="233">
       <id>13</id>
       <index>0</index>
       <activity reference="134"/>
-      <group reference="170"/>
+      <group reference="215"/>
+      <location reference="184"/>
     </Task>
-    <Task id="188">
+    <Task id="234">
       <id>14</id>
       <index>0</index>
       <activity reference="130"/>
-      <group reference="170"/>
+      <group reference="215"/>
     </Task>
   </taskList>
-  <score id="189">-15init/0hard/0soft</score>
+  <score id="235">-15init/0hard/0medium/0soft</score>
 </Week>

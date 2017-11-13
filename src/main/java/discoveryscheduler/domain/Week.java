@@ -6,10 +6,12 @@ import java.util.List;
 import org.optaplanner.core.api.domain.solution.PlanningSolution;
 import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
 import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScore;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 //import org.optaplanner.core.impl.score.buildin.simple.SimpleScoreDefinition;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 import org.optaplanner.persistence.xstream.api.score.buildin.hardsoft.HardSoftScoreXStreamConverter;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardmediumsoft.HardMediumSoftScoreXStreamConverter;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
@@ -37,14 +39,18 @@ public class Week extends AbstractPersistable {
 	private List<Instructor> instructorList;
 	private List<Location> locationList;
 	private List<Group> groupList;
+	private List<Hotel> hotelList;
 	
 	private List<Task> taskList;
 		
 	//@XStreamConverter(value = XStreamScoreConverter.class, types = {SimpleScoreDefinition.class})
 	//private SimpleScore score;
 	
-	@XStreamConverter(HardSoftScoreXStreamConverter.class)
-	private HardSoftScore score;
+	//@XStreamConverter(HardSoftScoreXStreamConverter.class)
+	//private HardSoftScore score;
+	
+	@XStreamConverter(HardMediumSoftScoreXStreamConverter.class)
+	private HardMediumSoftScore score;
 
 	public int getNumber() {
 		return number;
@@ -111,11 +117,18 @@ public class Week extends AbstractPersistable {
 	public void setLocationList(List<Location> locationList) {
 		this.locationList = locationList;
 	}
+	@ProblemFactCollectionProperty
+	public List<Hotel> getHotelList() {
+		return hotelList;
+	}
+	public void setHotelList(List<Hotel> hotelList) {
+		this.hotelList = hotelList;
+	}
 	@PlanningScore
-	public HardSoftScore getScore() {
+	public HardMediumSoftScore getScore() {
 		return score;
 	}
-	public void setScore(HardSoftScore score) {
+	public void setScore(HardMediumSoftScore score) {
 		this.score = score;
 	}
 
@@ -130,10 +143,11 @@ public class Week extends AbstractPersistable {
         facts.addAll(groupList);
         facts.addAll(instructorList);
         facts.addAll(locationList);
+        facts.addAll(hotelList);
         
 
         
-        // Do not add the planning entity's (processList) because that will be done automatically
+        // Do not add the planning entity's (taskList) because that will be done automatically
         return facts;
     }
 }

@@ -7,7 +7,7 @@
   <entityClass>discoveryscheduler.domain.Task</entityClass>
     
   <scoreDirectorFactory>
-   <!--scoreDefinitionType>HARD_SOFT</scoreDefinitionType-->
+   <!--scoreDefinitionType>HARD_MEDIUM_SOFT</scoreDefinitionType-->
     <scoreDrl>discoveryscheduler/solver/discoverySchedulerScoreRules.drl</scoreDrl>
 	
 	<!--doesnt improve overall time, construction is faster but it takes more time to make it feasible -->
@@ -34,6 +34,7 @@
 	      </changeMoveSelector>
 	      <changeMoveSelector>
 	        <valueSelector variableName="location"/>
+	        <filterClass>discoveryscheduler.solver.move.LocationTaskChangeMoveFilter</filterClass>
 	      </changeMoveSelector>
 	    <!--/cartesianProductMoveSelector-->
       <!--changeMoveSelector>
@@ -51,10 +52,12 @@
       <changeMoveSelector>
       	<cacheType>PHASE</cacheType>
       	<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
+      	<filterClass>discoveryscheduler.solver.move.LocationTaskChangeMoveFilter</filterClass>
       </changeMoveSelector>
       <swapMoveSelector>
       	<cacheType>PHASE</cacheType>
-        <filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskSwapMoveFilter</filterClass>
+        <!--filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskSwapMoveFilter</filterClass-->
+        <filterClass>discoveryscheduler.solver.move.LocationTaskSwapMoveFilter</filterClass>
       </swapMoveSelector>
     </unionMoveSelector>
     <acceptor>

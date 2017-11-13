@@ -17,6 +17,7 @@ public class Group extends AbstractPersistable implements Labeled {
 	private static final long serialVersionUID = 8L;
 	private String name;
 	private int numOfClients;
+	private Hotel hotel;
 	private List<Activity> requiredActivities;
 	private List<Timestamp> groupTimestampList;
 	
@@ -32,6 +33,12 @@ public class Group extends AbstractPersistable implements Labeled {
 	}
 	public void setNumOfClients(int numOfClients) {
 		this.numOfClients = numOfClients;
+	}
+	public Hotel getHotel() {
+		return hotel;
+	}
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
 	}
 	public List<Activity> getRequiredActivities() {
 		return requiredActivities;
