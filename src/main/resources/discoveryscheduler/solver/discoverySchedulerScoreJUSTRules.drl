@@ -1,0 +1,311 @@
+package discoveryscheduler.solver;
+    dialect "java"
+
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScoreHolder;
+import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScoreHolder;
+
+import discoveryscheduler.domain.*;
+
+import java.util.ArrayList;
+
+global HardMediumSoftScoreHolder scoreHolder;
+
+rule "conflictingTaskGroupMoreThanTwoInSameDay"
+	when
+		Task($idLeft : id, start != null, $day : start.getDay(), $groupLeft : group)
+		Task($idMiddle : id, id > $idLeft, start != null, start.getDay() == $day, group == $groupLeft)
+		Task(id > $idMiddle, start != null, start.getDay() == $day, group == $groupLeft)
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "conflictingTasksSameGroupInSameTime"
+	when
+		Task($leftId : id, $leftGroup : group, $start : start, start != null, $end : getEnd())
+		Task(id > $leftId, group == $leftGroup, start != null, !((start < $start && getEnd() < $start) || (start > $end && getEnd() > $end)))
+	then
+        scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "timeForLunchWithOneTask"
+	when
+		Task(start != null, (start.getHour().getHourIndex() < 9 && end.getHour().getHourIndex() > 11), activity.getType() != "TeamSpirit")
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "timeForLunchWithTwoTasks"
+	when
+		Task($idLeft : id, start != null, $day : start.getDay(), $groupLeft : group, $startLeft : start, $endLeft : getEnd())
+		Task(id > $idLeft, start != null, start.getDay() == $day, group == $groupLeft, (($startLeft < start && start.getTimestampIndex() - $endLeft.getTimestampIndex() <= 2) || ($startLeft > start && $startLeft.getTimestampIndex() - getEnd().getTimestampIndex() <= 2)))
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "instructorRequiredForTask"
+	when 
+		Task(start != null, instructor == null, isInstructorRequired())
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "instructorNotRequiredForTask"
+	when 
+		Task(start != null, instructor != null, !isInstructorRequired())
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "conflictInstructorsMoreTasksAtSameTime"
+	when
+		Task($idLeft : id, $startLeft : start, $endLeft : getEnd(), $instructorLeft : instructor, start != null, instructor != null, $locationLeft : location)
+		Task(id > $idLeft, instructor == $instructorLeft, !((location == $locationLeft && (start < $startLeft && $startLeft.getTimestampIndex()+1 - getEnd().getTimestampIndex()-1 > 0 ) || (start.getTimestampIndex()+1 - $endLeft.getTimestampIndex()-1 > 0 && getEnd() > $endLeft)) || (location != $locationLeft && (start < $startLeft && $startLeft.getTimestampIndex() - getEnd().getTimestampIndex() > 0) || (start.getTimestampIndex() - $endLeft.getTimestampIndex() > 0 && getEnd() > $endLeft))))
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "locationRequiredForTask"
+	when 
+		Task(start != null, location == null, isLocationRequired())
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "taskAtItsLocation"
+	when 
+		Task(start != null, location != null, location.getType() != activity.getType())
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "conflictClimbMTBMoreTasksAtSameTime"
+	when
+		Task($idLeft : id, $startLeft : start, $endLeft : getEnd(), $locationLeft : location, start != null, location != null, $activityLeft : activity, (activity.getType()=="MTB" || activity.getType()=="Climb"))
+		Task(id > $idLeft, location == $locationLeft, activity == $activityLeft, !((start < $startLeft && $startLeft.getTimestampIndex()+1 - getEnd().getTimestampIndex()-1 > 0 ) || (start.getTimestampIndex()+1 - $endLeft.getTimestampIndex()-1 > 0 && getEnd() > $endLeft)))
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "conflictTrekMoreThan4TasksAtSameTimeInTrekLocations1"
+	when
+		Task($idFirst : id, $startLeft : start, $endLeft : getEnd(), start != null, location != null, location.getType() == "Trek", location.getTypeNumber() == 1, $locationLeft : location)
+		Task(id > $idFirst, $idSecond : id, location == $locationLeft, !((start < $startLeft && $startLeft.getTimestampIndex() - getEnd().getTimestampIndex() >= -1 ) || (start.getTimestampIndex() - $endLeft.getTimestampIndex() >= -1 && getEnd() > $endLeft)))
+		Task(id > $idSecond, $idThird : id, location == $locationLeft, !((start < $startLeft && $startLeft.getTimestampIndex() - getEnd().getTimestampIndex() >= -1 ) || (start.getTimestampIndex() - $endLeft.getTimestampIndex() >= -1 && getEnd() > $endLeft)))
+		Task(id > $idThird, $idFourth : id, location == $locationLeft, !((start < $startLeft && $startLeft.getTimestampIndex() - getEnd().getTimestampIndex() >= -1 ) || (start.getTimestampIndex() - $endLeft.getTimestampIndex() >= -1 && getEnd() > $endLeft)))
+		Task(id > $idFourth, location == $locationLeft, !((start < $startLeft && $startLeft.getTimestampIndex() - getEnd().getTimestampIndex() >= -1 ) || (start.getTimestampIndex() - $endLeft.getTimestampIndex() >= -1 && getEnd() > $endLeft)))
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "conflictTrekMoreThan2TasksAtSameTimeInTrekLocations23"
+	when
+		Task($idFirst : id, $startLeft : start, $endLeft : getEnd(), start != null, location != null, location.getType() == "Trek", (location.getTypeNumber() == 2 || location.getTypeNumber() == 3), $locationLeft : location)
+		Task(id > $idFirst, $idSecond : id, location == $locationLeft, !((start < $startLeft && $startLeft.getTimestampIndex() - getEnd().getTimestampIndex() >= -1 ) || (start.getTimestampIndex() - $endLeft.getTimestampIndex() >= -1 && getEnd() > $endLeft)))
+		Task(id > $idSecond, location == $locationLeft, !((start < $startLeft && $startLeft.getTimestampIndex() - getEnd().getTimestampIndex() >= -1 ) || (start.getTimestampIndex() - $endLeft.getTimestampIndex() >= -1 && getEnd() > $endLeft)))
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "conflictRaftCanoeMoreThan3TasksAtSameTime"
+	when
+		Task($idFirst : id, $startLeft : start, $endLeft : getEnd(), start != null, $activityLeft : activity, (activity.getType()=="Raft" || activity.getType()=="Canoe"))
+		Task(id > $idFirst, $idSecond : id, activity == $activityLeft, !((start < $startLeft && $startLeft.getTimestampIndex() - getEnd().getTimestampIndex() >= -1 ) || (start.getTimestampIndex() - $endLeft.getTimestampIndex() >= -1 && getEnd() > $endLeft)))
+		Task(id > $idSecond, $idThird : id, activity == $activityLeft, !((start < $startLeft && $startLeft.getTimestampIndex() - getEnd().getTimestampIndex() >= -1 ) || (start.getTimestampIndex() - $endLeft.getTimestampIndex() >= -1 && getEnd() > $endLeft)))
+		Task(id > $idThird, activity == $activityLeft, !((start < $startLeft && $startLeft.getTimestampIndex() - getEnd().getTimestampIndex() >= -1 ) || (start.getTimestampIndex() - $endLeft.getTimestampIndex() >= -1 && getEnd() > $endLeft)))
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "conflictArcheryMoreThan4TasksAtSameTime"
+	when
+		Task($idFirst : id, $startLeft : start, $endLeft : getEnd(), start != null, $activityLeft : activity, activity.getType()=="Archery")
+		Task(id > $idFirst, $idSecond : id, activity == $activityLeft, !((start < $startLeft && $startLeft.getTimestampIndex() - getEnd().getTimestampIndex() >= -1 ) || (start.getTimestampIndex() - $endLeft.getTimestampIndex() >= -1 && getEnd() > $endLeft)))
+		Task(id > $idSecond, $idThird : id, activity == $activityLeft, !((start < $startLeft && $startLeft.getTimestampIndex() - getEnd().getTimestampIndex() >= -1 ) || (start.getTimestampIndex() - $endLeft.getTimestampIndex() >= -1 && getEnd() > $endLeft)))
+		Task(id > $idThird, $idFourth : id, activity == $activityLeft, !((start < $startLeft && $startLeft.getTimestampIndex() - getEnd().getTimestampIndex() >= -1 ) || (start.getTimestampIndex() - $endLeft.getTimestampIndex() >= -1 && getEnd() > $endLeft)))
+		Task(id > $idFourth, activity == $activityLeft, !((start < $startLeft && $startLeft.getTimestampIndex() - getEnd().getTimestampIndex() >= -1 ) || (start.getTimestampIndex() - $endLeft.getTimestampIndex() >= -1 && getEnd() > $endLeft)))
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "conflictC&RHRHSTeamSpiritHRMSMoreTasksAtSameTime"
+	when
+		Task($idLeft : id, $startLeft : start, $endLeft : getEnd(), start != null, $activityLeft : activity, (activity.getType()=="C&R" || activity.getType()=="HRHS" || activity.getType()=="TeamSpirit" || activity.getType()=="HRMS"))
+		Task(id > $idLeft, start != null, activity == $activityLeft, !((start < $startLeft && getEnd() < $startLeft) || (start > $endLeft && getEnd() > $endLeft)))
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "taskAtAllowedLocation"
+	when 
+		Task(start != null, location != null, group.getHotel().getLocationPenalty(location) == -1)
+	then
+		scoreHolder.addMediumConstraintMatch(kcontext, -1);
+end
+
+rule "noBusOnArrivalDay"
+	when
+		Task(start != null, (isLocationRequired() && location != null && group.getHotel().isBusRequired(location)) || (!isLocationRequired() && location == null && group.getHotel().isBusRequired(activity)), start.getDay() == group.getGroupTimestampList.get(0).getDay())
+	then
+		scoreHolder.addMediumConstraintMatch(kcontext, -1);
+end
+
+rule "minimizeNumberOfInstructors"
+	when
+		accumulate(
+			Task(start != null, getInstructor() != null, $instructor : getInstructor()),
+			$instructors : collectSet($instructor)
+		)
+	then
+		scoreHolder.addMediumConstraintMatch(kcontext, (-1)*$instructors.size());//$instructors.size());
+end
+
+rule "additionalEmployees"
+	when
+		$day : Day()
+		$numOfGroups : Number() from accumulate($group : Group(), count($group))
+		
+		$morningTasks : ArrayList() from collect( Task(start != null, start.getDay() == $day, start.getHour().getHourIndex() <= 6))
+		$morningReqInstructorsCount : Number() from accumulate(
+			$task : Task(activity.getType() == "Climb" || activity.getType() == "C&R" || activity.getType() == "MTB" || activity.getType() == "HRHS") from $morningTasks,
+			count($task)
+		)
+		$morningFreeInstructorsCount : Number() from accumulate(
+			$task : Task(activity.getType() == "Free") from $morningTasks,
+			 count($task)
+		)
+		
+		$afternoonTasks : ArrayList() from collect( Task(start != null, start.getDay() == $day, start.getHour().getHourIndex() >= 9))
+		$afternoonReqInstructorsCount : Number() from accumulate(
+			$task : Task(activity.getType() == "Climb" || activity.getType() == "C&R" || activity.getType() == "MTB" || activity.getType() == "HRHS") from $afternoonTasks,
+			count($task)
+		)
+		$afternoonFreeInstructorsCount : Number() from accumulate(
+			$task : Task(activity.getType() == "Free") from $afternoonTasks,
+			 count($task)
+		)
+	
+	then
+		int morningAdditionalInstructorsCount = $morningReqInstructorsCount.intValue() - ($morningFreeInstructorsCount.intValue() + ($numOfGroups.intValue() - $morningTasks.size()));
+		int afternoonAdditionalInstructorsCount = $afternoonReqInstructorsCount.intValue() - ($afternoonFreeInstructorsCount.intValue() + ($numOfGroups.intValue() - $afternoonTasks.size()));
+		int finalAdditionalInstructorsCount = 0;
+		if (morningAdditionalInstructorsCount < afternoonAdditionalInstructorsCount ){
+			finalAdditionalInstructorsCount = afternoonAdditionalInstructorsCount;
+		} else {
+			finalAdditionalInstructorsCount = morningAdditionalInstructorsCount;
+		}
+		
+		if (finalAdditionalInstructorsCount > 0){
+			scoreHolder.addSoftConstraintMatch(kcontext, -finalAdditionalInstructorsCount);
+		} else {
+			scoreHolder.addSoftConstraintMatch(kcontext, 0);
+		}
+end
+
+rule "instructorsPenalizeFreeTime"
+	when
+		$day : Day()
+		$instructor : Instructor()
+		exists Task($instructor == instructor, start != null, start.getDay() == $day)
+		accumulate(
+		  	$task : Task($instructor == instructor, start != null, start.getDay() == $day),
+			$instructorDayTaskCount : count($task)
+		)
+	then
+		if($instructorDayTaskCount.intValue() < 2){
+			scoreHolder.addSoftConstraintMatch(kcontext, (-1)*$instructorDayTaskCount.intValue()*$instructorDayTaskCount.intValue());
+		} else {
+			scoreHolder.addSoftConstraintMatch(kcontext, 0);
+		}
+end
+
+rule "instructorsStayAtLocationInOneDay"
+	when
+		$instructor : Instructor()
+		Task($idLeft : id, start != null, $day : getDay(), $instructor == getInstructor(), $location : getLocation())
+		accumulate(
+		  	$task : Task(id > $idLeft, start != null, getDay() == $day, $instructor == getInstructor(), $location != getLocation()),
+			$instructorDifferentLocationCount : count($task)
+		)
+	then
+		scoreHolder.addSoftConstraintMatch(kcontext, (-1)*$instructorDifferentLocationCount.intValue()*$instructorDifferentLocationCount.intValue());
+end
+
+rule "instructorsPenalizeDifference"
+	when
+		$day :Day()
+		$instructorLeft : Instructor($idLeft : id)
+		exists Task($instructorLeft == instructor, start != null, start.getDay() == $day)
+		accumulate(
+		  	$task : Task(start != null, $instructorLeft == instructor, start.getDay() == $day),
+			$instructorLeftTaskCount : count($task)
+		)
+		$instructorRight : Instructor(id > $idLeft)
+		exists Task($instructorRight == instructor, start != null, start.getDay() == $day)
+		accumulate(
+		  	$task : Task(start != null, $instructorRight == instructor, start.getDay() == $day),
+			$instructorRightTaskCount : count($task)
+		)
+	then
+			scoreHolder.addSoftConstraintMatch(kcontext, ($instructorLeftTaskCount.intValue() - $instructorRightTaskCount.intValue())*($instructorRightTaskCount.intValue() - $instructorLeftTaskCount.intValue()));
+end
+
+rule "tasksShouldStartAfter9AM"
+	when
+		$group : Group()
+		accumulate( 
+			$task : Task(start != null, start.getHour().getHourIndex() < 1, $group == getGroup()),
+			$numOfEarlyStartTasks : count($task)
+		)
+	then
+	 	scoreHolder.addSoftConstraintMatch(kcontext, (-1)*$numOfEarlyStartTasks.intValue()*$numOfEarlyStartTasks.intValue());
+end
+
+rule "tasksShouldEndBefore630PM"
+	when
+		$group : Group()
+		accumulate( 
+			$task : Task(start != null, getEnd().getHour().getHourIndex() >= 20, $group == getGroup()), //>= 18.30
+			$numOfLateEndTasks : count($task)
+		)
+	then
+	 	scoreHolder.addSoftConstraintMatch(kcontext, (-1)*$numOfLateEndTasks.intValue()*$numOfLateEndTasks.intValue());
+end
+
+rule "groupTasksShouldntHaveMuchBetweenTime"
+	when
+		$group : Group()
+		$day : Day()
+		Task(start != null, group == $group, $day == start.getDay(), $start : start, $endHourIndex : getEnd().getHour().getHourIndex())
+		accumulate( 
+			Task(start != null, $group == getGroup(), start.getDay() == $day, start > $start, $startHourIndex : start.getHour().getHourIndex()),
+			$sumOfTimeDifferences : sum($startHourIndex - $endHourIndex)
+		)
+	then
+	 	if($sumOfTimeDifferences.intValue() > 3){
+			scoreHolder.addSoftConstraintMatch(kcontext, (-1)*($sumOfTimeDifferences.intValue()-3)*($sumOfTimeDifferences.intValue()-3));
+		} else {
+			scoreHolder.addSoftConstraintMatch(kcontext, 0);
+		}
+end
+
+rule "locationBusTransportPenalty"
+	when
+		$group : Group()
+		accumulate(
+			$task : Task(start != null, group == $group, (isLocationRequired() && location != null && group.getHotel().isBusRequired(location)) || (!isLocationRequired() && location == null && group.getHotel().isBusRequired(activity))),
+			$groupBusTransportCount : count($task)
+		)
+	then
+		scoreHolder.addSoftConstraintMatch(kcontext, (-1)*$groupBusTransportCount.intValue()*$groupBusTransportCount.intValue());
+end
+
+rule "locationPreferencePenalty"
+	when
+		$group : Group()
+		accumulate(
+			Task(start != null, group == $group, location != null, group.getHotel().getLocationPenalty(location) != -1, $locationPenalty : group.getHotel().getLocationPenalty(location)),
+			$groupLocationPenalty : sum($locationPenalty)
+		)
+	then
+		scoreHolder.addSoftConstraintMatch(kcontext, (-1)*$groupLocationPenalty.intValue()*$groupLocationPenalty.intValue());
+end
