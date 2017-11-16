@@ -6,11 +6,10 @@ import static org.optaplanner.examples.common.swingui.timetable.TimeTablePanel.H
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +17,7 @@ import java.util.Map;
 import javax.swing.AbstractAction;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -25,13 +25,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
-import javax.swing.border.TitledBorder;
 
-import org.apache.commons.lang3.tuple.Pair;
-import org.apache.poi.hssf.util.HSSFColor.RED;
-//import org.optaplanner.core.api.domain.solution.Solution;
+import org.optaplanner.examples.common.swingui.CommonIcons;
 import org.optaplanner.examples.common.swingui.SolutionPanel;
-//import org.optaplanner.examples.common.swingui.components.Labeled;
 import org.optaplanner.examples.common.swingui.components.LabeledComboBoxRenderer;
 import org.optaplanner.examples.common.swingui.timetable.TimeTablePanel;
 
@@ -82,7 +78,8 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
         return true;
     }
 
-    private Week getWeek() {
+    @SuppressWarnings("unused")
+	private Week getWeek() {
         return (Week) solutionBusiness.getSolution();
     }
 
@@ -97,7 +94,8 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
         repaint(); // Hack to force a repaint of TimeTableLayout during "refresh screen while solving"
     }
     
-    private void defineColumnHeaders(TimeTablePanel panel, List list, int footprintWidth ){
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	private void defineColumnHeaders(TimeTablePanel panel, List list, int footprintWidth ){
     	panel.defineColumnHeaderByKey(HEADER_COLUMN_GROUP1); // Day header
         panel.defineColumnHeaderByKey(HEADER_COLUMN); // Hour header
         for (Object group : list) {
@@ -107,7 +105,9 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
         
            
     }
-    private void defineRowHeaders(TimeTablePanel panel, Week week, int rowsPerDay){
+    
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	private void defineRowHeaders(TimeTablePanel panel, Week week, int rowsPerDay){
         panel.defineRowHeaderByKey(HEADER_ROW); // Group header 
         if(rowsPerDay > 3){
         	for (Timestamp timestamp : week.getTimestampList()) {
@@ -504,26 +504,29 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
     	String label = task.getStart() != null ? task.getStart().getHour().getLabel() + " " : "";
     	switch (panel){
 	        case "groups":
-	        	label += task.getActivity().getName();
+	        	label += task.getActivity().getType();
 	            break;
 	        case "instructors":
 	        	if (task.getLocation() != null){
 	        		label += task.getLocation().getLabel();
 	        	} else {
-	        		label += task.getActivity().getName();
+	        		label += task.getActivity().getType();
 	        	}
 	            break;
 	        case "locations":
 	        	label += task.getGroup().getName();
 	            break;
 	        default:
-	        	label = task.getLabel();
+	        	label += task.getActivity().getType();
 	        	break;
         }
         
         JButton button = new JButton(new TaskAction(task));
         button.setMargin(new Insets(0, 0, 0, 0));
         button.setBackground(color);
+        if (task.isLocked()) {
+            button.setIcon(CommonIcons.LOCKED_ICON);
+        }
         button.setText(label);
         
         //mark departure and arrival
@@ -538,7 +541,8 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
         return button;
     }
 
-    private class TaskAction extends AbstractAction {
+    @SuppressWarnings("serial")
+	private class TaskAction extends AbstractAction {
 
         private Task task;
 
@@ -547,23 +551,87 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
             this.task = task;
         }
 
-        public void actionPerformed(ActionEvent e) {
-            JPanel listFieldsPanel = new JPanel(new GridLayout(3, 2));
+        @SuppressWarnings({ "rawtypes", "unchecked" })
+		public void actionPerformed(ActionEvent e) {
+        	int numOfLines = 1;
+        	if(task.getStart() != null){
+        		numOfLines++;
+        	}
+        	if(task.isInstructorRequired()){
+        		numOfLines++;
+        	}
+        	if(task.isLocationRequired()){
+        		numOfLines++;
+        	}
+        	JPanel listFieldsPanel = new JPanel(new GridLayout(numOfLines, 2));
+            
             listFieldsPanel.add(new JLabel("Starting time:"));
-            List<Timestamp> timestampList = getWeek().getTimestampList();
+            List<Timestamp> timestampList = task.getGroup().getGroupTimestampList();
             // Add 1 to array size to add null, which makes the entity unassigned
             JComboBox timestampListField = new JComboBox(
             		timestampList.toArray(new Object[timestampList.size() + 1]));
-            timestampListField.setRenderer(new LabeledComboBoxRenderer(null));
+            LabeledComboBoxRenderer.applyToComboBox(timestampListField);
             timestampListField.setSelectedItem(task.getStart());
             listFieldsPanel.add(timestampListField);
+            
+            List<Instructor> instructorList = getSolution().getInstructorList();
+            // Add 1 to array size to add null, which makes the entity unassigned
+            JComboBox instructorListField = new JComboBox(
+            		instructorList.toArray(new Object[instructorList.size() + 1]));
+            if(task.isInstructorRequired()){
+	            listFieldsPanel.add(new JLabel("Instructor:"));
+	            LabeledComboBoxRenderer.applyToComboBox(instructorListField);
+	            instructorListField.setSelectedItem(task.getInstructor());
+	            listFieldsPanel.add(instructorListField);
+            }
+            
+            List<Location> locationList = task.getActivity().getPossibleLocations();
+        	// Add 1 to array size to add null, which makes the entity unassigned
+        	JComboBox locationListField = new JComboBox(
+        		locationList.toArray(new Object[locationList.size() + 1]));
+            if(task.isLocationRequired()){
+	            listFieldsPanel.add(new JLabel("Location:"));
+	            LabeledComboBoxRenderer.applyToComboBox(locationListField);
+	            locationListField.setSelectedItem(task.getLocation());
+	            listFieldsPanel.add(locationListField);
+            }
+            
+            JCheckBox lockedField = new JCheckBox("immovable during planning");
+            if(task.getStart() != null){
+	            listFieldsPanel.add(new JLabel("Locked:"));
+	            lockedField.setSelected(task.isLocked());
+	            listFieldsPanel.add(lockedField);
+            }
+            
             int result = JOptionPane.showConfirmDialog(DiscoverySchedulerPanel.this.getRootPane(), listFieldsPanel,
-                    "Select starting time", JOptionPane.OK_CANCEL_OPTION);
+                    task.toString(), JOptionPane.OK_CANCEL_OPTION);
             if (result == JOptionPane.OK_OPTION) {
                 Timestamp toTimestamp = (Timestamp) timestampListField.getSelectedItem();
                 if (task.getStart() != toTimestamp) {
                     solutionBusiness.doChangeMove(task, "start", toTimestamp);
-                }                
+                }     
+                if(task.isInstructorRequired()){
+	                Instructor toInstructor = (Instructor) instructorListField.getSelectedItem();
+	                if (task.getInstructor() != toInstructor) {
+	                    solutionBusiness.doChangeMove(task, "instructor", toInstructor);
+	                }   
+                }
+                if(task.isLocationRequired()){
+	                Location toLocation = (Location) locationListField.getSelectedItem();
+	                if (task.getLocation() != toLocation) {
+	                    solutionBusiness.doChangeMove(task, "location", toLocation);
+	                }    
+                }
+                if(task.getStart() != null && toTimestamp != null){
+	                boolean toLocked = lockedField.isSelected();
+	                if (task.isLocked() != toLocked) {
+	                    if (solutionBusiness.isSolving()) {
+	                        logger.error("Not doing user change because the solver is solving.");
+	                        return;
+	                    }
+	                    task.setLocked(toLocked);
+	                }
+                }
                 solverAndPersistenceFrame.resetScreen();
             }
         }

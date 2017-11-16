@@ -16,12 +16,13 @@ public class LocationTaskChangeMoveFilter implements SelectionFilter<Week, Chang
 	@Override
 	public boolean accept(ScoreDirector<Week> scoreDirector, ChangeMove<Week> move) {
 		Task task = (Task) move.getEntity();
+		if(task.isLocked()){
+			return false;
+		}
 		List<Object> values = new ArrayList<Object> (move.getPlanningValues());
-		Location location = new Location();
 		for(Object value : values){
 			if(value instanceof Location){
-				location = (Location) value;
-				if(task.getActivity().getName() != location.getType()){
+				if(task.getActivity().getType() != ((Location) value).getType()){
 					return false;
 				}
 			}

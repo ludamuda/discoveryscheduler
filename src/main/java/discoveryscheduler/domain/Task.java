@@ -4,15 +4,14 @@ import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
 import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
 import discoveryscheduler.domain.solver.TaskDifficultyComparator;
-//import discoveryscheduler.domain.solver.OutOfBoundsTaskSelectionFilter;
+
 
 import java.util.ArrayList;
-//import java.util.Collection;
+
 import java.util.List;
 import java.util.Properties;
 
@@ -21,9 +20,6 @@ import java.util.Properties;
 @XStreamAlias("Task")
 public class Task extends AbstractPersistable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5L;
 	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
 	private static final int MORNING_EST = Integer.parseInt(configuration.getProperty("morning_earliest_start_time"));
@@ -35,6 +31,8 @@ public class Task extends AbstractPersistable {
 	
 	private Activity activity;
 	private Group group;
+	
+	boolean locked;
 	
 	//Planning variables
 	private Timestamp start;
@@ -53,6 +51,12 @@ public class Task extends AbstractPersistable {
 	public void setActivity(Activity activity) {
 		this.activity = activity;
 	}	
+	public boolean isLocked() {
+		return locked;
+	}
+	public void setLocked(boolean locked) {
+		this.locked = locked;
+	}
 	@PlanningVariable(valueRangeProviderRefs = {"possibleStartRange"})
 	public Timestamp getStart() {
 		return start;
@@ -72,7 +76,7 @@ public class Task extends AbstractPersistable {
 		this.instructor = instructor;
 	}
 	
-	@PlanningVariable(valueRangeProviderRefs = {"locationRange"}, nullable = true)
+	@PlanningVariable(valueRangeProviderRefs = {"possibleLocations"}, nullable = true)
 	public Location getLocation() {
 		return location;
 	}
@@ -93,14 +97,14 @@ public class Task extends AbstractPersistable {
 	 */
 	
 	public String getLabel() {
-        return activity.getName() + " " + group.getLabel() + " " + 
-        		"Reqs:" + (isInstructorRequired() ? " -I" : "") + (isLocationRequired() ? " -L" : "");
+        return group.getLabel() + ": " + activity.getType().toUpperCase() + ", " + 
+        		"Requires:" + (isInstructorRequired() ? " -instructor" : "") + (isLocationRequired() ? " -location" : "");
     }
 	
     @Override
     public String toString() {
-        return activity + " " + group + " " +
-        		"Reqs: " + (isInstructorRequired() ? " -I" : "") + (isLocationRequired() ? " -L" : "");
+    	return group.getLabel() + ": " + activity.getType().toUpperCase() + ", " + 
+        		"Requires:" + (isInstructorRequired() ? " -instructor" : "") + (isLocationRequired() ? " -location" : "");
     }
     		
 	@ValueRangeProvider(id = "possibleStartRange")   
@@ -108,15 +112,16 @@ public class Task extends AbstractPersistable {
     	List<Timestamp> starts = new ArrayList<Timestamp>();
     	for(Timestamp timestamp : group.getGroupTimestampList()){
     		int hour = timestamp.getHour().getHourIndex();
-    		// snidane nejdrive v 7.30, 30 min snidane, 30 min odpocinek = 1 hod, 
-    		// lunchtime is: est: 12.00 lst: 13.30, typical length: 30 min + 0,5 - 1 hod odpocinek = 1 - 1,5 hod
-    		// vecere est 17.30, lst 19.00
-    		// morning activity: 
-    		if((hour >= MORNING_EST && hour <= MORNING_LST) || (hour >= AFTERNOON_EST && hour <= AFTERNOON_LST)){ //8-10, 13-16
+    		if((hour >= MORNING_EST && hour <= MORNING_LST) || (hour >= AFTERNOON_EST && hour <= AFTERNOON_LST)){
     			starts.add(timestamp);
     		}
     	}
     	return starts;
+    }
+	
+	@ValueRangeProvider(id = "possibleLocations")   
+    List<Location> getPossibleLocations(){
+		return activity.getPossibleLocations();
     }
 	
 	public Day getDay(){

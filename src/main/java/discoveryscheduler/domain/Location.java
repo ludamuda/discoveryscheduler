@@ -1,13 +1,12 @@
 package discoveryscheduler.domain;
 
-import java.util.Map;
-
 import org.optaplanner.examples.common.domain.AbstractPersistable;
+import org.optaplanner.examples.common.swingui.components.Labeled;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("Location")
-public class Location extends AbstractPersistable{
+public class Location extends AbstractPersistable implements Labeled{
 	
 	/**
 	 * 
@@ -17,9 +16,6 @@ public class Location extends AbstractPersistable{
 	private String type;
 	private int typeNumber;
 	
-	private Map<Hotel, Boolean> locationHotelBusRequriemnet;
-	private Map<Hotel, Integer> locationHotelPreference;
-
 	public int getLocationIndex() {
 		return locationIndex;
 	}
@@ -33,25 +29,14 @@ public class Location extends AbstractPersistable{
 		this.type = type;
 	}
 	
-
 	public int getTypeNumber() {
 		return typeNumber;
 	}
 	public void setTypeNumber(int typeNumber) {
 		this.typeNumber = typeNumber;
 	}
-	public Map<Hotel, Boolean> getLocationHotelBusRequriemnet() {
-		return locationHotelBusRequriemnet;
-	}
-	public void setLocationHotelBusRequriemnet(Map<Hotel, Boolean> locationHotelBusRequriemnet) {
-		this.locationHotelBusRequriemnet = locationHotelBusRequriemnet;
-	}
-	public Map<Hotel, Integer> getLocationHotelPreference() {
-		return locationHotelPreference;
-	}
-	public void setLocationHotelPreference(Map<Hotel, Integer> locationHotelPreference) {
-		this.locationHotelPreference = locationHotelPreference;
-	}
+	
+	@Override
 	public String getLabel() {
         return type + "-" + typeNumber;
     }
@@ -60,14 +45,4 @@ public class Location extends AbstractPersistable{
 	public String toString() {
 	    return locationIndex + " " + type + "-" + typeNumber;
 	}
-	
-	
-	public Boolean isBusRequired(Hotel hotel){
-		return locationHotelBusRequriemnet.get(hotel);
-	}
-	
-	public Integer getLocationPreference(Hotel hotel){
-		return locationHotelPreference.get(hotel);
-	}
-
 }

@@ -1,5 +1,7 @@
 package discoveryscheduler.domain;
 
+import java.util.List;
+
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
@@ -10,17 +12,25 @@ public class Activity extends AbstractPersistable{
 	 * 
 	 */
 	private static final long serialVersionUID = 9L;
-	private String name;
+	private int activityIndex;
+	private String type;
 	private int length;
 	private boolean instructorRequired;
 	private boolean locationRequired; 
+	private List<Location> possibleLocations;
 	
 
-	public String getName() {
-		return name;
+	public int getActivityIndex() {
+		return activityIndex;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setActivityIndex(int activityIndex) {
+		this.activityIndex = activityIndex;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String name) {
+		this.type = name;
 	}
 	public int getLength() {
 		return length;
@@ -42,9 +52,15 @@ public class Activity extends AbstractPersistable{
 	public void setLocationRequired(boolean locationRequired) {
 		this.locationRequired = locationRequired;
 	}
+	public List<Location> getPossibleLocations() {
+		return possibleLocations;
+	}
+	public void setPossibleLocations(List<Location> possibleLocations) {
+		this.possibleLocations = possibleLocations;
+	}
 	@Override
 	public String toString() {
-	    return name;
+	    return type;
 	}
 
 }

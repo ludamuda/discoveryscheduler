@@ -7,10 +7,10 @@ import org.optaplanner.core.api.domain.solution.PlanningSolution;
 import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
 import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
 import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScore;
-import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
+//import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 //import org.optaplanner.core.impl.score.buildin.simple.SimpleScoreDefinition;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
-import org.optaplanner.persistence.xstream.api.score.buildin.hardsoft.HardSoftScoreXStreamConverter;
+//import org.optaplanner.persistence.xstream.api.score.buildin.hardsoft.HardSoftScoreXStreamConverter;
 import org.optaplanner.persistence.xstream.api.score.buildin.hardmediumsoft.HardMediumSoftScoreXStreamConverter;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -18,8 +18,6 @@ import com.thoughtworks.xstream.annotations.XStreamConverter;
 
 import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
 import org.optaplanner.core.api.domain.solution.PlanningScore;
-
-//import discoveryscheduler.domain.solver.ActivityConflict;
 
 @PlanningSolution
 @XStreamAlias("Week")
@@ -42,10 +40,7 @@ public class Week extends AbstractPersistable {
 	private List<Hotel> hotelList;
 	
 	private List<Task> taskList;
-		
-	//@XStreamConverter(value = XStreamScoreConverter.class, types = {SimpleScoreDefinition.class})
-	//private SimpleScore score;
-	
+
 	//@XStreamConverter(HardSoftScoreXStreamConverter.class)
 	//private HardSoftScore score;
 	
@@ -133,7 +128,6 @@ public class Week extends AbstractPersistable {
 	}
 
 	//Required for drools score calculation
-    
     public Collection<? extends Object> getProblemFacts() {
         List<Object> facts = new ArrayList<Object>();
         facts.addAll(dayList);
@@ -144,8 +138,6 @@ public class Week extends AbstractPersistable {
         facts.addAll(instructorList);
         facts.addAll(locationList);
         facts.addAll(hotelList);
-        
-
         
         // Do not add the planning entity's (taskList) because that will be done automatically
         return facts;

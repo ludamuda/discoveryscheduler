@@ -21,6 +21,9 @@ public class OutOfBoundsTaskSwapMoveFilter implements SelectionFilter<Week, Swap
     public boolean accept(ScoreDirector<Week> scoreDirector, SwapMove<Week> move) {
         Task leftTask = (Task) move.getLeftEntity();
         Task rightTask = (Task) move.getRightEntity();
+        if(rightTask.isLocked() || leftTask.isLocked()){
+			return false;
+		}
         //boolean accept = true;
         Timestamp start = new Timestamp();
         List<Object> assignedValues = new ArrayList<Object>(move.getPlanningValues());

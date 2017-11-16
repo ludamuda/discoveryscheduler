@@ -18,6 +18,9 @@ public class OutOfBoundsTaskChangeMoveFilter implements SelectionFilter<Week, Ch
 	@Override
 	public boolean accept(ScoreDirector<Week> scoreDirector, ChangeMove<Week> move) {
 		Task task = (Task) move.getEntity();
+		if(task.isLocked()){
+			return false;
+		}
 		List<Object> values = new ArrayList<Object> (move.getPlanningValues());
 		Timestamp start = new Timestamp();
 		for(Object value : values){

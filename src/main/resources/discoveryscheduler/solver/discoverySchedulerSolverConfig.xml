@@ -24,7 +24,7 @@
         <selectionOrder>SORTED</selectionOrder>
         <sorterManner>DECREASING_DIFFICULTY</sorterManner>
       </entitySelector-->
-        <!--cartesianProductMoveSelector-->
+        <cartesianProductMoveSelector>
           <changeMoveSelector>
 	        <valueSelector variableName="start"/>
 	        <filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
@@ -34,9 +34,9 @@
 	      </changeMoveSelector>
 	      <changeMoveSelector>
 	        <valueSelector variableName="location"/>
-	        <filterClass>discoveryscheduler.solver.move.LocationTaskChangeMoveFilter</filterClass>
+	        <!--filterClass>discoveryscheduler.solver.move.LocationTaskChangeMoveFilter</filterClass-->
 	      </changeMoveSelector>
-	    <!--/cartesianProductMoveSelector-->
+	    </cartesianProductMoveSelector>
       <!--changeMoveSelector>
 	    <filterClass>discoveryscheduler.solver.move.InstructorReqTaskSelectionFilter</filterClass>
       	<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
@@ -52,12 +52,12 @@
       <changeMoveSelector>
       	<cacheType>PHASE</cacheType>
       	<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
-      	<filterClass>discoveryscheduler.solver.move.LocationTaskChangeMoveFilter</filterClass>
+      	<!--filterClass>discoveryscheduler.solver.move.LocationTaskChangeMoveFilter</filterClass-->
       </changeMoveSelector>
       <swapMoveSelector>
       	<cacheType>PHASE</cacheType>
-        <!--filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskSwapMoveFilter</filterClass-->
-        <filterClass>discoveryscheduler.solver.move.LocationTaskSwapMoveFilter</filterClass>
+        <filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskSwapMoveFilter</filterClass>
+        <!--filterClass>discoveryscheduler.solver.move.LocationTaskSwapMoveFilter</filterClass-->
       </swapMoveSelector>
     </unionMoveSelector>
     <acceptor>
