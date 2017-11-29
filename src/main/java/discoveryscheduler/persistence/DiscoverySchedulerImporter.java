@@ -140,8 +140,8 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter<Week
                 int departure_day = Integer.parseInt(lineTokens[4]);
                 int departure_time = Integer.parseInt(lineTokens[5]);
                 groupStayTimeList.add(Pair.of(Pair.of(arrival_day, arrival_time),Pair.of(departure_day, departure_time)));                
-                if (departure_day-arrival_day+1 > numOfDays){
-                	numOfDays = departure_day-arrival_day+1;
+                if (departure_day+1 > numOfDays){
+                	numOfDays = departure_day+1;
                 }
                 
                 int numberOfRequriedActivities = Integer.parseInt(lineTokens[6]);

@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import javax.swing.AbstractAction;
 import javax.swing.BorderFactory;
@@ -34,6 +35,7 @@ import org.optaplanner.examples.common.swingui.timetable.TimeTablePanel;
 import org.optaplanner.swing.impl.TangoColorFactory;
 
 import discoveryscheduler.domain.*;
+import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
 
 public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
 
@@ -41,6 +43,13 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
 	 * 
 	 */
 	private static final long serialVersionUID = 170795823157068652L;
+	
+	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
+	private static final int MORNING_EST = Integer.parseInt(configuration.getProperty("morning_earliest_start_time"));
+	private static final int MORNING_LST = Integer.parseInt(configuration.getProperty("morning_latest_start_time"));
+	private static final int AFTERNOON_EST = Integer.parseInt(configuration.getProperty("afternoon_earliest_start_time"));
+	private static final int AFTERNOON_LST = Integer.parseInt(configuration.getProperty("afternoon_latest_start_time"));
+	private static final int TIME_PERIODS_IN_DAY = Integer.parseInt(configuration.getProperty("time_periods_in_day"));
 
 
 	public static final String LOGO_PATH = "/discoveryscheduler/swingui/logo.png";
@@ -291,9 +300,9 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
     		DEVPanelMarkedArrsAndDeps.put(group, new boolean[] {false, false});//{arrival, departure}
     		groupsPanelMarkedArrsAndDeps.put(group, new boolean[] {false, false});
     	}
-        TangoColorFactory tangoColorFactory = new TangoColorFactory();
+        //TangoColorFactory tangoColorFactory = new TangoColorFactory();
         for (Task task : week.getTaskList()) {
-            Color taskColor = tangoColorFactory.pickColor(task.getActivity());
+            Color taskColor = getActivityColor(task.getActivity());
             //no start time set yet, unassigned column
             if(task.getStart() == null){ 
             	groupsPanel.addCell(task.getGroup(), null, createButton(task, taskColor, "groups"));
@@ -305,21 +314,26 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
             	
             	//start time is set, creating tasks in groupsPanel, marking the arrival or departure of group when needed
             	int dayStartPos1 = task.getDay().getDayIndex() * 2;
-            	if(task.getStart().getHour().getHourIndex() < 7){ //latest start at 11.00
+            	if(task.getStart().getHour().getHourIndex() <= MORNING_LST){ //latest start at 10.30
             		dayStartPos1 += 1;
-            	} else { // earliest start at 11.30
+            	} else { // earliest start at 11.00
             		dayStartPos1 += 2;
             	}
+            	int dayEndPos1 = dayStartPos1;
+            	if(task.getActivity().getType().equals("TeamSpirit")){
+            		dayEndPos1 = task.getDay().getDayIndex() * 2 + 2;
+            	}            	
+            	
             	int dayArrivalPos = task.getGroup().getGroupTimestampList().get(0).getDay().getDayIndex() * 2;
-            	if(task.getGroup().getGroupTimestampList().get(0).getHour().getHourIndex() < 7){ //latest start at 11.00
+            	if(task.getGroup().getGroupTimestampList().get(0).getHour().getHourIndex() <= MORNING_LST){ //latest start at 10.30
             		dayArrivalPos += 1;
-            	} else { // earliest start at 11.30
+            	} else { // earliest start at 11.00
             		dayArrivalPos += 2;
             	}
             	int dayDeparturePos = task.getGroup().getGroupTimestampList().get(task.getGroup().getGroupTimestampList().size()-1).getDay().getDayIndex() * 2;
-            	if(task.getGroup().getGroupTimestampList().get(task.getGroup().getGroupTimestampList().size()-1).getHour().getHourIndex() < 7){ //latest start at 11.00
+            	if(task.getGroup().getGroupTimestampList().get(task.getGroup().getGroupTimestampList().size()-1).getHour().getHourIndex() < MORNING_LST){ //latest start at 10.30
             		dayDeparturePos += 1;
-            	} else { // earliest start at 11.30
+            	} else { // earliest start at 11.00
             		dayDeparturePos += 2;
             	}
             	JButton groupButton = createButton(task, taskColor, "groups");
@@ -329,7 +343,7 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
 	            	arrAndDep[0] = true;
 	            	groupsPanelMarkedArrsAndDeps.replace(task.getGroup(), arrAndDep);
             	}
-            	if(dayStartPos1 == dayDeparturePos){
+            	if(dayStartPos1 == dayDeparturePos || dayEndPos1 == dayDeparturePos){
             		setBorder(groupButton, "departure");
             		boolean[] arrAndDep= groupsPanelMarkedArrsAndDeps.get(task.getGroup());
 	            	arrAndDep[1] = true;
@@ -339,7 +353,8 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
             		setBorder(groupButton, "both");
             		groupsPanelMarkedArrsAndDeps.replace(task.getGroup(), new boolean[]{true, true});
             	}
-            	groupsPanel.addCell(task.getGroup(), dayStartPos1, task.getGroup(), dayStartPos1, groupButton);
+            	
+            	groupsPanel.addCell(task.getGroup(), dayStartPos1, task.getGroup(), dayEndPos1, groupButton);
             	
             	//start time is set, creating tasks in DEVPanel, marking the arrival or departure of group when needed
             	JButton DEVButton = createButton(task, taskColor, "Groups");
@@ -367,17 +382,29 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
 		                    createButton(task, taskColor, "instructors"));
 	            } else {
 		            int dayStartPos2 = task.getDay().getDayIndex() * 3;
-	            	if(task.getStart().getHour().getHourIndex() < 5){ //latest start at 10.00
+	            	if(task.getStart().getHour().getHourIndex() <= MORNING_LST){ //latest start at 10.30
 	            		dayStartPos2 += 1;
 	            	}
-	            	else if(task.getStart().getHour().getHourIndex() < 13){ // earliest start at 10.30, latest at 14.00
+	            	else if(task.getStart().getHour().getHourIndex() < 13){ // earliest start at 11.00, latest at 14.30
 	            		dayStartPos2 += 2;
 	            	}
-	            	else { // earliest start at 14.30
+	            	else { // earliest start at 15.00
 	            		dayStartPos2 += 3;
 	            	}
+	            	int dayEndPos2 = dayStartPos2;
+	            	if(task.getActivity().getType().equals("TeamSpirit")){
+	            		if(task.getEnd().getHour().getHourIndex() <= MORNING_LST){ //latest end at 10.30
+	            			dayEndPos2 = task.getDay().getDayIndex() * 3 + 1;
+		            	}
+		            	else if(task.getEnd().getHour().getHourIndex() < 13){ // earliest end at 11.00, latest at 14.30
+		            		dayEndPos2 = task.getDay().getDayIndex() * 3 + 2;
+		            	}
+		            	else { // earliest end at 15.00
+		            		dayEndPos2 = task.getDay().getDayIndex() * 3 + 3;
+		            	}
+	            	}
 		            instructorsPanel.addCell(task.getInstructor(), dayStartPos2, task.getInstructor(), 
-		            		dayStartPos2, createButton(task, taskColor, "instructors"));
+		            		dayEndPos2, createButton(task, taskColor, "instructors"));
 		        }
 	            //start time is set, creating tasks in locationPanel
 	            if (task.getLocation() == null){
@@ -385,17 +412,18 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
 		                    createButton(task, taskColor, "locations"));
 	            } else {
 	            	int dayStartPos3 = task.getDay().getDayIndex() * 3;
-	            	if(task.getStart().getHour().getHourIndex() < 5){ //latest start at 10.00
+	            	if(task.getStart().getHour().getHourIndex() < MORNING_LST){ ///latest start at 10.30
 	            		dayStartPos3 += 1;
 	            	}
-	            	else if(task.getStart().getHour().getHourIndex() < 13){ // earliest start at 10.30, latest at 14.00
+	            	else if(task.getStart().getHour().getHourIndex() < 13){ // earliest start at 11.00, latest at 15.00
 	            		dayStartPos3 += 2;
 	            	}
-	            	else { // earliest start at 14.30
+	            	else { // earliest start at 15.30
 	            		dayStartPos3 += 3;
 	            	}
+	            	int dayEndPos3 = dayStartPos3;
 	            	locationsPanel.addCell(task.getLocation(), dayStartPos3, task.getLocation(), 
-	            			dayStartPos3, createButton(task, taskColor, "locations"));
+	            			dayEndPos3, createButton(task, taskColor, "locations"));
 	            }
             }
         }
@@ -470,14 +498,27 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
     	cell.setBorder(BorderFactory.createMatteBorder(2, 0, 0, 0, Color.RED));
     	if(arrOrDep == "A"){
     		cell.add(new JLabel("Arrival " + time.getHour().getLabel()));
+    		if(time.getHour().getHourIndex() > MORNING_LST && time.getHour().getHourIndex() > AFTERNOON_LST){
+    			cell.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, Color.RED));
+    		} else {
+    			cell.setBorder(BorderFactory.createMatteBorder(2, 0, 0, 0, Color.RED));
+    		}
     	} else if (arrOrDep == "D"){
     		cell.add(new JLabel("Departure " + time.getHour().getLabel()));
+    		if(time.getHour().getHourIndex() > MORNING_LST){
+    			if(time.getHour().getHourIndex() < AFTERNOON_EST + 6){
+    				cell.setBorder(BorderFactory.createMatteBorder(2, 0, 0, 0, Color.RED));
+    			} else {
+    				cell.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, Color.RED));
+    			}
+    		} else {
+    			cell.setBorder(BorderFactory.createMatteBorder(2, 0, 0, 0, Color.RED));
+    		}
     	} else if(arrOrDep == "B"){
     		cell.setBorder(BorderFactory.createMatteBorder(2, 0, 2, 0, Color.RED));
     		cell.add(new JLabel(time.getHour().getLabel() + " - " + time2.getHour().getLabel()));
     	}
     	return cell;
-    	
     }
     
     /**
@@ -494,6 +535,53 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
         }else if(border == "both"){
         	button.setBorder(BorderFactory.createMatteBorder(2, 0, 2, 0, Color.RED));
         }
+    }
+    
+    private Color getActivityColor(Activity act){
+    	Color actColor = Color.BLACK;
+    	switch (act.getType()){
+    	case "Climb":
+    		actColor = TangoColorFactory.CHAMELEON_1 ;
+    		break;
+    	case "HRHS":
+    		actColor = TangoColorFactory.ALUMINIUM_3 ;
+    		break;
+    	case "HRMS":
+    		actColor = TangoColorFactory.ALUMINIUM_4 ;
+    		break;
+    	case "C&R":
+    		actColor = TangoColorFactory.CHAMELEON_3 ;
+    		break;
+    	case "TeamSpirit":
+    		actColor = Color.GREEN ;
+    		break;
+    	case "Raft":
+    		actColor = Color.CYAN ;
+    		break;
+    	case "Canoe":
+    		actColor = TangoColorFactory.SKY_BLUE_3 ;
+    		break;
+    	case "Trek":
+    		//actColor = TangoColorFactory.CHOCOLATE_1 ;
+    		actColor = Color.ORANGE ;
+    		break;
+    	case "Archery":
+    		actColor = TangoColorFactory.CHOCOLATE_3;
+    		break;
+    	case "OB":
+    		actColor = Color.YELLOW ;
+    		break;
+    	case "MTB":
+    		actColor = Color.PINK ;
+    		break;
+    	case "Free":
+    		actColor = Color.WHITE ;
+    		break;
+    	default:
+    		actColor = Color.BLACK;
+    		break;
+    	}
+    	return actColor;
     }
     
     private JButton createButton(Task task, Color color, String panel){

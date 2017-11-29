@@ -13,6 +13,7 @@ public class TaskDifficultyComparator implements Comparator<Task> {
 		return new CompareToBuilder()
 			.append(task1.isInstructorRequired(), task2.isInstructorRequired())
 			.append(task1.isLocationRequired(), task2.isLocationRequired())
+			.append(task1.getActivity().getLength(), task2.getActivity().getLength())
             .append(task1.getId(), task2.getId())
             .toComparison();
 	}

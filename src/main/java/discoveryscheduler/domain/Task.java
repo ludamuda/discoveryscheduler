@@ -22,10 +22,8 @@ public class Task extends AbstractPersistable {
 	
 	private static final long serialVersionUID = 5L;
 	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
-	private static final int MORNING_EST = Integer.parseInt(configuration.getProperty("morning_earliest_start_time"));
-	private static final int MORNING_LST = Integer.parseInt(configuration.getProperty("morning_latest_start_time"));
-	private static final int AFTERNOON_EST = Integer.parseInt(configuration.getProperty("afternoon_earliest_start_time"));
-	private static final int AFTERNOON_LST = Integer.parseInt(configuration.getProperty("afternoon_latest_start_time"));
+	private static final int EST = Integer.parseInt(configuration.getProperty("earliest_start_time"));
+	private static final int LST = Integer.parseInt(configuration.getProperty("latest_start_time"));
 	
 	private int index;
 	
@@ -112,7 +110,7 @@ public class Task extends AbstractPersistable {
     	List<Timestamp> starts = new ArrayList<Timestamp>();
     	for(Timestamp timestamp : group.getGroupTimestampList()){
     		int hour = timestamp.getHour().getHourIndex();
-    		if((hour >= MORNING_EST && hour <= MORNING_LST) || (hour >= AFTERNOON_EST && hour <= AFTERNOON_LST)){
+    		if(hour >= EST && hour <= LST){
     			starts.add(timestamp);
     		}
     	}
