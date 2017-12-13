@@ -13,64 +13,14 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.optaplanner.examples.common.persistence.AbstractTxtSolutionImporter;
 
 import discoveryscheduler.domain.*;
-
-
 import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
 
 public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter<Week> {
-	
-	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
-	
-	private static final int TIME_PERIODS_IN_DAY = Integer.parseInt(configuration.getProperty("time_periods_in_day"));
-	private static final String[] ACTIVITIES = (configuration.getProperty("activities")).split(",");
-	private static final int[] ACTIVITIES_LENGTH = Arrays.stream((configuration.getProperty("activities_length")).split(",")).map(String::trim).mapToInt(Integer::parseInt).toArray();
-	private static final int[] ACTIVITIES_INSTRUCTOR = Arrays.stream((configuration.getProperty("activities_instructor")).split(",")).map(String::trim).mapToInt(Integer::parseInt).toArray();
-	private static final int[] ACTIVITIES_LOCATION = Arrays.stream((configuration.getProperty("activities_location")).split(",")).map(String::trim).mapToInt(Integer::parseInt).toArray();
-	private static final int[] ACTIVITIES_TRANSPORT_LENGHT = Arrays.stream((configuration.getProperty("activities_transport_length")).split(",")).map(String::trim).mapToInt(Integer::parseInt).toArray();
-	private static final String[] LOCATIONS = (configuration.getProperty("locations")).split(",");
-	private static final Boolean[][] HOTEL_LOCATION_BUS_REQUIREMENT = 
-		{
-			//MS, Frydstejn, Brada, DianaOrt, Raj, HS
-			{false, true, true, true, true, true},//climb 1
-			{false, true, true, true, true, true},//climb 2
-			{true, true, false, true, true, true},//climb 3
-			{false, true, true, true, true, true},//MTB 1
-			{true, true, true, true, true, false},//MTB 2
-			{false, true, true, true, true, true},//trek 1
-			{true, true, true, true, true, false},//trek 2
-			{true, true, false, true, true, true},//trek 3
-		};
-	private static final Boolean[][] HOTEL_ACTIVITY_BUS_REQUIREMENT = 
-		{
-			//MS, Frydstejn, Brada, DianaOrt, Raj, HS
-			{false, false, false, false, false, false},//archery
-			{false, false, false, false, false, false},//ob
-			{false, true, true, true, true, true},//raft
-			{true, true, true, true, true, true},//c&r
-			{true, true, true, true, true, false},//hrhs
-			{false, true, true, true, true, true},//hrms
-			{false, false, false, false, false, false},//free
-			{true, true, true, true, true, true},//teamspirit
-			{false, true, true, true, true, true},//canoe
-		};
-	private static final Integer[][] HOTEL_LOCATION_PENALTY = 
-		{
-			//MS, Frydstejn, Brada, DianaOrt, Raj, HS
-			{0, 0, 1, 1, 0, 0},//climb 1
-			{1, 1, 3, 3, 1, 1},//climb 2
-			{10, 10, 0, 5, 5, 8},//climb 3
-			{0, 0, 1, 1, 1, 3},//MTB 1
-			{3, 2, 0, 0, 0, 0},//MTB 2
-			{0, 0, 3, 3, 2, 3},//trek 1
-			{3, 2, 1, 1, 1, 1},//trek 2
-			{3, 2, 0, 0, 0, 0},//trek 3
-		};
-	private static final int NUMBER_OF_HOTELS = Integer.parseInt(configuration.getProperty("number_of_hotels")); //MS, Frydstejn, Brada, DianaOrt, Raj, HS
-    private static final int MAX_NUM_OF_INSTRUCTORS = Integer.parseInt(configuration.getProperty("max_num_of_instructors")); //max number of concurrent activities that require instructor
-    
+	 
 	private static final String INPUT_FILE_SUFFIX = "dsb";//discovery schedule breakdown
     
     public static void main(String[] args) {
+    	new DiscoverySchedulerImportConfig().loadConfig();
         new DiscoverySchedulerImporter().convertAll();
     }
 
@@ -88,7 +38,53 @@ public class DiscoverySchedulerImporter extends AbstractTxtSolutionImporter<Week
     }
 
     public static class DiscoverySchedulerInputBuilder extends TxtInputBuilder<Week> {
-
+    	
+    	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
+    	
+    	private static final int TIME_PERIODS_IN_DAY = Integer.parseInt(configuration.getProperty("time_periods_in_day"));
+    	private static final String[] ACTIVITIES = (configuration.getProperty("activities")).split(",");
+    	private static final int[] ACTIVITIES_LENGTH = Arrays.stream((configuration.getProperty("activities_length")).split(",")).map(String::trim).mapToInt(Integer::parseInt).toArray();
+    	private static final int[] ACTIVITIES_INSTRUCTOR = Arrays.stream((configuration.getProperty("activities_instructor")).split(",")).map(String::trim).mapToInt(Integer::parseInt).toArray();
+    	private static final int[] ACTIVITIES_LOCATION = Arrays.stream((configuration.getProperty("activities_location")).split(",")).map(String::trim).mapToInt(Integer::parseInt).toArray();
+    	private static final int[] ACTIVITIES_TRANSPORT_LENGHT = Arrays.stream((configuration.getProperty("activities_transport_length")).split(",")).map(String::trim).mapToInt(Integer::parseInt).toArray();
+    	private static final String[] LOCATIONS = (configuration.getProperty("locations")).split(",");
+    	private static final Boolean[][] HOTEL_LOCATION_BUS_REQUIREMENT = 
+    		{
+    			{false, true, true, true, true, true},
+    			{false, true, true, true, true, true},
+    			{true, true, false, true, true, true},
+    			{false, true, true, true, true, true},
+    			{true, true, true, true, true, false},
+    			{false, true, true, true, true, true},
+    			{true, true, true, true, true, false},
+    			{true, true, false, true, true, true},
+    		};
+    	private static final Boolean[][] HOTEL_ACTIVITY_BUS_REQUIREMENT = 
+    		{
+    			{false, false, false, false, false, false},
+    			{false, false, false, false, false, false},
+    			{false, true, true, true, true, true},
+    			{true, true, true, true, true, true},
+    			{true, true, true, true, true, false},
+    			{false, true, true, true, true, true},
+    			{false, false, false, false, false, false},
+    			{true, true, true, true, true, true},
+    			{false, true, true, true, true, true},
+    		};
+    	private static final Integer[][] HOTEL_LOCATION_PENALTY = 
+    		{
+    			{0, 0, 1, 1, 0, 0},
+    			{1, 1, 3, 3, 1, 1},
+    			{10, 10, 0, 5, 5, 8},
+    			{0, 0, 1, 1, 1, 3},
+    			{3, 2, 0, 0, 0, 0},
+    			{0, 0, 3, 3, 2, 3},
+    			{3, 2, 1, 1, 1, 1},
+    			{3, 2, 0, 0, 0, 0},
+    		};
+    	private static final int NUMBER_OF_HOTELS = Integer.parseInt(configuration.getProperty("number_of_hotels")); 
+        private static final int MAX_NUM_OF_INSTRUCTORS = Integer.parseInt(configuration.getProperty("max_num_of_instructors")); 
+    	
         public Week readSolution() throws IOException {
             Week week = new Week();
             week.setId(0L); 

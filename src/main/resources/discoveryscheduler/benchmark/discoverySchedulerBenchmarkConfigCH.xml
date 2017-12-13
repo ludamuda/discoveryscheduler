@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plannerBenchmark>
+  <benchmarkDirectory>local/data/discoveryscheduler</benchmarkDirectory>
+  
+  <parallelBenchmarkCount>AUTO</parallelBenchmarkCount>
+  
+  <warmUpSecondsSpentLimit>30</warmUpSecondsSpentLimit>
+  
+
+  <inheritedSolverBenchmark>
+    <problemBenchmarks>
+    	<writeOutputSolutionEnabled>true</writeOutputSolutionEnabled> 
+      <xStreamAnnotatedClass>discoveryscheduler.domain.Week</xStreamAnnotatedClass> 
+      
+      <inputSolutionFile>data/discoveryscheduler/experiment/prog1.xml</inputSolutionFile>
+      <inputSolutionFile>data/discoveryscheduler/experiment/prog2.xml</inputSolutionFile>
+      <inputSolutionFile>data/discoveryscheduler/experiment/prog3.xml</inputSolutionFile>
+      <inputSolutionFile>data/discoveryscheduler/experiment/prog4.xml</inputSolutionFile>
+      <inputSolutionFile>data/discoveryscheduler/experiment/prog5.xml</inputSolutionFile>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+      <singleStatisticType>CONSTRAINT_MATCH_TOTAL_BEST_SCORE</singleStatisticType>
+      <problemStatisticType>STEP_SCORE</problemStatisticType>
+      <singleStatisticType>CONSTRAINT_MATCH_TOTAL_STEP_SCORE</singleStatisticType>
+      <problemStatisticType>SCORE_CALCULATION_SPEED</problemStatisticType>
+    </problemBenchmarks>
+
+    <solver>
+      <environmentMode>PRODUCTION</environmentMode>
+    
+      <solutionClass>discoveryscheduler.domain.Week</solutionClass>
+      <entityClass>discoveryscheduler.domain.Task</entityClass>
+      
+      <scoreDirectorFactory>
+        <scoreDrl>discoveryscheduler/solver/discoverySchedulerScoreRules.drl</scoreDrl>
+      </scoreDirectorFactory>
+      
+      <termination>
+        <minutesSpentLimit>2</minutesSpentLimit>
+      </termination>
+    </solver>
+    
+    <subSingleCount>10</subSingleCount>
+    
+  </inheritedSolverBenchmark>
+
+  <solverBenchmark>
+    <name>First Fit</name>
+    <solver>
+      <constructionHeuristic>
+    	<constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
+        	<cartesianProductMoveSelector>
+          		<changeMoveSelector>
+	        		<valueSelector variableName="start"/>
+	        		<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
+	      		</changeMoveSelector>
+	      		<changeMoveSelector>
+	        		<valueSelector variableName="instructor"/>
+	      		</changeMoveSelector>
+	      		<changeMoveSelector>
+	        		<valueSelector variableName="location"/>
+	      		</changeMoveSelector>
+	    	</cartesianProductMoveSelector>
+  		</constructionHeuristic>
+    </solver>
+  </solverBenchmark>
+  
+  <solverBenchmark>
+    <name>First Fit Decreasing</name>
+    <solver>
+      <constructionHeuristic>
+    	<constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+        	<cartesianProductMoveSelector>
+          		<changeMoveSelector>
+	        		<valueSelector variableName="start"/>
+	        		<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
+	      		</changeMoveSelector>
+	      		<changeMoveSelector>
+	        		<valueSelector variableName="instructor"/>
+	      		</changeMoveSelector>
+	      		<changeMoveSelector>
+	        		<valueSelector variableName="location"/>
+	      		</changeMoveSelector>
+	    	</cartesianProductMoveSelector>
+  		</constructionHeuristic>
+    </solver>
+  </solverBenchmark>
+  
+  <solverBenchmark>
+    <name>Weakest Fit</name>
+    <solver>
+      <constructionHeuristic>
+    	<constructionHeuristicType>WEAKEST_FIT</constructionHeuristicType>
+        	<cartesianProductMoveSelector>
+          		<changeMoveSelector>
+	        		<valueSelector variableName="start"/>
+	        		<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
+	      		</changeMoveSelector>
+	      		<changeMoveSelector>
+	        		<valueSelector variableName="instructor"/>
+	      		</changeMoveSelector>
+	      		<changeMoveSelector>
+	        		<valueSelector variableName="location"/>
+	      		</changeMoveSelector>
+	    	</cartesianProductMoveSelector>
+  		</constructionHeuristic>
+    </solver>
+  </solverBenchmark>
+  
+  <solverBenchmark>
+    <name>Weakest Fit Decreasing</name>
+    <solver>
+      <constructionHeuristic>
+    	<constructionHeuristicType>WEAKEST_FIT_DECREASING</constructionHeuristicType>
+        	<cartesianProductMoveSelector>
+          		<changeMoveSelector>
+	        		<valueSelector variableName="start"/>
+	        		<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
+	      		</changeMoveSelector>
+	      		<changeMoveSelector>
+	        		<valueSelector variableName="instructor"/>
+	      		</changeMoveSelector>
+	      		<changeMoveSelector>
+	        		<valueSelector variableName="location"/>
+	      		</changeMoveSelector>
+	    	</cartesianProductMoveSelector>
+  		</constructionHeuristic>
+    </solver>
+  </solverBenchmark>
+  
+  <solverBenchmark>
+    <name>Strongest Fit</name>
+    <solver>
+      <constructionHeuristic>
+    	<constructionHeuristicType>STRONGEST_FIT</constructionHeuristicType>
+        	<cartesianProductMoveSelector>
+          		<changeMoveSelector>
+	        		<valueSelector variableName="start"/>
+	        		<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
+	      		</changeMoveSelector>
+	      		<changeMoveSelector>
+	        		<valueSelector variableName="instructor"/>
+	      		</changeMoveSelector>
+	      		<changeMoveSelector>
+	        		<valueSelector variableName="location"/>
+	      		</changeMoveSelector>
+	    	</cartesianProductMoveSelector>
+  		</constructionHeuristic>
+    </solver>
+  </solverBenchmark>
+  
+  <solverBenchmark>
+    <name>Strongest Fit Decreasing</name>
+    <solver>
+      <constructionHeuristic>
+    	<constructionHeuristicType>STRONGEST_FIT_DECREASING</constructionHeuristicType>
+        	<cartesianProductMoveSelector>
+          		<changeMoveSelector>
+	        		<valueSelector variableName="start"/>
+	        		<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
+	      		</changeMoveSelector>
+	      		<changeMoveSelector>
+	        		<valueSelector variableName="instructor"/>
+	      		</changeMoveSelector>
+	      		<changeMoveSelector>
+	        		<valueSelector variableName="location"/>
+	      		</changeMoveSelector>
+	    	</cartesianProductMoveSelector>
+  		</constructionHeuristic>
+    </solver>
+  </solverBenchmark>
+
+</plannerBenchmark>

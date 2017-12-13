@@ -1,28 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solver>
 
-	<environmentMode>PRODUCTION</environmentMode>
+	<!--environmentMode>PRODUCTION</environmentMode-->
 
   <solutionClass>discoveryscheduler.domain.Week</solutionClass>
   <entityClass>discoveryscheduler.domain.Task</entityClass>
     
   <scoreDirectorFactory>
-   <!--scoreDefinitionType>HARD_MEDIUM_SOFT</scoreDefinitionType-->
     <scoreDrl>discoveryscheduler/solver/discoverySchedulerScoreRules.drl</scoreDrl>
-	
-	<!--doesnt improve overall time, construction is faster but it takes more time to make it feasible -->
-  	<!-- initializingScoreTrend>ONLY_DOWN</initializingScoreTrend -->
   </scoreDirectorFactory>
- 
+  
+  <!--termination>
+  	<terminationCompositionStyle>AND</terminationCompositionStyle>
+  	<bestScoreFeasible>true</bestScoreFeasible>
+   	<unimprovedSecondsSpentLimit>60</unimprovedSecondsSpentLimit>
+  </termination-->
 
   <constructionHeuristic>
     <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
-	<!--queuedEntityPlacer>
-      <entitySelector id="placerEntitySelector">
-        <cacheType>PHASE</cacheType>
-        <selectionOrder>SORTED</selectionOrder>
-        <sorterManner>DECREASING_DIFFICULTY</sorterManner>
-      </entitySelector-->
         <cartesianProductMoveSelector>
           <changeMoveSelector>
 	        <valueSelector variableName="start"/>
@@ -33,26 +28,22 @@
 	      </changeMoveSelector>
 	      <changeMoveSelector>
 	        <valueSelector variableName="location"/>
-	        <!--filterClass>discoveryscheduler.solver.move.LocationTaskChangeMoveFilter</filterClass-->
 	      </changeMoveSelector>
 	    </cartesianProductMoveSelector>
-      <!--changeMoveSelector>
-	    <filterClass>discoveryscheduler.solver.move.InstructorReqTaskSelectionFilter</filterClass>
-      	<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
-      </changeMoveSelector-->
-    <!--/queuedEntityPlacer-->
-    <!-- forager>
-      <pickEarlyType>FIRST_FEASIBLE_SCORE</pickEarlyType>
-    </forager -->
   </constructionHeuristic>
   
   <localSearch>
-
     <unionMoveSelector>
       <changeMoveSelector>
       	<cacheType>PHASE</cacheType>
       	<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
       </changeMoveSelector>
+      <changeMoveSelector>
+	  	<valueSelector variableName="instructor"/>
+	  </changeMoveSelector>
+	  <changeMoveSelector>
+	    <valueSelector variableName="location"/>
+	  </changeMoveSelector>
       <swapMoveSelector>
       	<cacheType>PHASE</cacheType>
         <filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskSwapMoveFilter</filterClass>
@@ -62,10 +53,10 @@
 <!-- LATE ACCEPTANCE HILL CLIMBING -->
 <!--
     <acceptor>
-      <lateAcceptanceSize>600</lateAcceptanceSize>
+      <lateAcceptanceSize>1000</lateAcceptanceSize>
     </acceptor>
     <forager>
-      <acceptedCountLimit>7</acceptedCountLimit>
+      <acceptedCountLimit>4</acceptedCountLimit>
     </forager>
 -->
   	
@@ -82,18 +73,12 @@
 <!-- SIMULATED ANNEALING -->
 
 	<acceptor>
-      <simulatedAnnealingStartingTemperature>2hard/50medium/100soft</simulatedAnnealingStartingTemperature>
+            <simulatedAnnealingStartingTemperature>3hard/20medium/40soft</simulatedAnnealingStartingTemperature>
     </acceptor>
     <forager>
-      <acceptedCountLimit>4</acceptedCountLimit>
+      <acceptedCountLimit>10</acceptedCountLimit>
     </forager>
-
-
-    <termination>
-    	<terminationCompositionStyle>AND</terminationCompositionStyle>
-    	<bestScoreFeasible>true</bestScoreFeasible>
-   	  	<unimprovedSecondsSpentLimit>60</unimprovedSecondsSpentLimit>
-    </termination>
+   
   </localSearch>
 
 </solver>

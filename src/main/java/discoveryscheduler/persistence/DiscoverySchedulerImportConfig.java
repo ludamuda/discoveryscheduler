@@ -6,6 +6,7 @@ import java.io.*;
 public class DiscoverySchedulerImportConfig {
 	private static Properties config = new Properties();
 	private static final String CONFIG_FILE = "discoveryscheduler/config/discoverySchedulerConfig.properties";
+	//private static final String CONFIG_FILE = "/discoveryscheduler/config/discoverySchedulerConfig.properties";
 	
 	public void loadConfig() {
 		ClassLoader classLoader = getClass().getClassLoader();

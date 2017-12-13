@@ -23,7 +23,7 @@ public class DiscoverySchedulerApp extends CommonApp<Week> {
 		 * Creates solutionAndPersistenceFrame - the look of the app 
 		 */
 		prepareSwingEnvironment();
-		new DiscoverySchedulerImportConfig().loadConfig();;
+		new DiscoverySchedulerImportConfig().loadConfig();
         new DiscoverySchedulerApp().init();
 	}
 	
@@ -58,14 +58,16 @@ public class DiscoverySchedulerApp extends CommonApp<Week> {
      * References the method creates solution with the domain attributes of @PlanningSolution(week) which can then be worked with 
      * 		loaded with data, changed by solver...
      */
-    @Override
+    @SuppressWarnings("rawtypes")
+	@Override
     protected SolutionDao createSolutionDao() {
         return new DiscoverySchedulerDao();
     }
     /**
      * Array of importers from different file types
      */
-    @Override
+    @SuppressWarnings("rawtypes")
+	@Override
     protected AbstractSolutionImporter[] createSolutionImporters() {
         return new AbstractSolutionImporter[]{
                 new DiscoverySchedulerImporter()

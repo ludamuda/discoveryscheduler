@@ -7,8 +7,10 @@ import org.optaplanner.examples.common.domain.AbstractPersistable;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
+import discoveryscheduler.domain.solver.InstructorStrengthComparator;
+import discoveryscheduler.domain.solver.LocationStrengthComparator;
 import discoveryscheduler.domain.solver.TaskDifficultyComparator;
-
+import discoveryscheduler.domain.solver.TimestampStrengthComparator;
 
 import java.util.ArrayList;
 
@@ -22,9 +24,11 @@ public class Task extends AbstractPersistable {
 	
 	private static final long serialVersionUID = 5L;
 	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
-	private static final int EST = Integer.parseInt(configuration.getProperty("earliest_start_time"));
-	private static final int LST = Integer.parseInt(configuration.getProperty("latest_start_time"));
-	
+	//private static final int EST = Integer.parseInt(configuration.getProperty("earliest_start_time"));
+	//private static final int LST = Integer.parseInt(configuration.getProperty("latest_start_time"));
+	private static final int EST = 0;
+	private static final int LST = 17;	
+			
 	private int index;
 	
 	private Activity activity;
@@ -55,7 +59,7 @@ public class Task extends AbstractPersistable {
 	public void setLocked(boolean locked) {
 		this.locked = locked;
 	}
-	@PlanningVariable(valueRangeProviderRefs = {"possibleStartRange"})
+	@PlanningVariable(valueRangeProviderRefs = {"possibleStartRange"}, strengthComparatorClass = TimestampStrengthComparator.class)
 	public Timestamp getStart() {
 		return start;
 	}	
@@ -66,7 +70,7 @@ public class Task extends AbstractPersistable {
 		return group.getGroupTimestampList().get(group.getGroupTimestampList().indexOf(start) + activity.getLength() - 1);
 	}
 
-	@PlanningVariable(valueRangeProviderRefs = {"instructorRange"}, nullable = true)
+	@PlanningVariable(valueRangeProviderRefs = {"instructorRange"}, nullable = true, strengthComparatorClass = InstructorStrengthComparator.class)
 	public Instructor getInstructor() {
 		return instructor;
 	}
@@ -74,7 +78,7 @@ public class Task extends AbstractPersistable {
 		this.instructor = instructor;
 	}
 	
-	@PlanningVariable(valueRangeProviderRefs = {"possibleLocations"}, nullable = true)
+	@PlanningVariable(valueRangeProviderRefs = {"possibleLocations"}, nullable = true, strengthComparatorClass = LocationStrengthComparator.class)
 	public Location getLocation() {
 		return location;
 	}

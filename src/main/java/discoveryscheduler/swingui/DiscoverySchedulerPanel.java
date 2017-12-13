@@ -45,10 +45,12 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
 	private static final long serialVersionUID = 170795823157068652L;
 	
 	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
+	@SuppressWarnings("unused")
 	private static final int MORNING_EST = Integer.parseInt(configuration.getProperty("morning_earliest_start_time"));
 	private static final int MORNING_LST = Integer.parseInt(configuration.getProperty("morning_latest_start_time"));
 	private static final int AFTERNOON_EST = Integer.parseInt(configuration.getProperty("afternoon_earliest_start_time"));
 	private static final int AFTERNOON_LST = Integer.parseInt(configuration.getProperty("afternoon_latest_start_time"));
+	@SuppressWarnings("unused")
 	private static final int TIME_PERIODS_IN_DAY = Integer.parseInt(configuration.getProperty("time_periods_in_day"));
 
 
@@ -168,8 +170,8 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
      * @param week
      */
     private void fillGroupsPanelHeaders(Week week) {
-    	groupsPanel.addCornerHeader(HEADER_COLUMN_GROUP1, HEADER_ROW, createTableHeader(new JLabel("Day")));
-        groupsPanel.addCornerHeader(HEADER_COLUMN, HEADER_ROW, createTableHeader(new JLabel("Hour")));
+    	groupsPanel.addCornerHeader(HEADER_COLUMN_GROUP1, HEADER_ROW, createTableHeader(new JLabel("")));//day
+        groupsPanel.addCornerHeader(HEADER_COLUMN, HEADER_ROW, createTableHeader(new JLabel("")));//time
         for (Group group : week.getGroupList()) {
             groupsPanel.addColumnHeader(group, HEADER_ROW,
                     createTableHeader(new JLabel(group.getLabel(), SwingConstants.CENTER)));
@@ -183,8 +185,8 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
      * @param week
      */
     private void fillInstructorsPanelHeaders(Week week) {
-    	instructorsPanel.addCornerHeader(HEADER_COLUMN_GROUP1, HEADER_ROW, createTableHeader(new JLabel("Day")));
-        instructorsPanel.addCornerHeader(HEADER_COLUMN, HEADER_ROW, createTableHeader(new JLabel("Hour")));
+    	instructorsPanel.addCornerHeader(HEADER_COLUMN_GROUP1, HEADER_ROW, createTableHeader(new JLabel("")));
+        instructorsPanel.addCornerHeader(HEADER_COLUMN, HEADER_ROW, createTableHeader(new JLabel("")));
         for (Instructor instructor : week.getInstructorList()) {
         	instructorsPanel.addColumnHeader(instructor, HEADER_ROW,
                     createTableHeader(new JLabel(instructor.getLabel(), SwingConstants.CENTER)));
@@ -198,8 +200,8 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
      * @param week
      */
     private void fillLocationsPanelHeaders(Week week) {
-    	locationsPanel.addCornerHeader(HEADER_COLUMN_GROUP1, HEADER_ROW, createTableHeader(new JLabel("Day")));
-        locationsPanel.addCornerHeader(HEADER_COLUMN, HEADER_ROW, createTableHeader(new JLabel("Hour")));
+    	locationsPanel.addCornerHeader(HEADER_COLUMN_GROUP1, HEADER_ROW, createTableHeader(new JLabel("")));
+        locationsPanel.addCornerHeader(HEADER_COLUMN, HEADER_ROW, createTableHeader(new JLabel("")));
         for (Location location : week.getLocationList()) {
         	locationsPanel.addColumnHeader(location, HEADER_ROW,
                     createTableHeader(new JLabel(location.getLabel(), SwingConstants.CENTER)));
@@ -213,8 +215,8 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
      * @param week
      */
     private void fillDEVPanelHeaders(Week week) {
-    	DEVPanel.addCornerHeader(HEADER_COLUMN_GROUP1, HEADER_ROW, createTableHeader(new JLabel("Day")));
-        DEVPanel.addCornerHeader(HEADER_COLUMN, HEADER_ROW, createTableHeader(new JLabel("Hour")));
+    	DEVPanel.addCornerHeader(HEADER_COLUMN_GROUP1, HEADER_ROW, createTableHeader(new JLabel("")));
+        DEVPanel.addCornerHeader(HEADER_COLUMN, HEADER_ROW, createTableHeader(new JLabel("")));
         for (Group group : week.getGroupList()) {
             DEVPanel.addColumnHeader(group, HEADER_ROW,
                     createTableHeader(new JLabel(group.getLabel(), SwingConstants.CENTER)));
@@ -233,23 +235,23 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
             Timestamp dayEndTimestamp = day.getTimestampList().get(day.getTimestampList().size() - 1);
             
             groupsPanel.addRowHeader(HEADER_COLUMN_GROUP1, 2*day.getDayIndex() + 1, HEADER_COLUMN_GROUP1, 2*day.getDayIndex() + 2,
-            		createTableHeader(new JLabel(day.getLabel())));
+            		createTableHeader(new JLabel("Day " + day.getDayIndex())));//day.getLabel()
             instructorsPanel.addRowHeader(HEADER_COLUMN_GROUP1, 3*day.getDayIndex() + 1, HEADER_COLUMN_GROUP1, 3*day.getDayIndex() + 3,
-            		createTableHeader(new JLabel(day.getLabel())));
+            		createTableHeader(new JLabel("Day " + day.getDayIndex())));
             locationsPanel.addRowHeader(HEADER_COLUMN_GROUP1, 3*day.getDayIndex() + 1, HEADER_COLUMN_GROUP1, 3*day.getDayIndex() + 3,
-            		createTableHeader(new JLabel(day.getLabel())));
+            		createTableHeader(new JLabel("Day " + day.getDayIndex())));
             
             DEVPanel.addRowHeader(HEADER_COLUMN_GROUP1, dayStartTimestamp, HEADER_COLUMN_GROUP1, dayEndTimestamp,
-                    createTableHeader(new JLabel(day.getLabel())));
+                    createTableHeader(new JLabel("Day " + day.getDayIndex())));
            
             for (int i = 1; i <= 2; i++){
             	String rowName = "";
             	switch (i){
             	case 1:
-            		rowName = "Morning"; //latest start at 11.00
+            		rowName = "Morning"; 
             		break;
             	case 2:
-            		rowName = "Afternoon"; // earliest start at 11.30
+            		rowName = "Afternoon"; 
             		break;
             	}
             	groupsPanel.addRowHeader(HEADER_COLUMN, 2*day.getDayIndex() + i,
@@ -259,13 +261,13 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
             	String rowName = "";
             	switch (i){
             	case 1:
-            		rowName = "Morning"; //latest start at 10.00
+            		rowName = "Morning"; 
             		break;
             	case 2:
-            		rowName = "1st Afternoon"; // earliest start at 10.30, latest at 14.00
+            		rowName = "1st Afternoon"; 
             		break;
             	case 3:
-            		rowName = "2nd Afternoon"; // earliest start at 14.30
+            		rowName = "2nd Afternoon"; 
             		break;
             	}
             	instructorsPanel.addRowHeader(HEADER_COLUMN, 3*day.getDayIndex() + i,
@@ -297,10 +299,9 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
     	Map<Group, boolean[]> DEVPanelMarkedArrsAndDeps = new HashMap<>();
     	Map<Group, boolean[]> groupsPanelMarkedArrsAndDeps = new HashMap<>();
     	for(Group group : week.getGroupList()){
-    		DEVPanelMarkedArrsAndDeps.put(group, new boolean[] {false, false});//{arrival, departure}
+    		DEVPanelMarkedArrsAndDeps.put(group, new boolean[] {false, false});
     		groupsPanelMarkedArrsAndDeps.put(group, new boolean[] {false, false});
     	}
-        //TangoColorFactory tangoColorFactory = new TangoColorFactory();
         for (Task task : week.getTaskList()) {
             Color taskColor = getActivityColor(task.getActivity());
             //no start time set yet, unassigned column
@@ -562,7 +563,6 @@ public class DiscoverySchedulerPanel extends SolutionPanel<Week> {
     		actColor = TangoColorFactory.SKY_BLUE_3 ;
     		break;
     	case "Trek":
-    		//actColor = TangoColorFactory.CHOCOLATE_1 ;
     		actColor = Color.ORANGE ;
     		break;
     	case "Archery":

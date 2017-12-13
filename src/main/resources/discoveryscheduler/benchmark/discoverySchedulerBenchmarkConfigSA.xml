@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plannerBenchmark>
+  <benchmarkDirectory>local/data/discoveryscheduler</benchmarkDirectory>
+  
+  <parallelBenchmarkCount>AUTO</parallelBenchmarkCount>
+  
+  <warmUpSecondsSpentLimit>30</warmUpSecondsSpentLimit>
+  
+
+  <inheritedSolverBenchmark>
+    <problemBenchmarks>
+    	<writeOutputSolutionEnabled>true</writeOutputSolutionEnabled> 
+      <xStreamAnnotatedClass>discoveryscheduler.domain.Week</xStreamAnnotatedClass> 
+      
+      <inputSolutionFile>data/discoveryscheduler/experiment/CH-FFD/prog1.xml</inputSolutionFile>
+      <inputSolutionFile>data/discoveryscheduler/experiment/CH-FFD/prog2.xml</inputSolutionFile>
+      <inputSolutionFile>data/discoveryscheduler/experiment/CH-FFD/prog3.xml</inputSolutionFile>
+      <inputSolutionFile>data/discoveryscheduler/experiment/CH-FF/prog4.xml</inputSolutionFile>
+      <inputSolutionFile>data/discoveryscheduler/experiment/CH-FFD/prog5.xml</inputSolutionFile>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+      <!--singleStatisticType>CONSTRAINT_MATCH_TOTAL_BEST_SCORE</singleStatisticType>
+      <problemStatisticType>STEP_SCORE</problemStatisticType>
+      <singleStatisticType>CONSTRAINT_MATCH_TOTAL_STEP_SCORE</singleStatisticType-->
+      <problemStatisticType>SCORE_CALCULATION_SPEED</problemStatisticType>
+    </problemBenchmarks>
+
+    <solver>
+      <environmentMode>PRODUCTION</environmentMode>
+    
+      <solutionClass>discoveryscheduler.domain.Week</solutionClass>
+      <entityClass>discoveryscheduler.domain.Task</entityClass>
+      
+      <scoreDirectorFactory>
+        <scoreDrl>discoveryscheduler/solver/discoverySchedulerScoreRules.drl</scoreDrl>
+      </scoreDirectorFactory>
+      
+      <termination>
+        <minutesSpentLimit>5</minutesSpentLimit>
+      </termination>
+    </solver>
+    
+    <subSingleCount>10</subSingleCount>
+    
+  </inheritedSolverBenchmark>
+  
+  <solverBenchmark>
+    <name>Simulated Annealing 1</name>
+    <solver>
+      <localSearch>
+        <unionMoveSelector>
+      <changeMoveSelector>
+      	<cacheType>PHASE</cacheType>
+      	<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
+      </changeMoveSelector>
+       <changeMoveSelector>
+	        <valueSelector variableName="instructor"/>
+	      </changeMoveSelector>
+	      <changeMoveSelector>
+	        <valueSelector variableName="location"/>
+	      </changeMoveSelector>
+      <swapMoveSelector>
+      	<cacheType>PHASE</cacheType>
+        <filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskSwapMoveFilter</filterClass>
+      </swapMoveSelector>
+    </unionMoveSelector>
+    <acceptor>
+      <simulatedAnnealingStartingTemperature>8hard/169medium/660soft</simulatedAnnealingStartingTemperature>
+    </acceptor>
+    <forager>
+      <acceptedCountLimit>4</acceptedCountLimit>
+    </forager>
+      </localSearch>
+    </solver>
+  </solverBenchmark>
+  
+  <solverBenchmark>
+    <name>Simulated Annealing 2</name>
+    <solver>
+      <localSearch>
+        <unionMoveSelector>
+      <changeMoveSelector>
+      	<cacheType>PHASE</cacheType>
+      	<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
+      </changeMoveSelector>
+       <changeMoveSelector>
+	        <valueSelector variableName="instructor"/>
+	      </changeMoveSelector>
+	      <changeMoveSelector>
+	        <valueSelector variableName="location"/>
+	      </changeMoveSelector>
+      <swapMoveSelector>
+      	<cacheType>PHASE</cacheType>
+        <filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskSwapMoveFilter</filterClass>
+      </swapMoveSelector>
+    </unionMoveSelector>
+    <acceptor>
+       <simulatedAnnealingStartingTemperature>4hard/169medium/660soft</simulatedAnnealingStartingTemperature> 
+    </acceptor>
+    <forager>
+      <acceptedCountLimit>4</acceptedCountLimit>
+    </forager>
+      </localSearch>
+    </solver>
+  </solverBenchmark>
+  
+  <solverBenchmark>
+    <name>Simulated Annealing 3</name>
+    <solver>
+      <localSearch>
+        <unionMoveSelector>
+      <changeMoveSelector>
+      	<cacheType>PHASE</cacheType>
+      	<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
+      </changeMoveSelector>
+       <changeMoveSelector>
+	        <valueSelector variableName="instructor"/>
+	      </changeMoveSelector>
+	      <changeMoveSelector>
+	        <valueSelector variableName="location"/>
+	      </changeMoveSelector>
+      <swapMoveSelector>
+      	<cacheType>PHASE</cacheType>
+        <filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskSwapMoveFilter</filterClass>
+      </swapMoveSelector>
+    </unionMoveSelector>
+    <acceptor>
+     
+        <simulatedAnnealingStartingTemperature>6hard/61medium/80soft</simulatedAnnealingStartingTemperature>
+        
+    </acceptor>
+    <forager>
+      <acceptedCountLimit>4</acceptedCountLimit>
+    </forager>
+      </localSearch>
+    </solver>
+  </solverBenchmark>
+  
+  <solverBenchmark>
+    <name>Simulated Annealing 4</name>
+    <solver>
+      <localSearch>
+        <unionMoveSelector>
+      <changeMoveSelector>
+      	<cacheType>PHASE</cacheType>
+      	<filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskChangeMoveFilter</filterClass>
+      </changeMoveSelector>
+       <changeMoveSelector>
+	        <valueSelector variableName="instructor"/>
+	      </changeMoveSelector>
+	      <changeMoveSelector>
+	        <valueSelector variableName="location"/>
+	      </changeMoveSelector>
+      <swapMoveSelector>
+      	<cacheType>PHASE</cacheType>
+        <filterClass>discoveryscheduler.solver.move.OutOfBoundsTaskSwapMoveFilter</filterClass>
+      </swapMoveSelector>
+    </unionMoveSelector>
+    <acceptor>
+     
+            <simulatedAnnealingStartingTemperature>3hard/20medium/40soft</simulatedAnnealingStartingTemperature>
+    </acceptor>
+    <forager>
+      <acceptedCountLimit>4</acceptedCountLimit>
+    </forager>
+      </localSearch>
+    </solver>
+  </solverBenchmark>
+ 
+</plannerBenchmark>

@@ -3,12 +3,17 @@ package discoveryscheduler.benchmark;
 import org.optaplanner.benchmark.api.PlannerBenchmark;
 import org.optaplanner.benchmark.api.PlannerBenchmarkFactory;
 
+import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
+
 public class DiscoverySchedulerBenchmarkApp {
 	
 	public static void main(String[] args) {
+		
+		new DiscoverySchedulerImportConfig().loadConfig();
+		
         // Build the PlannerBenchmark
         PlannerBenchmarkFactory plannerBenchmarkFactory = PlannerBenchmarkFactory.createFromXmlResource(
-                "discoveryscheduler/benchmark/discoverySchedulerBenchmarkConfig.xml");
+                "discoveryscheduler/benchmark/discoverySchedulerBenchmarkConfigSAconst.xml");
         PlannerBenchmark plannerBenchmark = plannerBenchmarkFactory.buildPlannerBenchmark();
 
         // Benchmark the problem

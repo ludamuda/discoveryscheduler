@@ -40,9 +40,6 @@ public class Week extends AbstractPersistable {
 	private List<Hotel> hotelList;
 	
 	private List<Task> taskList;
-
-	//@XStreamConverter(HardSoftScoreXStreamConverter.class)
-	//private HardSoftScore score;
 	
 	@XStreamConverter(HardMediumSoftScoreXStreamConverter.class)
 	private HardMediumSoftScore score;

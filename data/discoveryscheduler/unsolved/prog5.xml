@@ -1,0 +1,3361 @@
+<Week id="1">
+  <id>0</id>
+  <number>5</number>
+  <dayList id="2">
+    <Day id="3">
+      <id>0</id>
+      <dayIndex>0</dayIndex>
+      <timestampList id="4">
+        <Timestamp id="5">
+          <id>0</id>
+          <timestampIndex>0</timestampIndex>
+          <day reference="3"/>
+          <hour id="6">
+            <id>0</id>
+            <hourIndex>0</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="7">
+          <id>1</id>
+          <timestampIndex>1</timestampIndex>
+          <day reference="3"/>
+          <hour id="8">
+            <id>1</id>
+            <hourIndex>1</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="9">
+          <id>2</id>
+          <timestampIndex>2</timestampIndex>
+          <day reference="3"/>
+          <hour id="10">
+            <id>2</id>
+            <hourIndex>2</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="11">
+          <id>3</id>
+          <timestampIndex>3</timestampIndex>
+          <day reference="3"/>
+          <hour id="12">
+            <id>3</id>
+            <hourIndex>3</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="13">
+          <id>4</id>
+          <timestampIndex>4</timestampIndex>
+          <day reference="3"/>
+          <hour id="14">
+            <id>4</id>
+            <hourIndex>4</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="15">
+          <id>5</id>
+          <timestampIndex>5</timestampIndex>
+          <day reference="3"/>
+          <hour id="16">
+            <id>5</id>
+            <hourIndex>5</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="17">
+          <id>6</id>
+          <timestampIndex>6</timestampIndex>
+          <day reference="3"/>
+          <hour id="18">
+            <id>6</id>
+            <hourIndex>6</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="19">
+          <id>7</id>
+          <timestampIndex>7</timestampIndex>
+          <day reference="3"/>
+          <hour id="20">
+            <id>7</id>
+            <hourIndex>7</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="21">
+          <id>8</id>
+          <timestampIndex>8</timestampIndex>
+          <day reference="3"/>
+          <hour id="22">
+            <id>8</id>
+            <hourIndex>8</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="23">
+          <id>9</id>
+          <timestampIndex>9</timestampIndex>
+          <day reference="3"/>
+          <hour id="24">
+            <id>9</id>
+            <hourIndex>9</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="25">
+          <id>10</id>
+          <timestampIndex>10</timestampIndex>
+          <day reference="3"/>
+          <hour id="26">
+            <id>10</id>
+            <hourIndex>10</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="27">
+          <id>11</id>
+          <timestampIndex>11</timestampIndex>
+          <day reference="3"/>
+          <hour id="28">
+            <id>11</id>
+            <hourIndex>11</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="29">
+          <id>12</id>
+          <timestampIndex>12</timestampIndex>
+          <day reference="3"/>
+          <hour id="30">
+            <id>12</id>
+            <hourIndex>12</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="31">
+          <id>13</id>
+          <timestampIndex>13</timestampIndex>
+          <day reference="3"/>
+          <hour id="32">
+            <id>13</id>
+            <hourIndex>13</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="33">
+          <id>14</id>
+          <timestampIndex>14</timestampIndex>
+          <day reference="3"/>
+          <hour id="34">
+            <id>14</id>
+            <hourIndex>14</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="35">
+          <id>15</id>
+          <timestampIndex>15</timestampIndex>
+          <day reference="3"/>
+          <hour id="36">
+            <id>15</id>
+            <hourIndex>15</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="37">
+          <id>16</id>
+          <timestampIndex>16</timestampIndex>
+          <day reference="3"/>
+          <hour id="38">
+            <id>16</id>
+            <hourIndex>16</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="39">
+          <id>17</id>
+          <timestampIndex>17</timestampIndex>
+          <day reference="3"/>
+          <hour id="40">
+            <id>17</id>
+            <hourIndex>17</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="41">
+          <id>18</id>
+          <timestampIndex>18</timestampIndex>
+          <day reference="3"/>
+          <hour id="42">
+            <id>18</id>
+            <hourIndex>18</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="43">
+          <id>19</id>
+          <timestampIndex>19</timestampIndex>
+          <day reference="3"/>
+          <hour id="44">
+            <id>19</id>
+            <hourIndex>19</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="45">
+          <id>20</id>
+          <timestampIndex>20</timestampIndex>
+          <day reference="3"/>
+          <hour id="46">
+            <id>20</id>
+            <hourIndex>20</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="47">
+          <id>21</id>
+          <timestampIndex>21</timestampIndex>
+          <day reference="3"/>
+          <hour id="48">
+            <id>21</id>
+            <hourIndex>21</hourIndex>
+          </hour>
+        </Timestamp>
+        <Timestamp id="49">
+          <id>22</id>
+          <timestampIndex>22</timestampIndex>
+          <day reference="3"/>
+          <hour id="50">
+            <id>22</id>
+            <hourIndex>22</hourIndex>
+          </hour>
+        </Timestamp>
+      </timestampList>
+    </Day>
+    <Day id="51">
+      <id>1</id>
+      <dayIndex>1</dayIndex>
+      <timestampList id="52">
+        <Timestamp id="53">
+          <id>23</id>
+          <timestampIndex>23</timestampIndex>
+          <day reference="51"/>
+          <hour reference="6"/>
+        </Timestamp>
+        <Timestamp id="54">
+          <id>24</id>
+          <timestampIndex>24</timestampIndex>
+          <day reference="51"/>
+          <hour reference="8"/>
+        </Timestamp>
+        <Timestamp id="55">
+          <id>25</id>
+          <timestampIndex>25</timestampIndex>
+          <day reference="51"/>
+          <hour reference="10"/>
+        </Timestamp>
+        <Timestamp id="56">
+          <id>26</id>
+          <timestampIndex>26</timestampIndex>
+          <day reference="51"/>
+          <hour reference="12"/>
+        </Timestamp>
+        <Timestamp id="57">
+          <id>27</id>
+          <timestampIndex>27</timestampIndex>
+          <day reference="51"/>
+          <hour reference="14"/>
+        </Timestamp>
+        <Timestamp id="58">
+          <id>28</id>
+          <timestampIndex>28</timestampIndex>
+          <day reference="51"/>
+          <hour reference="16"/>
+        </Timestamp>
+        <Timestamp id="59">
+          <id>29</id>
+          <timestampIndex>29</timestampIndex>
+          <day reference="51"/>
+          <hour reference="18"/>
+        </Timestamp>
+        <Timestamp id="60">
+          <id>30</id>
+          <timestampIndex>30</timestampIndex>
+          <day reference="51"/>
+          <hour reference="20"/>
+        </Timestamp>
+        <Timestamp id="61">
+          <id>31</id>
+          <timestampIndex>31</timestampIndex>
+          <day reference="51"/>
+          <hour reference="22"/>
+        </Timestamp>
+        <Timestamp id="62">
+          <id>32</id>
+          <timestampIndex>32</timestampIndex>
+          <day reference="51"/>
+          <hour reference="24"/>
+        </Timestamp>
+        <Timestamp id="63">
+          <id>33</id>
+          <timestampIndex>33</timestampIndex>
+          <day reference="51"/>
+          <hour reference="26"/>
+        </Timestamp>
+        <Timestamp id="64">
+          <id>34</id>
+          <timestampIndex>34</timestampIndex>
+          <day reference="51"/>
+          <hour reference="28"/>
+        </Timestamp>
+        <Timestamp id="65">
+          <id>35</id>
+          <timestampIndex>35</timestampIndex>
+          <day reference="51"/>
+          <hour reference="30"/>
+        </Timestamp>
+        <Timestamp id="66">
+          <id>36</id>
+          <timestampIndex>36</timestampIndex>
+          <day reference="51"/>
+          <hour reference="32"/>
+        </Timestamp>
+        <Timestamp id="67">
+          <id>37</id>
+          <timestampIndex>37</timestampIndex>
+          <day reference="51"/>
+          <hour reference="34"/>
+        </Timestamp>
+        <Timestamp id="68">
+          <id>38</id>
+          <timestampIndex>38</timestampIndex>
+          <day reference="51"/>
+          <hour reference="36"/>
+        </Timestamp>
+        <Timestamp id="69">
+          <id>39</id>
+          <timestampIndex>39</timestampIndex>
+          <day reference="51"/>
+          <hour reference="38"/>
+        </Timestamp>
+        <Timestamp id="70">
+          <id>40</id>
+          <timestampIndex>40</timestampIndex>
+          <day reference="51"/>
+          <hour reference="40"/>
+        </Timestamp>
+        <Timestamp id="71">
+          <id>41</id>
+          <timestampIndex>41</timestampIndex>
+          <day reference="51"/>
+          <hour reference="42"/>
+        </Timestamp>
+        <Timestamp id="72">
+          <id>42</id>
+          <timestampIndex>42</timestampIndex>
+          <day reference="51"/>
+          <hour reference="44"/>
+        </Timestamp>
+        <Timestamp id="73">
+          <id>43</id>
+          <timestampIndex>43</timestampIndex>
+          <day reference="51"/>
+          <hour reference="46"/>
+        </Timestamp>
+        <Timestamp id="74">
+          <id>44</id>
+          <timestampIndex>44</timestampIndex>
+          <day reference="51"/>
+          <hour reference="48"/>
+        </Timestamp>
+        <Timestamp id="75">
+          <id>45</id>
+          <timestampIndex>45</timestampIndex>
+          <day reference="51"/>
+          <hour reference="50"/>
+        </Timestamp>
+      </timestampList>
+    </Day>
+    <Day id="76">
+      <id>2</id>
+      <dayIndex>2</dayIndex>
+      <timestampList id="77">
+        <Timestamp id="78">
+          <id>46</id>
+          <timestampIndex>46</timestampIndex>
+          <day reference="76"/>
+          <hour reference="6"/>
+        </Timestamp>
+        <Timestamp id="79">
+          <id>47</id>
+          <timestampIndex>47</timestampIndex>
+          <day reference="76"/>
+          <hour reference="8"/>
+        </Timestamp>
+        <Timestamp id="80">
+          <id>48</id>
+          <timestampIndex>48</timestampIndex>
+          <day reference="76"/>
+          <hour reference="10"/>
+        </Timestamp>
+        <Timestamp id="81">
+          <id>49</id>
+          <timestampIndex>49</timestampIndex>
+          <day reference="76"/>
+          <hour reference="12"/>
+        </Timestamp>
+        <Timestamp id="82">
+          <id>50</id>
+          <timestampIndex>50</timestampIndex>
+          <day reference="76"/>
+          <hour reference="14"/>
+        </Timestamp>
+        <Timestamp id="83">
+          <id>51</id>
+          <timestampIndex>51</timestampIndex>
+          <day reference="76"/>
+          <hour reference="16"/>
+        </Timestamp>
+        <Timestamp id="84">
+          <id>52</id>
+          <timestampIndex>52</timestampIndex>
+          <day reference="76"/>
+          <hour reference="18"/>
+        </Timestamp>
+        <Timestamp id="85">
+          <id>53</id>
+          <timestampIndex>53</timestampIndex>
+          <day reference="76"/>
+          <hour reference="20"/>
+        </Timestamp>
+        <Timestamp id="86">
+          <id>54</id>
+          <timestampIndex>54</timestampIndex>
+          <day reference="76"/>
+          <hour reference="22"/>
+        </Timestamp>
+        <Timestamp id="87">
+          <id>55</id>
+          <timestampIndex>55</timestampIndex>
+          <day reference="76"/>
+          <hour reference="24"/>
+        </Timestamp>
+        <Timestamp id="88">
+          <id>56</id>
+          <timestampIndex>56</timestampIndex>
+          <day reference="76"/>
+          <hour reference="26"/>
+        </Timestamp>
+        <Timestamp id="89">
+          <id>57</id>
+          <timestampIndex>57</timestampIndex>
+          <day reference="76"/>
+          <hour reference="28"/>
+        </Timestamp>
+        <Timestamp id="90">
+          <id>58</id>
+          <timestampIndex>58</timestampIndex>
+          <day reference="76"/>
+          <hour reference="30"/>
+        </Timestamp>
+        <Timestamp id="91">
+          <id>59</id>
+          <timestampIndex>59</timestampIndex>
+          <day reference="76"/>
+          <hour reference="32"/>
+        </Timestamp>
+        <Timestamp id="92">
+          <id>60</id>
+          <timestampIndex>60</timestampIndex>
+          <day reference="76"/>
+          <hour reference="34"/>
+        </Timestamp>
+        <Timestamp id="93">
+          <id>61</id>
+          <timestampIndex>61</timestampIndex>
+          <day reference="76"/>
+          <hour reference="36"/>
+        </Timestamp>
+        <Timestamp id="94">
+          <id>62</id>
+          <timestampIndex>62</timestampIndex>
+          <day reference="76"/>
+          <hour reference="38"/>
+        </Timestamp>
+        <Timestamp id="95">
+          <id>63</id>
+          <timestampIndex>63</timestampIndex>
+          <day reference="76"/>
+          <hour reference="40"/>
+        </Timestamp>
+        <Timestamp id="96">
+          <id>64</id>
+          <timestampIndex>64</timestampIndex>
+          <day reference="76"/>
+          <hour reference="42"/>
+        </Timestamp>
+        <Timestamp id="97">
+          <id>65</id>
+          <timestampIndex>65</timestampIndex>
+          <day reference="76"/>
+          <hour reference="44"/>
+        </Timestamp>
+        <Timestamp id="98">
+          <id>66</id>
+          <timestampIndex>66</timestampIndex>
+          <day reference="76"/>
+          <hour reference="46"/>
+        </Timestamp>
+        <Timestamp id="99">
+          <id>67</id>
+          <timestampIndex>67</timestampIndex>
+          <day reference="76"/>
+          <hour reference="48"/>
+        </Timestamp>
+        <Timestamp id="100">
+          <id>68</id>
+          <timestampIndex>68</timestampIndex>
+          <day reference="76"/>
+          <hour reference="50"/>
+        </Timestamp>
+      </timestampList>
+    </Day>
+    <Day id="101">
+      <id>3</id>
+      <dayIndex>3</dayIndex>
+      <timestampList id="102">
+        <Timestamp id="103">
+          <id>69</id>
+          <timestampIndex>69</timestampIndex>
+          <day reference="101"/>
+          <hour reference="6"/>
+        </Timestamp>
+        <Timestamp id="104">
+          <id>70</id>
+          <timestampIndex>70</timestampIndex>
+          <day reference="101"/>
+          <hour reference="8"/>
+        </Timestamp>
+        <Timestamp id="105">
+          <id>71</id>
+          <timestampIndex>71</timestampIndex>
+          <day reference="101"/>
+          <hour reference="10"/>
+        </Timestamp>
+        <Timestamp id="106">
+          <id>72</id>
+          <timestampIndex>72</timestampIndex>
+          <day reference="101"/>
+          <hour reference="12"/>
+        </Timestamp>
+        <Timestamp id="107">
+          <id>73</id>
+          <timestampIndex>73</timestampIndex>
+          <day reference="101"/>
+          <hour reference="14"/>
+        </Timestamp>
+        <Timestamp id="108">
+          <id>74</id>
+          <timestampIndex>74</timestampIndex>
+          <day reference="101"/>
+          <hour reference="16"/>
+        </Timestamp>
+        <Timestamp id="109">
+          <id>75</id>
+          <timestampIndex>75</timestampIndex>
+          <day reference="101"/>
+          <hour reference="18"/>
+        </Timestamp>
+        <Timestamp id="110">
+          <id>76</id>
+          <timestampIndex>76</timestampIndex>
+          <day reference="101"/>
+          <hour reference="20"/>
+        </Timestamp>
+        <Timestamp id="111">
+          <id>77</id>
+          <timestampIndex>77</timestampIndex>
+          <day reference="101"/>
+          <hour reference="22"/>
+        </Timestamp>
+        <Timestamp id="112">
+          <id>78</id>
+          <timestampIndex>78</timestampIndex>
+          <day reference="101"/>
+          <hour reference="24"/>
+        </Timestamp>
+        <Timestamp id="113">
+          <id>79</id>
+          <timestampIndex>79</timestampIndex>
+          <day reference="101"/>
+          <hour reference="26"/>
+        </Timestamp>
+        <Timestamp id="114">
+          <id>80</id>
+          <timestampIndex>80</timestampIndex>
+          <day reference="101"/>
+          <hour reference="28"/>
+        </Timestamp>
+        <Timestamp id="115">
+          <id>81</id>
+          <timestampIndex>81</timestampIndex>
+          <day reference="101"/>
+          <hour reference="30"/>
+        </Timestamp>
+        <Timestamp id="116">
+          <id>82</id>
+          <timestampIndex>82</timestampIndex>
+          <day reference="101"/>
+          <hour reference="32"/>
+        </Timestamp>
+        <Timestamp id="117">
+          <id>83</id>
+          <timestampIndex>83</timestampIndex>
+          <day reference="101"/>
+          <hour reference="34"/>
+        </Timestamp>
+        <Timestamp id="118">
+          <id>84</id>
+          <timestampIndex>84</timestampIndex>
+          <day reference="101"/>
+          <hour reference="36"/>
+        </Timestamp>
+        <Timestamp id="119">
+          <id>85</id>
+          <timestampIndex>85</timestampIndex>
+          <day reference="101"/>
+          <hour reference="38"/>
+        </Timestamp>
+        <Timestamp id="120">
+          <id>86</id>
+          <timestampIndex>86</timestampIndex>
+          <day reference="101"/>
+          <hour reference="40"/>
+        </Timestamp>
+        <Timestamp id="121">
+          <id>87</id>
+          <timestampIndex>87</timestampIndex>
+          <day reference="101"/>
+          <hour reference="42"/>
+        </Timestamp>
+        <Timestamp id="122">
+          <id>88</id>
+          <timestampIndex>88</timestampIndex>
+          <day reference="101"/>
+          <hour reference="44"/>
+        </Timestamp>
+        <Timestamp id="123">
+          <id>89</id>
+          <timestampIndex>89</timestampIndex>
+          <day reference="101"/>
+          <hour reference="46"/>
+        </Timestamp>
+        <Timestamp id="124">
+          <id>90</id>
+          <timestampIndex>90</timestampIndex>
+          <day reference="101"/>
+          <hour reference="48"/>
+        </Timestamp>
+        <Timestamp id="125">
+          <id>91</id>
+          <timestampIndex>91</timestampIndex>
+          <day reference="101"/>
+          <hour reference="50"/>
+        </Timestamp>
+      </timestampList>
+    </Day>
+    <Day id="126">
+      <id>4</id>
+      <dayIndex>4</dayIndex>
+      <timestampList id="127">
+        <Timestamp id="128">
+          <id>92</id>
+          <timestampIndex>92</timestampIndex>
+          <day reference="126"/>
+          <hour reference="6"/>
+        </Timestamp>
+        <Timestamp id="129">
+          <id>93</id>
+          <timestampIndex>93</timestampIndex>
+          <day reference="126"/>
+          <hour reference="8"/>
+        </Timestamp>
+        <Timestamp id="130">
+          <id>94</id>
+          <timestampIndex>94</timestampIndex>
+          <day reference="126"/>
+          <hour reference="10"/>
+        </Timestamp>
+        <Timestamp id="131">
+          <id>95</id>
+          <timestampIndex>95</timestampIndex>
+          <day reference="126"/>
+          <hour reference="12"/>
+        </Timestamp>
+        <Timestamp id="132">
+          <id>96</id>
+          <timestampIndex>96</timestampIndex>
+          <day reference="126"/>
+          <hour reference="14"/>
+        </Timestamp>
+        <Timestamp id="133">
+          <id>97</id>
+          <timestampIndex>97</timestampIndex>
+          <day reference="126"/>
+          <hour reference="16"/>
+        </Timestamp>
+        <Timestamp id="134">
+          <id>98</id>
+          <timestampIndex>98</timestampIndex>
+          <day reference="126"/>
+          <hour reference="18"/>
+        </Timestamp>
+        <Timestamp id="135">
+          <id>99</id>
+          <timestampIndex>99</timestampIndex>
+          <day reference="126"/>
+          <hour reference="20"/>
+        </Timestamp>
+        <Timestamp id="136">
+          <id>100</id>
+          <timestampIndex>100</timestampIndex>
+          <day reference="126"/>
+          <hour reference="22"/>
+        </Timestamp>
+        <Timestamp id="137">
+          <id>101</id>
+          <timestampIndex>101</timestampIndex>
+          <day reference="126"/>
+          <hour reference="24"/>
+        </Timestamp>
+        <Timestamp id="138">
+          <id>102</id>
+          <timestampIndex>102</timestampIndex>
+          <day reference="126"/>
+          <hour reference="26"/>
+        </Timestamp>
+        <Timestamp id="139">
+          <id>103</id>
+          <timestampIndex>103</timestampIndex>
+          <day reference="126"/>
+          <hour reference="28"/>
+        </Timestamp>
+        <Timestamp id="140">
+          <id>104</id>
+          <timestampIndex>104</timestampIndex>
+          <day reference="126"/>
+          <hour reference="30"/>
+        </Timestamp>
+        <Timestamp id="141">
+          <id>105</id>
+          <timestampIndex>105</timestampIndex>
+          <day reference="126"/>
+          <hour reference="32"/>
+        </Timestamp>
+        <Timestamp id="142">
+          <id>106</id>
+          <timestampIndex>106</timestampIndex>
+          <day reference="126"/>
+          <hour reference="34"/>
+        </Timestamp>
+        <Timestamp id="143">
+          <id>107</id>
+          <timestampIndex>107</timestampIndex>
+          <day reference="126"/>
+          <hour reference="36"/>
+        </Timestamp>
+        <Timestamp id="144">
+          <id>108</id>
+          <timestampIndex>108</timestampIndex>
+          <day reference="126"/>
+          <hour reference="38"/>
+        </Timestamp>
+        <Timestamp id="145">
+          <id>109</id>
+          <timestampIndex>109</timestampIndex>
+          <day reference="126"/>
+          <hour reference="40"/>
+        </Timestamp>
+        <Timestamp id="146">
+          <id>110</id>
+          <timestampIndex>110</timestampIndex>
+          <day reference="126"/>
+          <hour reference="42"/>
+        </Timestamp>
+        <Timestamp id="147">
+          <id>111</id>
+          <timestampIndex>111</timestampIndex>
+          <day reference="126"/>
+          <hour reference="44"/>
+        </Timestamp>
+        <Timestamp id="148">
+          <id>112</id>
+          <timestampIndex>112</timestampIndex>
+          <day reference="126"/>
+          <hour reference="46"/>
+        </Timestamp>
+        <Timestamp id="149">
+          <id>113</id>
+          <timestampIndex>113</timestampIndex>
+          <day reference="126"/>
+          <hour reference="48"/>
+        </Timestamp>
+        <Timestamp id="150">
+          <id>114</id>
+          <timestampIndex>114</timestampIndex>
+          <day reference="126"/>
+          <hour reference="50"/>
+        </Timestamp>
+      </timestampList>
+    </Day>
+    <Day id="151">
+      <id>5</id>
+      <dayIndex>5</dayIndex>
+      <timestampList id="152">
+        <Timestamp id="153">
+          <id>115</id>
+          <timestampIndex>115</timestampIndex>
+          <day reference="151"/>
+          <hour reference="6"/>
+        </Timestamp>
+        <Timestamp id="154">
+          <id>116</id>
+          <timestampIndex>116</timestampIndex>
+          <day reference="151"/>
+          <hour reference="8"/>
+        </Timestamp>
+        <Timestamp id="155">
+          <id>117</id>
+          <timestampIndex>117</timestampIndex>
+          <day reference="151"/>
+          <hour reference="10"/>
+        </Timestamp>
+        <Timestamp id="156">
+          <id>118</id>
+          <timestampIndex>118</timestampIndex>
+          <day reference="151"/>
+          <hour reference="12"/>
+        </Timestamp>
+        <Timestamp id="157">
+          <id>119</id>
+          <timestampIndex>119</timestampIndex>
+          <day reference="151"/>
+          <hour reference="14"/>
+        </Timestamp>
+        <Timestamp id="158">
+          <id>120</id>
+          <timestampIndex>120</timestampIndex>
+          <day reference="151"/>
+          <hour reference="16"/>
+        </Timestamp>
+        <Timestamp id="159">
+          <id>121</id>
+          <timestampIndex>121</timestampIndex>
+          <day reference="151"/>
+          <hour reference="18"/>
+        </Timestamp>
+        <Timestamp id="160">
+          <id>122</id>
+          <timestampIndex>122</timestampIndex>
+          <day reference="151"/>
+          <hour reference="20"/>
+        </Timestamp>
+        <Timestamp id="161">
+          <id>123</id>
+          <timestampIndex>123</timestampIndex>
+          <day reference="151"/>
+          <hour reference="22"/>
+        </Timestamp>
+        <Timestamp id="162">
+          <id>124</id>
+          <timestampIndex>124</timestampIndex>
+          <day reference="151"/>
+          <hour reference="24"/>
+        </Timestamp>
+        <Timestamp id="163">
+          <id>125</id>
+          <timestampIndex>125</timestampIndex>
+          <day reference="151"/>
+          <hour reference="26"/>
+        </Timestamp>
+        <Timestamp id="164">
+          <id>126</id>
+          <timestampIndex>126</timestampIndex>
+          <day reference="151"/>
+          <hour reference="28"/>
+        </Timestamp>
+        <Timestamp id="165">
+          <id>127</id>
+          <timestampIndex>127</timestampIndex>
+          <day reference="151"/>
+          <hour reference="30"/>
+        </Timestamp>
+        <Timestamp id="166">
+          <id>128</id>
+          <timestampIndex>128</timestampIndex>
+          <day reference="151"/>
+          <hour reference="32"/>
+        </Timestamp>
+        <Timestamp id="167">
+          <id>129</id>
+          <timestampIndex>129</timestampIndex>
+          <day reference="151"/>
+          <hour reference="34"/>
+        </Timestamp>
+        <Timestamp id="168">
+          <id>130</id>
+          <timestampIndex>130</timestampIndex>
+          <day reference="151"/>
+          <hour reference="36"/>
+        </Timestamp>
+        <Timestamp id="169">
+          <id>131</id>
+          <timestampIndex>131</timestampIndex>
+          <day reference="151"/>
+          <hour reference="38"/>
+        </Timestamp>
+        <Timestamp id="170">
+          <id>132</id>
+          <timestampIndex>132</timestampIndex>
+          <day reference="151"/>
+          <hour reference="40"/>
+        </Timestamp>
+        <Timestamp id="171">
+          <id>133</id>
+          <timestampIndex>133</timestampIndex>
+          <day reference="151"/>
+          <hour reference="42"/>
+        </Timestamp>
+        <Timestamp id="172">
+          <id>134</id>
+          <timestampIndex>134</timestampIndex>
+          <day reference="151"/>
+          <hour reference="44"/>
+        </Timestamp>
+        <Timestamp id="173">
+          <id>135</id>
+          <timestampIndex>135</timestampIndex>
+          <day reference="151"/>
+          <hour reference="46"/>
+        </Timestamp>
+        <Timestamp id="174">
+          <id>136</id>
+          <timestampIndex>136</timestampIndex>
+          <day reference="151"/>
+          <hour reference="48"/>
+        </Timestamp>
+        <Timestamp id="175">
+          <id>137</id>
+          <timestampIndex>137</timestampIndex>
+          <day reference="151"/>
+          <hour reference="50"/>
+        </Timestamp>
+      </timestampList>
+    </Day>
+    <Day id="176">
+      <id>6</id>
+      <dayIndex>6</dayIndex>
+      <timestampList id="177">
+        <Timestamp id="178">
+          <id>138</id>
+          <timestampIndex>138</timestampIndex>
+          <day reference="176"/>
+          <hour reference="6"/>
+        </Timestamp>
+        <Timestamp id="179">
+          <id>139</id>
+          <timestampIndex>139</timestampIndex>
+          <day reference="176"/>
+          <hour reference="8"/>
+        </Timestamp>
+        <Timestamp id="180">
+          <id>140</id>
+          <timestampIndex>140</timestampIndex>
+          <day reference="176"/>
+          <hour reference="10"/>
+        </Timestamp>
+        <Timestamp id="181">
+          <id>141</id>
+          <timestampIndex>141</timestampIndex>
+          <day reference="176"/>
+          <hour reference="12"/>
+        </Timestamp>
+        <Timestamp id="182">
+          <id>142</id>
+          <timestampIndex>142</timestampIndex>
+          <day reference="176"/>
+          <hour reference="14"/>
+        </Timestamp>
+        <Timestamp id="183">
+          <id>143</id>
+          <timestampIndex>143</timestampIndex>
+          <day reference="176"/>
+          <hour reference="16"/>
+        </Timestamp>
+        <Timestamp id="184">
+          <id>144</id>
+          <timestampIndex>144</timestampIndex>
+          <day reference="176"/>
+          <hour reference="18"/>
+        </Timestamp>
+        <Timestamp id="185">
+          <id>145</id>
+          <timestampIndex>145</timestampIndex>
+          <day reference="176"/>
+          <hour reference="20"/>
+        </Timestamp>
+        <Timestamp id="186">
+          <id>146</id>
+          <timestampIndex>146</timestampIndex>
+          <day reference="176"/>
+          <hour reference="22"/>
+        </Timestamp>
+        <Timestamp id="187">
+          <id>147</id>
+          <timestampIndex>147</timestampIndex>
+          <day reference="176"/>
+          <hour reference="24"/>
+        </Timestamp>
+        <Timestamp id="188">
+          <id>148</id>
+          <timestampIndex>148</timestampIndex>
+          <day reference="176"/>
+          <hour reference="26"/>
+        </Timestamp>
+        <Timestamp id="189">
+          <id>149</id>
+          <timestampIndex>149</timestampIndex>
+          <day reference="176"/>
+          <hour reference="28"/>
+        </Timestamp>
+        <Timestamp id="190">
+          <id>150</id>
+          <timestampIndex>150</timestampIndex>
+          <day reference="176"/>
+          <hour reference="30"/>
+        </Timestamp>
+        <Timestamp id="191">
+          <id>151</id>
+          <timestampIndex>151</timestampIndex>
+          <day reference="176"/>
+          <hour reference="32"/>
+        </Timestamp>
+        <Timestamp id="192">
+          <id>152</id>
+          <timestampIndex>152</timestampIndex>
+          <day reference="176"/>
+          <hour reference="34"/>
+        </Timestamp>
+        <Timestamp id="193">
+          <id>153</id>
+          <timestampIndex>153</timestampIndex>
+          <day reference="176"/>
+          <hour reference="36"/>
+        </Timestamp>
+        <Timestamp id="194">
+          <id>154</id>
+          <timestampIndex>154</timestampIndex>
+          <day reference="176"/>
+          <hour reference="38"/>
+        </Timestamp>
+        <Timestamp id="195">
+          <id>155</id>
+          <timestampIndex>155</timestampIndex>
+          <day reference="176"/>
+          <hour reference="40"/>
+        </Timestamp>
+        <Timestamp id="196">
+          <id>156</id>
+          <timestampIndex>156</timestampIndex>
+          <day reference="176"/>
+          <hour reference="42"/>
+        </Timestamp>
+        <Timestamp id="197">
+          <id>157</id>
+          <timestampIndex>157</timestampIndex>
+          <day reference="176"/>
+          <hour reference="44"/>
+        </Timestamp>
+        <Timestamp id="198">
+          <id>158</id>
+          <timestampIndex>158</timestampIndex>
+          <day reference="176"/>
+          <hour reference="46"/>
+        </Timestamp>
+        <Timestamp id="199">
+          <id>159</id>
+          <timestampIndex>159</timestampIndex>
+          <day reference="176"/>
+          <hour reference="48"/>
+        </Timestamp>
+        <Timestamp id="200">
+          <id>160</id>
+          <timestampIndex>160</timestampIndex>
+          <day reference="176"/>
+          <hour reference="50"/>
+        </Timestamp>
+      </timestampList>
+    </Day>
+  </dayList>
+  <hourList id="201">
+    <Hour reference="6"/>
+    <Hour reference="8"/>
+    <Hour reference="10"/>
+    <Hour reference="12"/>
+    <Hour reference="14"/>
+    <Hour reference="16"/>
+    <Hour reference="18"/>
+    <Hour reference="20"/>
+    <Hour reference="22"/>
+    <Hour reference="24"/>
+    <Hour reference="26"/>
+    <Hour reference="28"/>
+    <Hour reference="30"/>
+    <Hour reference="32"/>
+    <Hour reference="34"/>
+    <Hour reference="36"/>
+    <Hour reference="38"/>
+    <Hour reference="40"/>
+    <Hour reference="42"/>
+    <Hour reference="44"/>
+    <Hour reference="46"/>
+    <Hour reference="48"/>
+    <Hour reference="50"/>
+  </hourList>
+  <timestampList id="202">
+    <Timestamp reference="5"/>
+    <Timestamp reference="7"/>
+    <Timestamp reference="9"/>
+    <Timestamp reference="11"/>
+    <Timestamp reference="13"/>
+    <Timestamp reference="15"/>
+    <Timestamp reference="17"/>
+    <Timestamp reference="19"/>
+    <Timestamp reference="21"/>
+    <Timestamp reference="23"/>
+    <Timestamp reference="25"/>
+    <Timestamp reference="27"/>
+    <Timestamp reference="29"/>
+    <Timestamp reference="31"/>
+    <Timestamp reference="33"/>
+    <Timestamp reference="35"/>
+    <Timestamp reference="37"/>
+    <Timestamp reference="39"/>
+    <Timestamp reference="41"/>
+    <Timestamp reference="43"/>
+    <Timestamp reference="45"/>
+    <Timestamp reference="47"/>
+    <Timestamp reference="49"/>
+    <Timestamp reference="53"/>
+    <Timestamp reference="54"/>
+    <Timestamp reference="55"/>
+    <Timestamp reference="56"/>
+    <Timestamp reference="57"/>
+    <Timestamp reference="58"/>
+    <Timestamp reference="59"/>
+    <Timestamp reference="60"/>
+    <Timestamp reference="61"/>
+    <Timestamp reference="62"/>
+    <Timestamp reference="63"/>
+    <Timestamp reference="64"/>
+    <Timestamp reference="65"/>
+    <Timestamp reference="66"/>
+    <Timestamp reference="67"/>
+    <Timestamp reference="68"/>
+    <Timestamp reference="69"/>
+    <Timestamp reference="70"/>
+    <Timestamp reference="71"/>
+    <Timestamp reference="72"/>
+    <Timestamp reference="73"/>
+    <Timestamp reference="74"/>
+    <Timestamp reference="75"/>
+    <Timestamp reference="78"/>
+    <Timestamp reference="79"/>
+    <Timestamp reference="80"/>
+    <Timestamp reference="81"/>
+    <Timestamp reference="82"/>
+    <Timestamp reference="83"/>
+    <Timestamp reference="84"/>
+    <Timestamp reference="85"/>
+    <Timestamp reference="86"/>
+    <Timestamp reference="87"/>
+    <Timestamp reference="88"/>
+    <Timestamp reference="89"/>
+    <Timestamp reference="90"/>
+    <Timestamp reference="91"/>
+    <Timestamp reference="92"/>
+    <Timestamp reference="93"/>
+    <Timestamp reference="94"/>
+    <Timestamp reference="95"/>
+    <Timestamp reference="96"/>
+    <Timestamp reference="97"/>
+    <Timestamp reference="98"/>
+    <Timestamp reference="99"/>
+    <Timestamp reference="100"/>
+    <Timestamp reference="103"/>
+    <Timestamp reference="104"/>
+    <Timestamp reference="105"/>
+    <Timestamp reference="106"/>
+    <Timestamp reference="107"/>
+    <Timestamp reference="108"/>
+    <Timestamp reference="109"/>
+    <Timestamp reference="110"/>
+    <Timestamp reference="111"/>
+    <Timestamp reference="112"/>
+    <Timestamp reference="113"/>
+    <Timestamp reference="114"/>
+    <Timestamp reference="115"/>
+    <Timestamp reference="116"/>
+    <Timestamp reference="117"/>
+    <Timestamp reference="118"/>
+    <Timestamp reference="119"/>
+    <Timestamp reference="120"/>
+    <Timestamp reference="121"/>
+    <Timestamp reference="122"/>
+    <Timestamp reference="123"/>
+    <Timestamp reference="124"/>
+    <Timestamp reference="125"/>
+    <Timestamp reference="128"/>
+    <Timestamp reference="129"/>
+    <Timestamp reference="130"/>
+    <Timestamp reference="131"/>
+    <Timestamp reference="132"/>
+    <Timestamp reference="133"/>
+    <Timestamp reference="134"/>
+    <Timestamp reference="135"/>
+    <Timestamp reference="136"/>
+    <Timestamp reference="137"/>
+    <Timestamp reference="138"/>
+    <Timestamp reference="139"/>
+    <Timestamp reference="140"/>
+    <Timestamp reference="141"/>
+    <Timestamp reference="142"/>
+    <Timestamp reference="143"/>
+    <Timestamp reference="144"/>
+    <Timestamp reference="145"/>
+    <Timestamp reference="146"/>
+    <Timestamp reference="147"/>
+    <Timestamp reference="148"/>
+    <Timestamp reference="149"/>
+    <Timestamp reference="150"/>
+    <Timestamp reference="153"/>
+    <Timestamp reference="154"/>
+    <Timestamp reference="155"/>
+    <Timestamp reference="156"/>
+    <Timestamp reference="157"/>
+    <Timestamp reference="158"/>
+    <Timestamp reference="159"/>
+    <Timestamp reference="160"/>
+    <Timestamp reference="161"/>
+    <Timestamp reference="162"/>
+    <Timestamp reference="163"/>
+    <Timestamp reference="164"/>
+    <Timestamp reference="165"/>
+    <Timestamp reference="166"/>
+    <Timestamp reference="167"/>
+    <Timestamp reference="168"/>
+    <Timestamp reference="169"/>
+    <Timestamp reference="170"/>
+    <Timestamp reference="171"/>
+    <Timestamp reference="172"/>
+    <Timestamp reference="173"/>
+    <Timestamp reference="174"/>
+    <Timestamp reference="175"/>
+    <Timestamp reference="178"/>
+    <Timestamp reference="179"/>
+    <Timestamp reference="180"/>
+    <Timestamp reference="181"/>
+    <Timestamp reference="182"/>
+    <Timestamp reference="183"/>
+    <Timestamp reference="184"/>
+    <Timestamp reference="185"/>
+    <Timestamp reference="186"/>
+    <Timestamp reference="187"/>
+    <Timestamp reference="188"/>
+    <Timestamp reference="189"/>
+    <Timestamp reference="190"/>
+    <Timestamp reference="191"/>
+    <Timestamp reference="192"/>
+    <Timestamp reference="193"/>
+    <Timestamp reference="194"/>
+    <Timestamp reference="195"/>
+    <Timestamp reference="196"/>
+    <Timestamp reference="197"/>
+    <Timestamp reference="198"/>
+    <Timestamp reference="199"/>
+    <Timestamp reference="200"/>
+  </timestampList>
+  <activityList id="203">
+    <Activity id="204">
+      <id>8</id>
+      <activityIndex>8</activityIndex>
+      <type>HRMS</type>
+      <length>8</length>
+      <instructorRequired>false</instructorRequired>
+      <locationRequired>false</locationRequired>
+      <possibleLocations id="205"/>
+    </Activity>
+    <Activity id="206">
+      <id>2</id>
+      <activityIndex>2</activityIndex>
+      <type>Trek</type>
+      <length>7</length>
+      <instructorRequired>false</instructorRequired>
+      <locationRequired>true</locationRequired>
+      <possibleLocations id="207">
+        <Location id="208">
+          <id>5</id>
+          <locationIndex>5</locationIndex>
+          <type>Trek</type>
+          <typeNumber>1</typeNumber>
+        </Location>
+        <Location id="209">
+          <id>6</id>
+          <locationIndex>6</locationIndex>
+          <type>Trek</type>
+          <typeNumber>2</typeNumber>
+        </Location>
+        <Location id="210">
+          <id>7</id>
+          <locationIndex>7</locationIndex>
+          <type>Trek</type>
+          <typeNumber>3</typeNumber>
+        </Location>
+      </possibleLocations>
+    </Activity>
+    <Activity id="211">
+      <id>4</id>
+      <activityIndex>4</activityIndex>
+      <type>OB</type>
+      <length>7</length>
+      <instructorRequired>false</instructorRequired>
+      <locationRequired>false</locationRequired>
+      <possibleLocations id="212"/>
+    </Activity>
+    <Activity id="213">
+      <id>7</id>
+      <activityIndex>7</activityIndex>
+      <type>HRHS</type>
+      <length>8</length>
+      <instructorRequired>true</instructorRequired>
+      <locationRequired>false</locationRequired>
+      <possibleLocations id="214"/>
+    </Activity>
+    <Activity id="215">
+      <id>0</id>
+      <activityIndex>0</activityIndex>
+      <type>Climb</type>
+      <length>8</length>
+      <instructorRequired>true</instructorRequired>
+      <locationRequired>true</locationRequired>
+      <possibleLocations id="216">
+        <Location id="217">
+          <id>0</id>
+          <locationIndex>0</locationIndex>
+          <type>Climb</type>
+          <typeNumber>1</typeNumber>
+        </Location>
+        <Location id="218">
+          <id>1</id>
+          <locationIndex>1</locationIndex>
+          <type>Climb</type>
+          <typeNumber>2</typeNumber>
+        </Location>
+        <Location id="219">
+          <id>2</id>
+          <locationIndex>2</locationIndex>
+          <type>Climb</type>
+          <typeNumber>3</typeNumber>
+        </Location>
+      </possibleLocations>
+    </Activity>
+    <Activity id="220">
+      <id>3</id>
+      <activityIndex>3</activityIndex>
+      <type>Archery</type>
+      <length>7</length>
+      <instructorRequired>false</instructorRequired>
+      <locationRequired>false</locationRequired>
+      <possibleLocations id="221"/>
+    </Activity>
+    <Activity id="222">
+      <id>1</id>
+      <activityIndex>1</activityIndex>
+      <type>MTB</type>
+      <length>9</length>
+      <instructorRequired>true</instructorRequired>
+      <locationRequired>true</locationRequired>
+      <possibleLocations id="223">
+        <Location id="224">
+          <id>3</id>
+          <locationIndex>3</locationIndex>
+          <type>MTB</type>
+          <typeNumber>1</typeNumber>
+        </Location>
+        <Location id="225">
+          <id>4</id>
+          <locationIndex>4</locationIndex>
+          <type>MTB</type>
+          <typeNumber>2</typeNumber>
+        </Location>
+      </possibleLocations>
+    </Activity>
+    <Activity id="226">
+      <id>5</id>
+      <activityIndex>5</activityIndex>
+      <type>Raft</type>
+      <length>7</length>
+      <instructorRequired>false</instructorRequired>
+      <locationRequired>false</locationRequired>
+      <possibleLocations id="227"/>
+    </Activity>
+    <Activity id="228">
+      <id>11</id>
+      <activityIndex>11</activityIndex>
+      <type>Canoe</type>
+      <length>8</length>
+      <instructorRequired>false</instructorRequired>
+      <locationRequired>false</locationRequired>
+      <possibleLocations id="229"/>
+    </Activity>
+    <Activity id="230">
+      <id>9</id>
+      <activityIndex>9</activityIndex>
+      <type>Free</type>
+      <length>6</length>
+      <instructorRequired>false</instructorRequired>
+      <locationRequired>false</locationRequired>
+      <possibleLocations id="231"/>
+    </Activity>
+    <Activity id="232">
+      <id>6</id>
+      <activityIndex>6</activityIndex>
+      <type>C&amp;R</type>
+      <length>9</length>
+      <instructorRequired>true</instructorRequired>
+      <locationRequired>false</locationRequired>
+      <possibleLocations id="233"/>
+    </Activity>
+    <Activity id="234">
+      <id>10</id>
+      <activityIndex>10</activityIndex>
+      <type>TeamSpirit</type>
+      <length>18</length>
+      <instructorRequired>true</instructorRequired>
+      <locationRequired>false</locationRequired>
+      <possibleLocations id="235"/>
+    </Activity>
+  </activityList>
+  <instructorList id="236">
+    <Instructor id="237">
+      <id>0</id>
+      <instructorIndex>0</instructorIndex>
+    </Instructor>
+    <Instructor id="238">
+      <id>1</id>
+      <instructorIndex>1</instructorIndex>
+    </Instructor>
+    <Instructor id="239">
+      <id>2</id>
+      <instructorIndex>2</instructorIndex>
+    </Instructor>
+    <Instructor id="240">
+      <id>3</id>
+      <instructorIndex>3</instructorIndex>
+    </Instructor>
+    <Instructor id="241">
+      <id>4</id>
+      <instructorIndex>4</instructorIndex>
+    </Instructor>
+    <Instructor id="242">
+      <id>5</id>
+      <instructorIndex>5</instructorIndex>
+    </Instructor>
+    <Instructor id="243">
+      <id>6</id>
+      <instructorIndex>6</instructorIndex>
+    </Instructor>
+    <Instructor id="244">
+      <id>7</id>
+      <instructorIndex>7</instructorIndex>
+    </Instructor>
+  </instructorList>
+  <locationList id="245">
+    <Location reference="217"/>
+    <Location reference="218"/>
+    <Location reference="219"/>
+    <Location reference="224"/>
+    <Location reference="225"/>
+    <Location reference="208"/>
+    <Location reference="209"/>
+    <Location reference="210"/>
+  </locationList>
+  <groupList id="246">
+    <Group id="247">
+      <id>0</id>
+      <name>Group01</name>
+      <hotel id="248">
+        <id>4</id>
+        <hotelIndex>4</hotelIndex>
+        <hotelLocationBusRequirement id="249">
+          <entry>
+            <Location reference="219"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Location reference="210"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Location reference="217"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Location reference="209"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Location reference="225"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Location reference="218"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Location reference="224"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Location reference="208"/>
+            <boolean>true</boolean>
+          </entry>
+        </hotelLocationBusRequirement>
+        <hotelActivityBusRequirement id="250">
+          <entry>
+            <Activity reference="232"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Activity reference="234"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Activity reference="213"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Activity reference="220"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Activity reference="230"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Activity reference="228"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Activity reference="211"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Activity reference="226"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Activity reference="204"/>
+            <boolean>true</boolean>
+          </entry>
+        </hotelActivityBusRequirement>
+        <hotelLocationPenalty id="251">
+          <entry>
+            <Location reference="219"/>
+            <int>5</int>
+          </entry>
+          <entry>
+            <Location reference="210"/>
+            <int>0</int>
+          </entry>
+          <entry>
+            <Location reference="217"/>
+            <int>0</int>
+          </entry>
+          <entry>
+            <Location reference="209"/>
+            <int>1</int>
+          </entry>
+          <entry>
+            <Location reference="225"/>
+            <int>0</int>
+          </entry>
+          <entry>
+            <Location reference="218"/>
+            <int>1</int>
+          </entry>
+          <entry>
+            <Location reference="224"/>
+            <int>1</int>
+          </entry>
+          <entry>
+            <Location reference="208"/>
+            <int>2</int>
+          </entry>
+        </hotelLocationPenalty>
+      </hotel>
+      <requiredActivities id="252">
+        <Activity reference="204"/>
+        <Activity reference="222"/>
+        <Activity reference="206"/>
+        <Activity reference="226"/>
+        <Activity reference="211"/>
+      </requiredActivities>
+      <groupTimestampList id="253">
+        <Timestamp reference="49"/>
+        <Timestamp reference="53"/>
+        <Timestamp reference="54"/>
+        <Timestamp reference="55"/>
+        <Timestamp reference="56"/>
+        <Timestamp reference="57"/>
+        <Timestamp reference="58"/>
+        <Timestamp reference="59"/>
+        <Timestamp reference="60"/>
+        <Timestamp reference="61"/>
+        <Timestamp reference="62"/>
+        <Timestamp reference="63"/>
+        <Timestamp reference="64"/>
+        <Timestamp reference="65"/>
+        <Timestamp reference="66"/>
+        <Timestamp reference="67"/>
+        <Timestamp reference="68"/>
+        <Timestamp reference="69"/>
+        <Timestamp reference="70"/>
+        <Timestamp reference="71"/>
+        <Timestamp reference="72"/>
+        <Timestamp reference="73"/>
+        <Timestamp reference="74"/>
+        <Timestamp reference="75"/>
+        <Timestamp reference="78"/>
+        <Timestamp reference="79"/>
+        <Timestamp reference="80"/>
+        <Timestamp reference="81"/>
+        <Timestamp reference="82"/>
+        <Timestamp reference="83"/>
+        <Timestamp reference="84"/>
+        <Timestamp reference="85"/>
+        <Timestamp reference="86"/>
+        <Timestamp reference="87"/>
+        <Timestamp reference="88"/>
+        <Timestamp reference="89"/>
+        <Timestamp reference="90"/>
+        <Timestamp reference="91"/>
+        <Timestamp reference="92"/>
+        <Timestamp reference="93"/>
+        <Timestamp reference="94"/>
+        <Timestamp reference="95"/>
+        <Timestamp reference="96"/>
+        <Timestamp reference="97"/>
+        <Timestamp reference="98"/>
+        <Timestamp reference="99"/>
+        <Timestamp reference="100"/>
+        <Timestamp reference="103"/>
+        <Timestamp reference="104"/>
+        <Timestamp reference="105"/>
+        <Timestamp reference="106"/>
+        <Timestamp reference="107"/>
+        <Timestamp reference="108"/>
+        <Timestamp reference="109"/>
+        <Timestamp reference="110"/>
+        <Timestamp reference="111"/>
+        <Timestamp reference="112"/>
+        <Timestamp reference="113"/>
+        <Timestamp reference="114"/>
+        <Timestamp reference="115"/>
+        <Timestamp reference="116"/>
+        <Timestamp reference="117"/>
+        <Timestamp reference="118"/>
+        <Timestamp reference="119"/>
+        <Timestamp reference="120"/>
+        <Timestamp reference="121"/>
+        <Timestamp reference="122"/>
+        <Timestamp reference="123"/>
+        <Timestamp reference="124"/>
+        <Timestamp reference="125"/>
+        <Timestamp reference="128"/>
+        <Timestamp reference="129"/>
+        <Timestamp reference="130"/>
+        <Timestamp reference="131"/>
+        <Timestamp reference="132"/>
+        <Timestamp reference="133"/>
+        <Timestamp reference="134"/>
+        <Timestamp reference="135"/>
+        <Timestamp reference="136"/>
+        <Timestamp reference="137"/>
+        <Timestamp reference="138"/>
+        <Timestamp reference="139"/>
+        <Timestamp reference="140"/>
+        <Timestamp reference="141"/>
+        <Timestamp reference="142"/>
+        <Timestamp reference="143"/>
+        <Timestamp reference="144"/>
+        <Timestamp reference="145"/>
+        <Timestamp reference="146"/>
+        <Timestamp reference="147"/>
+        <Timestamp reference="148"/>
+        <Timestamp reference="149"/>
+        <Timestamp reference="150"/>
+        <Timestamp reference="153"/>
+        <Timestamp reference="154"/>
+        <Timestamp reference="155"/>
+        <Timestamp reference="156"/>
+        <Timestamp reference="157"/>
+        <Timestamp reference="158"/>
+        <Timestamp reference="159"/>
+        <Timestamp reference="160"/>
+        <Timestamp reference="161"/>
+        <Timestamp reference="162"/>
+        <Timestamp reference="163"/>
+        <Timestamp reference="164"/>
+        <Timestamp reference="165"/>
+        <Timestamp reference="166"/>
+        <Timestamp reference="167"/>
+        <Timestamp reference="168"/>
+        <Timestamp reference="169"/>
+        <Timestamp reference="170"/>
+        <Timestamp reference="171"/>
+        <Timestamp reference="172"/>
+        <Timestamp reference="173"/>
+        <Timestamp reference="174"/>
+      </groupTimestampList>
+    </Group>
+    <Group id="254">
+      <id>1</id>
+      <name>Group02</name>
+      <hotel reference="248"/>
+      <requiredActivities id="255">
+        <Activity reference="204"/>
+        <Activity reference="222"/>
+        <Activity reference="206"/>
+        <Activity reference="226"/>
+        <Activity reference="211"/>
+      </requiredActivities>
+      <groupTimestampList id="256">
+        <Timestamp reference="49"/>
+        <Timestamp reference="53"/>
+        <Timestamp reference="54"/>
+        <Timestamp reference="55"/>
+        <Timestamp reference="56"/>
+        <Timestamp reference="57"/>
+        <Timestamp reference="58"/>
+        <Timestamp reference="59"/>
+        <Timestamp reference="60"/>
+        <Timestamp reference="61"/>
+        <Timestamp reference="62"/>
+        <Timestamp reference="63"/>
+        <Timestamp reference="64"/>
+        <Timestamp reference="65"/>
+        <Timestamp reference="66"/>
+        <Timestamp reference="67"/>
+        <Timestamp reference="68"/>
+        <Timestamp reference="69"/>
+        <Timestamp reference="70"/>
+        <Timestamp reference="71"/>
+        <Timestamp reference="72"/>
+        <Timestamp reference="73"/>
+        <Timestamp reference="74"/>
+        <Timestamp reference="75"/>
+        <Timestamp reference="78"/>
+        <Timestamp reference="79"/>
+        <Timestamp reference="80"/>
+        <Timestamp reference="81"/>
+        <Timestamp reference="82"/>
+        <Timestamp reference="83"/>
+        <Timestamp reference="84"/>
+        <Timestamp reference="85"/>
+        <Timestamp reference="86"/>
+        <Timestamp reference="87"/>
+        <Timestamp reference="88"/>
+        <Timestamp reference="89"/>
+        <Timestamp reference="90"/>
+        <Timestamp reference="91"/>
+        <Timestamp reference="92"/>
+        <Timestamp reference="93"/>
+        <Timestamp reference="94"/>
+        <Timestamp reference="95"/>
+        <Timestamp reference="96"/>
+        <Timestamp reference="97"/>
+        <Timestamp reference="98"/>
+        <Timestamp reference="99"/>
+        <Timestamp reference="100"/>
+        <Timestamp reference="103"/>
+        <Timestamp reference="104"/>
+        <Timestamp reference="105"/>
+        <Timestamp reference="106"/>
+        <Timestamp reference="107"/>
+        <Timestamp reference="108"/>
+        <Timestamp reference="109"/>
+        <Timestamp reference="110"/>
+        <Timestamp reference="111"/>
+        <Timestamp reference="112"/>
+        <Timestamp reference="113"/>
+        <Timestamp reference="114"/>
+        <Timestamp reference="115"/>
+        <Timestamp reference="116"/>
+        <Timestamp reference="117"/>
+        <Timestamp reference="118"/>
+        <Timestamp reference="119"/>
+        <Timestamp reference="120"/>
+        <Timestamp reference="121"/>
+        <Timestamp reference="122"/>
+        <Timestamp reference="123"/>
+        <Timestamp reference="124"/>
+        <Timestamp reference="125"/>
+        <Timestamp reference="128"/>
+        <Timestamp reference="129"/>
+        <Timestamp reference="130"/>
+        <Timestamp reference="131"/>
+        <Timestamp reference="132"/>
+        <Timestamp reference="133"/>
+        <Timestamp reference="134"/>
+        <Timestamp reference="135"/>
+        <Timestamp reference="136"/>
+        <Timestamp reference="137"/>
+        <Timestamp reference="138"/>
+        <Timestamp reference="139"/>
+        <Timestamp reference="140"/>
+        <Timestamp reference="141"/>
+        <Timestamp reference="142"/>
+        <Timestamp reference="143"/>
+        <Timestamp reference="144"/>
+        <Timestamp reference="145"/>
+        <Timestamp reference="146"/>
+        <Timestamp reference="147"/>
+        <Timestamp reference="148"/>
+        <Timestamp reference="149"/>
+        <Timestamp reference="150"/>
+        <Timestamp reference="153"/>
+        <Timestamp reference="154"/>
+        <Timestamp reference="155"/>
+        <Timestamp reference="156"/>
+        <Timestamp reference="157"/>
+        <Timestamp reference="158"/>
+        <Timestamp reference="159"/>
+        <Timestamp reference="160"/>
+        <Timestamp reference="161"/>
+        <Timestamp reference="162"/>
+        <Timestamp reference="163"/>
+        <Timestamp reference="164"/>
+        <Timestamp reference="165"/>
+        <Timestamp reference="166"/>
+        <Timestamp reference="167"/>
+        <Timestamp reference="168"/>
+        <Timestamp reference="169"/>
+        <Timestamp reference="170"/>
+        <Timestamp reference="171"/>
+        <Timestamp reference="172"/>
+        <Timestamp reference="173"/>
+        <Timestamp reference="174"/>
+      </groupTimestampList>
+    </Group>
+    <Group id="257">
+      <id>2</id>
+      <name>Group03</name>
+      <hotel id="258">
+        <id>5</id>
+        <hotelIndex>5</hotelIndex>
+        <hotelLocationBusRequirement id="259">
+          <entry>
+            <Location reference="219"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Location reference="210"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Location reference="217"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Location reference="209"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Location reference="225"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Location reference="218"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Location reference="224"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Location reference="208"/>
+            <boolean>true</boolean>
+          </entry>
+        </hotelLocationBusRequirement>
+        <hotelActivityBusRequirement id="260">
+          <entry>
+            <Activity reference="232"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Activity reference="234"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Activity reference="213"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Activity reference="220"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Activity reference="230"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Activity reference="228"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Activity reference="211"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Activity reference="226"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Activity reference="204"/>
+            <boolean>true</boolean>
+          </entry>
+        </hotelActivityBusRequirement>
+        <hotelLocationPenalty id="261">
+          <entry>
+            <Location reference="219"/>
+            <int>8</int>
+          </entry>
+          <entry>
+            <Location reference="210"/>
+            <int>0</int>
+          </entry>
+          <entry>
+            <Location reference="217"/>
+            <int>0</int>
+          </entry>
+          <entry>
+            <Location reference="209"/>
+            <int>1</int>
+          </entry>
+          <entry>
+            <Location reference="225"/>
+            <int>0</int>
+          </entry>
+          <entry>
+            <Location reference="218"/>
+            <int>1</int>
+          </entry>
+          <entry>
+            <Location reference="224"/>
+            <int>3</int>
+          </entry>
+          <entry>
+            <Location reference="208"/>
+            <int>3</int>
+          </entry>
+        </hotelLocationPenalty>
+      </hotel>
+      <requiredActivities id="262">
+        <Activity reference="220"/>
+        <Activity reference="232"/>
+        <Activity reference="215"/>
+        <Activity reference="213"/>
+        <Activity reference="206"/>
+      </requiredActivities>
+      <groupTimestampList id="263">
+        <Timestamp reference="53"/>
+        <Timestamp reference="54"/>
+        <Timestamp reference="55"/>
+        <Timestamp reference="56"/>
+        <Timestamp reference="57"/>
+        <Timestamp reference="58"/>
+        <Timestamp reference="59"/>
+        <Timestamp reference="60"/>
+        <Timestamp reference="61"/>
+        <Timestamp reference="62"/>
+        <Timestamp reference="63"/>
+        <Timestamp reference="64"/>
+        <Timestamp reference="65"/>
+        <Timestamp reference="66"/>
+        <Timestamp reference="67"/>
+        <Timestamp reference="68"/>
+        <Timestamp reference="69"/>
+        <Timestamp reference="70"/>
+        <Timestamp reference="71"/>
+        <Timestamp reference="72"/>
+        <Timestamp reference="73"/>
+        <Timestamp reference="74"/>
+        <Timestamp reference="75"/>
+        <Timestamp reference="78"/>
+        <Timestamp reference="79"/>
+        <Timestamp reference="80"/>
+        <Timestamp reference="81"/>
+        <Timestamp reference="82"/>
+        <Timestamp reference="83"/>
+        <Timestamp reference="84"/>
+        <Timestamp reference="85"/>
+        <Timestamp reference="86"/>
+        <Timestamp reference="87"/>
+        <Timestamp reference="88"/>
+        <Timestamp reference="89"/>
+        <Timestamp reference="90"/>
+        <Timestamp reference="91"/>
+        <Timestamp reference="92"/>
+        <Timestamp reference="93"/>
+        <Timestamp reference="94"/>
+        <Timestamp reference="95"/>
+        <Timestamp reference="96"/>
+        <Timestamp reference="97"/>
+        <Timestamp reference="98"/>
+        <Timestamp reference="99"/>
+        <Timestamp reference="100"/>
+        <Timestamp reference="103"/>
+        <Timestamp reference="104"/>
+        <Timestamp reference="105"/>
+        <Timestamp reference="106"/>
+        <Timestamp reference="107"/>
+        <Timestamp reference="108"/>
+        <Timestamp reference="109"/>
+        <Timestamp reference="110"/>
+        <Timestamp reference="111"/>
+        <Timestamp reference="112"/>
+        <Timestamp reference="113"/>
+        <Timestamp reference="114"/>
+        <Timestamp reference="115"/>
+        <Timestamp reference="116"/>
+        <Timestamp reference="117"/>
+        <Timestamp reference="118"/>
+        <Timestamp reference="119"/>
+        <Timestamp reference="120"/>
+        <Timestamp reference="121"/>
+        <Timestamp reference="122"/>
+        <Timestamp reference="123"/>
+        <Timestamp reference="124"/>
+        <Timestamp reference="125"/>
+        <Timestamp reference="128"/>
+      </groupTimestampList>
+    </Group>
+    <Group id="264">
+      <id>3</id>
+      <name>Group04</name>
+      <hotel reference="258"/>
+      <requiredActivities id="265">
+        <Activity reference="220"/>
+        <Activity reference="232"/>
+        <Activity reference="215"/>
+        <Activity reference="213"/>
+        <Activity reference="206"/>
+      </requiredActivities>
+      <groupTimestampList id="266">
+        <Timestamp reference="53"/>
+        <Timestamp reference="54"/>
+        <Timestamp reference="55"/>
+        <Timestamp reference="56"/>
+        <Timestamp reference="57"/>
+        <Timestamp reference="58"/>
+        <Timestamp reference="59"/>
+        <Timestamp reference="60"/>
+        <Timestamp reference="61"/>
+        <Timestamp reference="62"/>
+        <Timestamp reference="63"/>
+        <Timestamp reference="64"/>
+        <Timestamp reference="65"/>
+        <Timestamp reference="66"/>
+        <Timestamp reference="67"/>
+        <Timestamp reference="68"/>
+        <Timestamp reference="69"/>
+        <Timestamp reference="70"/>
+        <Timestamp reference="71"/>
+        <Timestamp reference="72"/>
+        <Timestamp reference="73"/>
+        <Timestamp reference="74"/>
+        <Timestamp reference="75"/>
+        <Timestamp reference="78"/>
+        <Timestamp reference="79"/>
+        <Timestamp reference="80"/>
+        <Timestamp reference="81"/>
+        <Timestamp reference="82"/>
+        <Timestamp reference="83"/>
+        <Timestamp reference="84"/>
+        <Timestamp reference="85"/>
+        <Timestamp reference="86"/>
+        <Timestamp reference="87"/>
+        <Timestamp reference="88"/>
+        <Timestamp reference="89"/>
+        <Timestamp reference="90"/>
+        <Timestamp reference="91"/>
+        <Timestamp reference="92"/>
+        <Timestamp reference="93"/>
+        <Timestamp reference="94"/>
+        <Timestamp reference="95"/>
+        <Timestamp reference="96"/>
+        <Timestamp reference="97"/>
+        <Timestamp reference="98"/>
+        <Timestamp reference="99"/>
+        <Timestamp reference="100"/>
+        <Timestamp reference="103"/>
+        <Timestamp reference="104"/>
+        <Timestamp reference="105"/>
+        <Timestamp reference="106"/>
+        <Timestamp reference="107"/>
+        <Timestamp reference="108"/>
+        <Timestamp reference="109"/>
+        <Timestamp reference="110"/>
+        <Timestamp reference="111"/>
+        <Timestamp reference="112"/>
+        <Timestamp reference="113"/>
+        <Timestamp reference="114"/>
+        <Timestamp reference="115"/>
+        <Timestamp reference="116"/>
+        <Timestamp reference="117"/>
+        <Timestamp reference="118"/>
+        <Timestamp reference="119"/>
+        <Timestamp reference="120"/>
+        <Timestamp reference="121"/>
+        <Timestamp reference="122"/>
+        <Timestamp reference="123"/>
+        <Timestamp reference="124"/>
+        <Timestamp reference="125"/>
+        <Timestamp reference="128"/>
+      </groupTimestampList>
+    </Group>
+    <Group id="267">
+      <id>4</id>
+      <name>Group05</name>
+      <hotel id="268">
+        <id>0</id>
+        <hotelIndex>0</hotelIndex>
+        <hotelLocationBusRequirement id="269">
+          <entry>
+            <Location reference="219"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Location reference="210"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Location reference="217"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Location reference="209"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Location reference="225"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Location reference="218"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Location reference="224"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Location reference="208"/>
+            <boolean>false</boolean>
+          </entry>
+        </hotelLocationBusRequirement>
+        <hotelActivityBusRequirement id="270">
+          <entry>
+            <Activity reference="232"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Activity reference="234"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Activity reference="213"/>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <Activity reference="220"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Activity reference="230"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Activity reference="228"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Activity reference="211"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Activity reference="226"/>
+            <boolean>false</boolean>
+          </entry>
+          <entry>
+            <Activity reference="204"/>
+            <boolean>false</boolean>
+          </entry>
+        </hotelActivityBusRequirement>
+        <hotelLocationPenalty id="271">
+          <entry>
+            <Location reference="219"/>
+            <int>10</int>
+          </entry>
+          <entry>
+            <Location reference="210"/>
+            <int>3</int>
+          </entry>
+          <entry>
+            <Location reference="217"/>
+            <int>0</int>
+          </entry>
+          <entry>
+            <Location reference="209"/>
+            <int>3</int>
+          </entry>
+          <entry>
+            <Location reference="225"/>
+            <int>3</int>
+          </entry>
+          <entry>
+            <Location reference="218"/>
+            <int>1</int>
+          </entry>
+          <entry>
+            <Location reference="224"/>
+            <int>0</int>
+          </entry>
+          <entry>
+            <Location reference="208"/>
+            <int>0</int>
+          </entry>
+        </hotelLocationPenalty>
+      </hotel>
+      <requiredActivities id="272">
+        <Activity reference="215"/>
+        <Activity reference="222"/>
+        <Activity reference="232"/>
+        <Activity reference="228"/>
+      </requiredActivities>
+      <groupTimestampList id="273">
+        <Timestamp reference="104"/>
+        <Timestamp reference="105"/>
+        <Timestamp reference="106"/>
+        <Timestamp reference="107"/>
+        <Timestamp reference="108"/>
+        <Timestamp reference="109"/>
+        <Timestamp reference="110"/>
+        <Timestamp reference="111"/>
+        <Timestamp reference="112"/>
+        <Timestamp reference="113"/>
+        <Timestamp reference="114"/>
+        <Timestamp reference="115"/>
+        <Timestamp reference="116"/>
+        <Timestamp reference="117"/>
+        <Timestamp reference="118"/>
+        <Timestamp reference="119"/>
+        <Timestamp reference="120"/>
+        <Timestamp reference="121"/>
+        <Timestamp reference="122"/>
+        <Timestamp reference="123"/>
+        <Timestamp reference="124"/>
+        <Timestamp reference="125"/>
+        <Timestamp reference="128"/>
+        <Timestamp reference="129"/>
+        <Timestamp reference="130"/>
+        <Timestamp reference="131"/>
+        <Timestamp reference="132"/>
+        <Timestamp reference="133"/>
+        <Timestamp reference="134"/>
+        <Timestamp reference="135"/>
+        <Timestamp reference="136"/>
+        <Timestamp reference="137"/>
+        <Timestamp reference="138"/>
+        <Timestamp reference="139"/>
+        <Timestamp reference="140"/>
+        <Timestamp reference="141"/>
+        <Timestamp reference="142"/>
+        <Timestamp reference="143"/>
+        <Timestamp reference="144"/>
+        <Timestamp reference="145"/>
+        <Timestamp reference="146"/>
+        <Timestamp reference="147"/>
+        <Timestamp reference="148"/>
+        <Timestamp reference="149"/>
+        <Timestamp reference="150"/>
+        <Timestamp reference="153"/>
+      </groupTimestampList>
+    </Group>
+    <Group id="274">
+      <id>5</id>
+      <name>Group06</name>
+      <hotel reference="268"/>
+      <requiredActivities id="275">
+        <Activity reference="215"/>
+        <Activity reference="222"/>
+        <Activity reference="232"/>
+        <Activity reference="228"/>
+      </requiredActivities>
+      <groupTimestampList id="276">
+        <Timestamp reference="104"/>
+        <Timestamp reference="105"/>
+        <Timestamp reference="106"/>
+        <Timestamp reference="107"/>
+        <Timestamp reference="108"/>
+        <Timestamp reference="109"/>
+        <Timestamp reference="110"/>
+        <Timestamp reference="111"/>
+        <Timestamp reference="112"/>
+        <Timestamp reference="113"/>
+        <Timestamp reference="114"/>
+        <Timestamp reference="115"/>
+        <Timestamp reference="116"/>
+        <Timestamp reference="117"/>
+        <Timestamp reference="118"/>
+        <Timestamp reference="119"/>
+        <Timestamp reference="120"/>
+        <Timestamp reference="121"/>
+        <Timestamp reference="122"/>
+        <Timestamp reference="123"/>
+        <Timestamp reference="124"/>
+        <Timestamp reference="125"/>
+        <Timestamp reference="128"/>
+        <Timestamp reference="129"/>
+        <Timestamp reference="130"/>
+        <Timestamp reference="131"/>
+        <Timestamp reference="132"/>
+        <Timestamp reference="133"/>
+        <Timestamp reference="134"/>
+        <Timestamp reference="135"/>
+        <Timestamp reference="136"/>
+        <Timestamp reference="137"/>
+        <Timestamp reference="138"/>
+        <Timestamp reference="139"/>
+        <Timestamp reference="140"/>
+        <Timestamp reference="141"/>
+        <Timestamp reference="142"/>
+        <Timestamp reference="143"/>
+        <Timestamp reference="144"/>
+        <Timestamp reference="145"/>
+        <Timestamp reference="146"/>
+        <Timestamp reference="147"/>
+        <Timestamp reference="148"/>
+        <Timestamp reference="149"/>
+        <Timestamp reference="150"/>
+        <Timestamp reference="153"/>
+      </groupTimestampList>
+    </Group>
+    <Group id="277">
+      <id>6</id>
+      <name>Group07</name>
+      <hotel reference="268"/>
+      <requiredActivities id="278">
+        <Activity reference="226"/>
+        <Activity reference="222"/>
+        <Activity reference="213"/>
+        <Activity reference="215"/>
+        <Activity reference="232"/>
+      </requiredActivities>
+      <groupTimestampList id="279">
+        <Timestamp reference="110"/>
+        <Timestamp reference="111"/>
+        <Timestamp reference="112"/>
+        <Timestamp reference="113"/>
+        <Timestamp reference="114"/>
+        <Timestamp reference="115"/>
+        <Timestamp reference="116"/>
+        <Timestamp reference="117"/>
+        <Timestamp reference="118"/>
+        <Timestamp reference="119"/>
+        <Timestamp reference="120"/>
+        <Timestamp reference="121"/>
+        <Timestamp reference="122"/>
+        <Timestamp reference="123"/>
+        <Timestamp reference="124"/>
+        <Timestamp reference="125"/>
+        <Timestamp reference="128"/>
+        <Timestamp reference="129"/>
+        <Timestamp reference="130"/>
+        <Timestamp reference="131"/>
+        <Timestamp reference="132"/>
+        <Timestamp reference="133"/>
+        <Timestamp reference="134"/>
+        <Timestamp reference="135"/>
+        <Timestamp reference="136"/>
+        <Timestamp reference="137"/>
+        <Timestamp reference="138"/>
+        <Timestamp reference="139"/>
+        <Timestamp reference="140"/>
+        <Timestamp reference="141"/>
+        <Timestamp reference="142"/>
+        <Timestamp reference="143"/>
+        <Timestamp reference="144"/>
+        <Timestamp reference="145"/>
+        <Timestamp reference="146"/>
+        <Timestamp reference="147"/>
+        <Timestamp reference="148"/>
+        <Timestamp reference="149"/>
+        <Timestamp reference="150"/>
+        <Timestamp reference="153"/>
+        <Timestamp reference="154"/>
+        <Timestamp reference="155"/>
+        <Timestamp reference="156"/>
+        <Timestamp reference="157"/>
+        <Timestamp reference="158"/>
+        <Timestamp reference="159"/>
+        <Timestamp reference="160"/>
+        <Timestamp reference="161"/>
+        <Timestamp reference="162"/>
+        <Timestamp reference="163"/>
+        <Timestamp reference="164"/>
+        <Timestamp reference="165"/>
+        <Timestamp reference="166"/>
+        <Timestamp reference="167"/>
+        <Timestamp reference="168"/>
+        <Timestamp reference="169"/>
+        <Timestamp reference="170"/>
+        <Timestamp reference="171"/>
+        <Timestamp reference="172"/>
+        <Timestamp reference="173"/>
+        <Timestamp reference="174"/>
+        <Timestamp reference="175"/>
+        <Timestamp reference="178"/>
+      </groupTimestampList>
+    </Group>
+    <Group id="280">
+      <id>7</id>
+      <name>Group08</name>
+      <hotel reference="268"/>
+      <requiredActivities id="281">
+        <Activity reference="226"/>
+        <Activity reference="206"/>
+        <Activity reference="220"/>
+        <Activity reference="230"/>
+        <Activity reference="215"/>
+      </requiredActivities>
+      <groupTimestampList id="282">
+        <Timestamp reference="106"/>
+        <Timestamp reference="107"/>
+        <Timestamp reference="108"/>
+        <Timestamp reference="109"/>
+        <Timestamp reference="110"/>
+        <Timestamp reference="111"/>
+        <Timestamp reference="112"/>
+        <Timestamp reference="113"/>
+        <Timestamp reference="114"/>
+        <Timestamp reference="115"/>
+        <Timestamp reference="116"/>
+        <Timestamp reference="117"/>
+        <Timestamp reference="118"/>
+        <Timestamp reference="119"/>
+        <Timestamp reference="120"/>
+        <Timestamp reference="121"/>
+        <Timestamp reference="122"/>
+        <Timestamp reference="123"/>
+        <Timestamp reference="124"/>
+        <Timestamp reference="125"/>
+        <Timestamp reference="128"/>
+        <Timestamp reference="129"/>
+        <Timestamp reference="130"/>
+        <Timestamp reference="131"/>
+        <Timestamp reference="132"/>
+        <Timestamp reference="133"/>
+        <Timestamp reference="134"/>
+        <Timestamp reference="135"/>
+        <Timestamp reference="136"/>
+        <Timestamp reference="137"/>
+        <Timestamp reference="138"/>
+        <Timestamp reference="139"/>
+        <Timestamp reference="140"/>
+        <Timestamp reference="141"/>
+        <Timestamp reference="142"/>
+        <Timestamp reference="143"/>
+        <Timestamp reference="144"/>
+        <Timestamp reference="145"/>
+        <Timestamp reference="146"/>
+        <Timestamp reference="147"/>
+        <Timestamp reference="148"/>
+        <Timestamp reference="149"/>
+        <Timestamp reference="150"/>
+        <Timestamp reference="153"/>
+        <Timestamp reference="154"/>
+        <Timestamp reference="155"/>
+        <Timestamp reference="156"/>
+        <Timestamp reference="157"/>
+        <Timestamp reference="158"/>
+        <Timestamp reference="159"/>
+        <Timestamp reference="160"/>
+        <Timestamp reference="161"/>
+        <Timestamp reference="162"/>
+        <Timestamp reference="163"/>
+        <Timestamp reference="164"/>
+        <Timestamp reference="165"/>
+        <Timestamp reference="166"/>
+        <Timestamp reference="167"/>
+        <Timestamp reference="168"/>
+        <Timestamp reference="169"/>
+        <Timestamp reference="170"/>
+        <Timestamp reference="171"/>
+        <Timestamp reference="172"/>
+        <Timestamp reference="173"/>
+        <Timestamp reference="174"/>
+        <Timestamp reference="175"/>
+        <Timestamp reference="178"/>
+      </groupTimestampList>
+    </Group>
+    <Group id="283">
+      <id>8</id>
+      <name>Group09</name>
+      <hotel reference="268"/>
+      <requiredActivities id="284">
+        <Activity reference="206"/>
+        <Activity reference="228"/>
+      </requiredActivities>
+      <groupTimestampList id="285">
+        <Timestamp reference="105"/>
+        <Timestamp reference="106"/>
+        <Timestamp reference="107"/>
+        <Timestamp reference="108"/>
+        <Timestamp reference="109"/>
+        <Timestamp reference="110"/>
+        <Timestamp reference="111"/>
+        <Timestamp reference="112"/>
+        <Timestamp reference="113"/>
+        <Timestamp reference="114"/>
+        <Timestamp reference="115"/>
+        <Timestamp reference="116"/>
+        <Timestamp reference="117"/>
+        <Timestamp reference="118"/>
+        <Timestamp reference="119"/>
+        <Timestamp reference="120"/>
+        <Timestamp reference="121"/>
+        <Timestamp reference="122"/>
+      </groupTimestampList>
+    </Group>
+    <Group id="286">
+      <id>9</id>
+      <name>Group10</name>
+      <hotel reference="268"/>
+      <requiredActivities id="287">
+        <Activity reference="206"/>
+        <Activity reference="228"/>
+      </requiredActivities>
+      <groupTimestampList id="288">
+        <Timestamp reference="105"/>
+        <Timestamp reference="106"/>
+        <Timestamp reference="107"/>
+        <Timestamp reference="108"/>
+        <Timestamp reference="109"/>
+        <Timestamp reference="110"/>
+        <Timestamp reference="111"/>
+        <Timestamp reference="112"/>
+        <Timestamp reference="113"/>
+        <Timestamp reference="114"/>
+        <Timestamp reference="115"/>
+        <Timestamp reference="116"/>
+        <Timestamp reference="117"/>
+        <Timestamp reference="118"/>
+        <Timestamp reference="119"/>
+        <Timestamp reference="120"/>
+        <Timestamp reference="121"/>
+        <Timestamp reference="122"/>
+      </groupTimestampList>
+    </Group>
+    <Group id="289">
+      <id>10</id>
+      <name>Group11</name>
+      <hotel reference="258"/>
+      <requiredActivities id="290">
+        <Activity reference="215"/>
+        <Activity reference="206"/>
+        <Activity reference="222"/>
+        <Activity reference="213"/>
+      </requiredActivities>
+      <groupTimestampList id="291">
+        <Timestamp reference="130"/>
+        <Timestamp reference="131"/>
+        <Timestamp reference="132"/>
+        <Timestamp reference="133"/>
+        <Timestamp reference="134"/>
+        <Timestamp reference="135"/>
+        <Timestamp reference="136"/>
+        <Timestamp reference="137"/>
+        <Timestamp reference="138"/>
+        <Timestamp reference="139"/>
+        <Timestamp reference="140"/>
+        <Timestamp reference="141"/>
+        <Timestamp reference="142"/>
+        <Timestamp reference="143"/>
+        <Timestamp reference="144"/>
+        <Timestamp reference="145"/>
+        <Timestamp reference="146"/>
+        <Timestamp reference="147"/>
+        <Timestamp reference="148"/>
+        <Timestamp reference="149"/>
+        <Timestamp reference="150"/>
+        <Timestamp reference="153"/>
+        <Timestamp reference="154"/>
+        <Timestamp reference="155"/>
+        <Timestamp reference="156"/>
+        <Timestamp reference="157"/>
+        <Timestamp reference="158"/>
+        <Timestamp reference="159"/>
+        <Timestamp reference="160"/>
+        <Timestamp reference="161"/>
+        <Timestamp reference="162"/>
+        <Timestamp reference="163"/>
+        <Timestamp reference="164"/>
+        <Timestamp reference="165"/>
+        <Timestamp reference="166"/>
+        <Timestamp reference="167"/>
+        <Timestamp reference="168"/>
+        <Timestamp reference="169"/>
+        <Timestamp reference="170"/>
+        <Timestamp reference="171"/>
+        <Timestamp reference="172"/>
+      </groupTimestampList>
+    </Group>
+    <Group id="292">
+      <id>11</id>
+      <name>Group12</name>
+      <hotel reference="258"/>
+      <requiredActivities id="293">
+        <Activity reference="215"/>
+        <Activity reference="206"/>
+        <Activity reference="222"/>
+        <Activity reference="213"/>
+      </requiredActivities>
+      <groupTimestampList id="294">
+        <Timestamp reference="130"/>
+        <Timestamp reference="131"/>
+        <Timestamp reference="132"/>
+        <Timestamp reference="133"/>
+        <Timestamp reference="134"/>
+        <Timestamp reference="135"/>
+        <Timestamp reference="136"/>
+        <Timestamp reference="137"/>
+        <Timestamp reference="138"/>
+        <Timestamp reference="139"/>
+        <Timestamp reference="140"/>
+        <Timestamp reference="141"/>
+        <Timestamp reference="142"/>
+        <Timestamp reference="143"/>
+        <Timestamp reference="144"/>
+        <Timestamp reference="145"/>
+        <Timestamp reference="146"/>
+        <Timestamp reference="147"/>
+        <Timestamp reference="148"/>
+        <Timestamp reference="149"/>
+        <Timestamp reference="150"/>
+        <Timestamp reference="153"/>
+        <Timestamp reference="154"/>
+        <Timestamp reference="155"/>
+        <Timestamp reference="156"/>
+        <Timestamp reference="157"/>
+        <Timestamp reference="158"/>
+        <Timestamp reference="159"/>
+        <Timestamp reference="160"/>
+        <Timestamp reference="161"/>
+        <Timestamp reference="162"/>
+        <Timestamp reference="163"/>
+        <Timestamp reference="164"/>
+        <Timestamp reference="165"/>
+        <Timestamp reference="166"/>
+        <Timestamp reference="167"/>
+        <Timestamp reference="168"/>
+        <Timestamp reference="169"/>
+        <Timestamp reference="170"/>
+        <Timestamp reference="171"/>
+        <Timestamp reference="172"/>
+      </groupTimestampList>
+    </Group>
+  </groupList>
+  <hotelList id="295">
+    <Hotel reference="268"/>
+    <Hotel id="296">
+      <id>1</id>
+      <hotelIndex>1</hotelIndex>
+      <hotelLocationBusRequirement id="297">
+        <entry>
+          <Location reference="219"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="210"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="217"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="209"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="225"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="218"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="224"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="208"/>
+          <boolean>true</boolean>
+        </entry>
+      </hotelLocationBusRequirement>
+      <hotelActivityBusRequirement id="298">
+        <entry>
+          <Activity reference="232"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Activity reference="234"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Activity reference="213"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Activity reference="220"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Activity reference="230"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Activity reference="228"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Activity reference="211"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Activity reference="226"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Activity reference="204"/>
+          <boolean>true</boolean>
+        </entry>
+      </hotelActivityBusRequirement>
+      <hotelLocationPenalty id="299">
+        <entry>
+          <Location reference="219"/>
+          <int>10</int>
+        </entry>
+        <entry>
+          <Location reference="210"/>
+          <int>2</int>
+        </entry>
+        <entry>
+          <Location reference="217"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Location reference="209"/>
+          <int>2</int>
+        </entry>
+        <entry>
+          <Location reference="225"/>
+          <int>2</int>
+        </entry>
+        <entry>
+          <Location reference="218"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Location reference="224"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Location reference="208"/>
+          <int>0</int>
+        </entry>
+      </hotelLocationPenalty>
+    </Hotel>
+    <Hotel id="300">
+      <id>2</id>
+      <hotelIndex>2</hotelIndex>
+      <hotelLocationBusRequirement id="301">
+        <entry>
+          <Location reference="219"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Location reference="210"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Location reference="217"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="209"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="225"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="218"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="224"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="208"/>
+          <boolean>true</boolean>
+        </entry>
+      </hotelLocationBusRequirement>
+      <hotelActivityBusRequirement id="302">
+        <entry>
+          <Activity reference="232"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Activity reference="234"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Activity reference="213"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Activity reference="220"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Activity reference="230"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Activity reference="228"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Activity reference="211"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Activity reference="226"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Activity reference="204"/>
+          <boolean>true</boolean>
+        </entry>
+      </hotelActivityBusRequirement>
+      <hotelLocationPenalty id="303">
+        <entry>
+          <Location reference="219"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Location reference="210"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Location reference="217"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Location reference="209"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Location reference="225"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Location reference="218"/>
+          <int>3</int>
+        </entry>
+        <entry>
+          <Location reference="224"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Location reference="208"/>
+          <int>3</int>
+        </entry>
+      </hotelLocationPenalty>
+    </Hotel>
+    <Hotel id="304">
+      <id>3</id>
+      <hotelIndex>3</hotelIndex>
+      <hotelLocationBusRequirement id="305">
+        <entry>
+          <Location reference="219"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="210"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="217"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="209"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="225"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="218"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="224"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Location reference="208"/>
+          <boolean>true</boolean>
+        </entry>
+      </hotelLocationBusRequirement>
+      <hotelActivityBusRequirement id="306">
+        <entry>
+          <Activity reference="232"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Activity reference="234"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Activity reference="213"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Activity reference="220"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Activity reference="230"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Activity reference="228"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Activity reference="211"/>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <Activity reference="226"/>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <Activity reference="204"/>
+          <boolean>true</boolean>
+        </entry>
+      </hotelActivityBusRequirement>
+      <hotelLocationPenalty id="307">
+        <entry>
+          <Location reference="219"/>
+          <int>5</int>
+        </entry>
+        <entry>
+          <Location reference="210"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Location reference="217"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Location reference="209"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Location reference="225"/>
+          <int>0</int>
+        </entry>
+        <entry>
+          <Location reference="218"/>
+          <int>3</int>
+        </entry>
+        <entry>
+          <Location reference="224"/>
+          <int>1</int>
+        </entry>
+        <entry>
+          <Location reference="208"/>
+          <int>3</int>
+        </entry>
+      </hotelLocationPenalty>
+    </Hotel>
+    <Hotel reference="248"/>
+    <Hotel reference="258"/>
+  </hotelList>
+  <taskList id="308">
+    <Task id="309">
+      <id>0</id>
+      <index>0</index>
+      <activity reference="204"/>
+      <group reference="247"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="310">
+      <id>1</id>
+      <index>0</index>
+      <activity reference="222"/>
+      <group reference="247"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="311">
+      <id>2</id>
+      <index>0</index>
+      <activity reference="206"/>
+      <group reference="247"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="312">
+      <id>3</id>
+      <index>0</index>
+      <activity reference="226"/>
+      <group reference="247"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="313">
+      <id>4</id>
+      <index>0</index>
+      <activity reference="211"/>
+      <group reference="247"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="314">
+      <id>5</id>
+      <index>0</index>
+      <activity reference="204"/>
+      <group reference="254"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="315">
+      <id>6</id>
+      <index>0</index>
+      <activity reference="222"/>
+      <group reference="254"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="316">
+      <id>7</id>
+      <index>0</index>
+      <activity reference="206"/>
+      <group reference="254"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="317">
+      <id>8</id>
+      <index>0</index>
+      <activity reference="226"/>
+      <group reference="254"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="318">
+      <id>9</id>
+      <index>0</index>
+      <activity reference="211"/>
+      <group reference="254"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="319">
+      <id>10</id>
+      <index>0</index>
+      <activity reference="220"/>
+      <group reference="257"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="320">
+      <id>11</id>
+      <index>0</index>
+      <activity reference="232"/>
+      <group reference="257"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="321">
+      <id>12</id>
+      <index>0</index>
+      <activity reference="215"/>
+      <group reference="257"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="322">
+      <id>13</id>
+      <index>0</index>
+      <activity reference="213"/>
+      <group reference="257"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="323">
+      <id>14</id>
+      <index>0</index>
+      <activity reference="206"/>
+      <group reference="257"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="324">
+      <id>15</id>
+      <index>0</index>
+      <activity reference="220"/>
+      <group reference="264"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="325">
+      <id>16</id>
+      <index>0</index>
+      <activity reference="232"/>
+      <group reference="264"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="326">
+      <id>17</id>
+      <index>0</index>
+      <activity reference="215"/>
+      <group reference="264"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="327">
+      <id>18</id>
+      <index>0</index>
+      <activity reference="213"/>
+      <group reference="264"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="328">
+      <id>19</id>
+      <index>0</index>
+      <activity reference="206"/>
+      <group reference="264"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="329">
+      <id>20</id>
+      <index>0</index>
+      <activity reference="215"/>
+      <group reference="267"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="330">
+      <id>21</id>
+      <index>0</index>
+      <activity reference="222"/>
+      <group reference="267"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="331">
+      <id>22</id>
+      <index>0</index>
+      <activity reference="232"/>
+      <group reference="267"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="332">
+      <id>23</id>
+      <index>0</index>
+      <activity reference="228"/>
+      <group reference="267"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="333">
+      <id>24</id>
+      <index>0</index>
+      <activity reference="215"/>
+      <group reference="274"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="334">
+      <id>25</id>
+      <index>0</index>
+      <activity reference="222"/>
+      <group reference="274"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="335">
+      <id>26</id>
+      <index>0</index>
+      <activity reference="232"/>
+      <group reference="274"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="336">
+      <id>27</id>
+      <index>0</index>
+      <activity reference="228"/>
+      <group reference="274"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="337">
+      <id>28</id>
+      <index>0</index>
+      <activity reference="226"/>
+      <group reference="277"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="338">
+      <id>29</id>
+      <index>0</index>
+      <activity reference="222"/>
+      <group reference="277"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="339">
+      <id>30</id>
+      <index>0</index>
+      <activity reference="213"/>
+      <group reference="277"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="340">
+      <id>31</id>
+      <index>0</index>
+      <activity reference="215"/>
+      <group reference="277"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="341">
+      <id>32</id>
+      <index>0</index>
+      <activity reference="232"/>
+      <group reference="277"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="342">
+      <id>33</id>
+      <index>0</index>
+      <activity reference="226"/>
+      <group reference="280"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="343">
+      <id>34</id>
+      <index>0</index>
+      <activity reference="206"/>
+      <group reference="280"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="344">
+      <id>35</id>
+      <index>0</index>
+      <activity reference="220"/>
+      <group reference="280"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="345">
+      <id>36</id>
+      <index>0</index>
+      <activity reference="230"/>
+      <group reference="280"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="346">
+      <id>37</id>
+      <index>0</index>
+      <activity reference="215"/>
+      <group reference="280"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="347">
+      <id>38</id>
+      <index>0</index>
+      <activity reference="206"/>
+      <group reference="283"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="348">
+      <id>39</id>
+      <index>0</index>
+      <activity reference="228"/>
+      <group reference="283"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="349">
+      <id>40</id>
+      <index>0</index>
+      <activity reference="206"/>
+      <group reference="286"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="350">
+      <id>41</id>
+      <index>0</index>
+      <activity reference="228"/>
+      <group reference="286"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="351">
+      <id>42</id>
+      <index>0</index>
+      <activity reference="215"/>
+      <group reference="289"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="352">
+      <id>43</id>
+      <index>0</index>
+      <activity reference="206"/>
+      <group reference="289"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="353">
+      <id>44</id>
+      <index>0</index>
+      <activity reference="222"/>
+      <group reference="289"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="354">
+      <id>45</id>
+      <index>0</index>
+      <activity reference="213"/>
+      <group reference="289"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="355">
+      <id>46</id>
+      <index>0</index>
+      <activity reference="215"/>
+      <group reference="292"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="356">
+      <id>47</id>
+      <index>0</index>
+      <activity reference="206"/>
+      <group reference="292"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="357">
+      <id>48</id>
+      <index>0</index>
+      <activity reference="222"/>
+      <group reference="292"/>
+      <locked>false</locked>
+    </Task>
+    <Task id="358">
+      <id>49</id>
+      <index>0</index>
+      <activity reference="213"/>
+      <group reference="292"/>
+      <locked>false</locked>
+    </Task>
+  </taskList>
+  <score id="359">-50init/0hard/0medium/0soft</score>
+</Week>
