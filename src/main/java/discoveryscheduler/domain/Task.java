@@ -23,6 +23,7 @@ import java.util.Properties;
 public class Task extends AbstractPersistable {
 	
 	private static final long serialVersionUID = 5L;
+	@SuppressWarnings("unused")
 	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
 	//private static final int EST = Integer.parseInt(configuration.getProperty("earliest_start_time"));
 	//private static final int LST = Integer.parseInt(configuration.getProperty("latest_start_time"));

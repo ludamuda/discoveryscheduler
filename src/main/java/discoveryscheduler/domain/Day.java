@@ -9,6 +9,7 @@ import discoveryscheduler.persistence.DiscoverySchedulerImportConfig;
 import java.util.List;
 import java.util.Properties;
 
+@SuppressWarnings("serial")
 @XStreamAlias("Day")
 public class Day extends AbstractPersistable{
 	/**
@@ -16,6 +17,7 @@ public class Day extends AbstractPersistable{
 	 */
 	//private static final long serialVersionUID = 7L;
 
+	@SuppressWarnings("unused")
 	private static final Properties configuration = DiscoverySchedulerImportConfig.getConfig();
 	//private static final String[] DAYS = configuration.getProperty("week_days").split(",");
 	private static final String[] DAYS = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
